@@ -1,5 +1,15 @@
 # portfolio — プロジェクト固有指示
 
+## このディレクトリの境界
+
+**役割: 対外公開の営業LP とサンプルサイト**。GitHub Pages で公開する本番資材のみ置く。
+
+> 判定基準: 見込み顧客が直接見る公開物か？
+>
+> - ビジネスロジック・エージェント → `~/work/ai-biz`
+> - 個人ライフログ → `~/life`
+> - 学習・プロトタイプ → `~/dev`
+
 ## 概要
 
 中村元揮（札幌・エンジニア）の個人ビジネスポートフォリオサイト。
@@ -18,7 +28,7 @@
 
 - `index.html` — メインLP。CSS は `<style>` タグ内、JS は `<script>` タグ内に**インライン**で記述（外部 style.css / script.js は存在しない）
 - `privacy.html` — プライバシーポリシー
-- `samples/{bonesetter,clinic,restaurant}/` — 営業用サンプルサイト（業種別）
+- `samples/{bonesetter,clinic,restaurant}/` — 営業用サンプルサイト（業種別）。完成サイトの設計見本。AI機能デモは別物（`~/work/ai-biz/demos/`）
 - `favicon.svg`, `sitemap.xml`, `robots.txt`
 - `profile.png` — プロフィール画像（`.gitignore` の `!profile.png` で例外許可）
 - 他の `*.png` はスクリーンショット等で `.gitignore` により除外される
