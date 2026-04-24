@@ -2,3 +2,11 @@
 *.jpeg
 *.png
 !profile.png
+
+# Claude Code
+.claude/worktrees/
+.claude/settings.local.json
+
+# ローカル作業領域
+.plans/
+.playwright-mcp/
