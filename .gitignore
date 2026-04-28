@@ -6,6 +6,7 @@
 # Claude Code
 .claude/worktrees/
 .claude/settings.local.json
+AGENTS.md
 
 # ローカル作業領域
 .plans/

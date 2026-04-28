@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中小企業向け AI導入チェックリスト | 中村元揮</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Sora:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1f262c;
+    --ink-soft: #3b4752;
+    --ink-muted: #68747e;
+    --ink-faint: #98a3ab;
+    --surface: #fffdf9;
+    --surface-warm: #f5efe6;
+    --surface-raised: #ffffff;
+    --surface-tint: #e7ddd0;
+    --warm: #a46d3d;
+    --line: #d7ccbe;
+    --radius: 18px;
+    --radius-sm: 10px;
+    --font-body: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    --font-display: "Sora", "Noto Sans JP", sans-serif;
+  }
+
+  @page { size: A4; margin: 16mm; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--surface);
+    font-family: var(--font-body);
+    line-height: 1.78;
+  }
+  .page {
+    min-height: 265mm;
+    page-break-after: always;
+  }
+  .page:last-child { page-break-after: auto; }
+  .eyebrow {
+    color: var(--warm);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  h1 {
+    margin: 0 0 18px;
+    font-family: var(--font-display);
+    font-size: 34px;
+    line-height: 1.28;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  h2 {
+    margin: 0 0 14px;
+    font-size: 22px;
+    line-height: 1.45;
+    color: var(--ink);
+  }
+  h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: var(--ink);
+  }
+  p {
+    margin: 0 0 14px;
+    color: var(--ink-soft);
+    font-size: 13.5px;
+  }
+  .lead {
+    max-width: 680px;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+  .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 248mm;
+    padding: 10mm 0 0;
+  }
+  .cover-box {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface-warm);
+    padding: 22px 24px;
+    margin-top: 28px;
+  }
+  .cover-box ul,
+  .checklist,
+  .simple-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .cover-box li,
+  .simple-list li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 9px;
+    color: var(--ink-soft);
+    font-size: 13.5px;
+  }
+  .cover-box li::before,
+  .simple-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--warm);
+  }
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+    color: var(--ink-muted);
+    font-size: 12px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 18px 0 28px;
+  }
+  .card {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--surface-raised);
+    padding: 16px 16px 14px;
+  }
+  .card strong {
+    display: block;
+    color: var(--ink);
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  .card span {
+    display: block;
+    color: var(--ink-muted);
+    font-size: 12.5px;
+  }
+  .section {
+    margin-bottom: 30px;
+  }
+  .checklist li {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--surface-tint);
+    font-size: 13.5px;
+    color: var(--ink-soft);
+  }
+  .box {
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid var(--warm);
+    border-radius: 4px;
+    margin-top: 3px;
+  }
+  .note {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface-warm);
+    padding: 18px 20px;
+  }
+  .cta {
+    border: 1px solid var(--ink);
+    border-radius: var(--radius);
+    background: var(--ink);
+    color: var(--surface);
+    padding: 22px 24px;
+    margin-top: 28px;
+  }
+  .cta h2,
+  .cta p {
+    color: var(--surface);
+  }
+  .cta a {
+    color: var(--surface);
+    font-weight: 700;
+  }
+  .footer {
+    margin-top: 30px;
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+    color: var(--ink-faint);
+    font-size: 11px;
+  }
+
+  /* --- Screen (レスポンシブ) --- */
+  @media screen {
+    body {
+      background: var(--surface-warm);
+    }
+    .page {
+      max-width: 780px;
+      margin: 0 auto 40px;
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 40px 48px;
+      box-shadow: 0 4px 24px rgba(31, 38, 44, 0.06);
+      min-height: auto;
+      page-break-after: unset;
+    }
+    .cover {
+      min-height: auto;
+      padding: 0;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .page {
+      padding: 28px 20px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 20px;
+    }
+    h1 { font-size: 26px; }
+    h2 { font-size: 18px; }
+    .grid { grid-template-columns: 1fr; }
+    .meta {
+      flex-direction: column;
+      gap: 6px;
+    }
+  }
+</style>
+</head>
+<body>
+  <main>
+    <section class="page cover">
+      <div>
+        <p class="eyebrow">AI Readiness Checklist</p>
+        <h1>中小企業向け<br>AI導入チェックリスト</h1>
+        <p class="lead">AIを入れる前に、まず確認することを1枚ずつ整理できる資料です。社内で「何から始めるか」を話すためのたたき台として使えます。</p>
+        <div class="cover-box">
+          <h2>この資料で整理できること</h2>
+          <ul>
+            <li>AIで見直しやすい業務の候補</li>
+            <li>導入前に確認しておきたい社内ルール</li>
+            <li>最初の30分相談で明確にすること</li>
+            <li>小さく試すための優先順位</li>
+          </ul>
+        </div>
+      </div>
+      <div class="meta">
+        <span>中村元揮 / 札幌のAI導入支援・AI顧問</span>
+        <span>motoki418.github.io/portfolio</span>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="section">
+        <p class="eyebrow">01 / First Targets</p>
+        <h2>最初に見直しやすい5つの業務</h2>
+        <p>全社導入から始める必要はありません。まずは毎週・毎月くり返していて、担当者の負担が見えやすい業務を選びます。</p>
+        <div class="grid">
+          <div class="card"><strong>議事録・会議整理</strong><span>要点、決定事項、次のアクションを短時間でまとめる。</span></div>
+          <div class="card"><strong>メール・問い合わせ対応</strong><span>返信案、FAQ、表現統一で対応品質を安定させる。</span></div>
+          <div class="card"><strong>資料作成</strong><span>提案書、報告書、社内説明資料のたたき台を作る。</span></div>
+          <div class="card"><strong>社内マニュアル・FAQ</strong><span>散らばった手順やルールを探しやすくまとめる。</span></div>
+          <div class="card"><strong>簡易自動化</strong><span>定型文書、集計、ファイル整理などの反復作業を減らす。</span></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="eyebrow">02 / Common Blocks</p>
+        <h2>よくあるつまずき</h2>
+        <ul class="simple-list">
+          <li>試しに使ってみたが、社内の業務フローに乗らない。</li>
+          <li>誰が何に使ってよいか決まっておらず、展開しづらい。</li>
+          <li>便利そうなツールが多すぎて、自社に合うものを選べない。</li>
+          <li>情報漏えいが不安で、現場に任せきれない。</li>
+          <li>一部の人だけが使い、組織全体には広がらない。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="section">
+        <p class="eyebrow">03 / Checklist</p>
+        <h2>導入前チェックリスト</h2>
+        <ul class="checklist">
+          <li><span class="box"></span><span>毎週または毎月くり返している業務を3つ書き出した。</span></li>
+          <li><span class="box"></span><span>その中で、作業時間が長いものを1つ選んだ。</span></li>
+          <li><span class="box"></span><span>AIに入力してよい情報と、入力してはいけない情報を分けた。</span></li>
+          <li><span class="box"></span><span>AIの出力を最終確認する担当者を決めた。</span></li>
+          <li><span class="box"></span><span>最初の試験導入を1部署または1業務に絞った。</span></li>
+          <li><span class="box"></span><span>うまくいった場合に、次に広げる業務を仮で決めた。</span></li>
+          <li><span class="box"></span><span>ツール費用、API費用、外部支援費用の上限を決めた。</span></li>
+          <li><span class="box"></span><span>社内で共有するための簡単な説明資料が必要か確認した。</span></li>
+        </ul>
+      </div>
+
+      <div class="note">
+        <h2>迷ったら、まず1業務だけで十分です</h2>
+        <p>AI導入は、最初から大きく設計しすぎると止まりやすくなります。1つの業務で「使える」「続けられる」「危なくない」を確認してから、次の業務へ広げるほうが現実的です。</p>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="section">
+        <p class="eyebrow">04 / 30 Min Session</p>
+        <h2>30分無料相談で整理すること</h2>
+        <ul class="simple-list">
+          <li>今いちばん時間がかかっている業務</li>
+          <li>AIで置き換えやすい部分と、人が残すべき部分</li>
+          <li>最初に試すべき業務の優先順位</li>
+          <li>導入支援、研修、月次顧問のどれが合うか</li>
+          <li>今は導入しないほうがよい場合の判断理由</li>
+        </ul>
+      </div>
+
+      <div class="cta">
+        <h2>まず30分、現状を聞かせてください</h2>
+        <p>課題が言語化できていなくても大丈夫です。相談後は、社内で共有できる簡単な整理メモをお返しします。</p>
+        <p><a href="https://motoki418.github.io/portfolio/#contact">https://motoki418.github.io/portfolio/#contact</a></p>
+      </div>
+
+      <div class="footer">
+        <p>中村元揮 / 札幌のAI導入支援・AI顧問</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

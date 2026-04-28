@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>中村元揮 | 札幌のWeb制作・AI業務改善</title>
-<meta name="description" content="札幌でホームページ制作・Web予約・AI業務改善をワンストップ対応。クリニック・飲食店・整骨院など地域密着型ビジネスに特化。最短1週間納品、月額1万円〜の保守サポート。">
-<meta property="og:title" content="中村元揮 | 札幌のWeb制作・AI業務改善">
-<meta property="og:description" content="札幌でホームページ制作・Web予約・AI業務改善をワンストップ対応。クリニック・飲食店・整骨院など地域密着型ビジネスに特化。最短1週間納品。">
+<title>札幌の生成AI・AIエージェント導入支援｜中村元揮</title>
+<meta name="description" content="札幌で生成AI導入支援、AIエージェント開発、AI活用研修・勉強会、AI顧問を提供。現場に合わせた設計から定着支援まで伴走します。30分無料相談、24時間以内にご返信。">
+<meta property="og:title" content="札幌の生成AI・AIエージェント導入支援｜中村元揮">
+<meta property="og:description" content="札幌で生成AI導入支援、AIエージェント開発、AI活用研修・勉強会、AI顧問を提供。現場に合わせた設計から定着支援まで伴走します。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://motoki418.github.io/portfolio/">
 <meta property="og:image" content="https://motoki418.github.io/portfolio/profile.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://motoki418.github.io/portfolio/profile.png">
-<meta name="twitter:title" content="中村元揮 | 札幌のWeb制作・AI業務改善">
-<meta name="twitter:description" content="札幌でホームページ制作・Web予約・AI業務改善をワンストップ対応。クリニック・飲食店・整骨院など地域密着型ビジネスに特化。">
+<meta name="twitter:title" content="札幌の生成AI・AIエージェント導入支援｜中村元揮">
+<meta name="twitter:description" content="札幌で生成AI導入支援、AIエージェント開発、AI活用研修・勉強会、AI顧問を提供。現場に合わせた設計から定着支援まで伴走します。">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KV15FJJDYL"></script>
 <script>
@@ -32,25 +32,38 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --ink: #0f172a;
-  --ink-soft: #334155;
-  --ink-muted: #64748b;
-  --ink-faint: #94a3b8;
-  --surface: #ffffff;
-  --surface-warm: #faf9f7;
-  --surface-elevated: #f1f0ed;
-  --accent: #2563eb;
-  --accent-glow: rgba(37, 99, 235, 0.12);
-  --accent-hover: #1d4ed8;
-  --warm: #d97706;
-  --border: #e2e0dc;
-  --radius: 12px;
-  --radius-sm: 8px;
-  --shadow-card: 0 1px 3px rgba(15,23,42,0.04), 0 4px 12px rgba(15,23,42,0.03);
-  --shadow-hover: 0 8px 30px rgba(15,23,42,0.08);
+  --ink: #1f262c;
+  --ink-soft: #3b4752;
+  --ink-muted: #68747e;
+  --ink-faint: #98a3ab;
+  --surface: #fffdf9;
+  --surface-warm: #f5efe6;
+  --surface-soft: #efe7dc;
+  --surface-raised: #ffffff;
+  --surface-tint: #e7ddd0;
+  --accent: #52687d;
+  --accent-hover: #3e5366;
+  --accent-soft: #e7edf2;
+  --warm: #a46d3d;
+  --warm-soft: #f4e8d8;
+  --olive: #67715d;
+  --olive-soft: #eaede6;
+  --brick: #8a6158;
+  --brick-soft: #f1e8e5;
+  --line: #d7ccbe;
+  --line-strong: #c6b9a7;
+  --danger: #a45b52;
+  --danger-soft: rgba(164, 91, 82, 0.12);
+  --danger-light: #f7d9d3;
+  --header-bg: rgba(255, 253, 249, 0.94);
+  --shadow-card: 0 16px 40px rgba(31, 38, 44, 0.06);
+  --shadow-soft: 0 8px 24px rgba(31, 38, 44, 0.04);
+  --shadow-header: 0 1px 0 rgba(31, 38, 44, 0.05);
+  --radius: 18px;
+  --radius-sm: 10px;
   --font-body: "Noto Sans JP", sans-serif;
   --font-display: "Sora", "Noto Sans JP", sans-serif;
-  --max-w: 1100px;
+  --max-w: 1120px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -59,7 +72,7 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   font-family: var(--font-body);
   font-size: 15.5px;
-  line-height: 1.85;
+  line-height: 1.9;
   color: var(--ink-soft);
   background: var(--surface);
   -webkit-font-smoothing: antialiased;
@@ -70,734 +83,1750 @@ a { color: var(--accent); text-decoration: none; transition: color 0.2s var(--ea
 a:hover { color: var(--accent-hover); }
 img { max-width: 100%; height: auto; display: block; }
 
-/* --- Utility --- */
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 28px; }
-section { padding: 100px 0; }
-@media (max-width: 768px) { section { padding: 64px 0; } .container { padding: 0 20px; } }
+section { padding: 104px 0; }
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+@media (max-width: 768px) {
+  section { padding: 72px 0; }
+  .container { padding: 0 20px; }
+}
 
 .section-label {
   display: inline-block;
   font-family: var(--font-display);
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
+  color: var(--warm);
+  margin-bottom: 14px;
 }
+
 .section-title {
-  font-family: var(--font-display);
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 34px;
+  font-weight: 900;
   color: var(--ink);
   line-height: 1.35;
+  letter-spacing: -0.03em;
   margin-bottom: 16px;
 }
+
 .section-lead {
   font-size: 15px;
   color: var(--ink-muted);
-  max-width: 540px;
-  line-height: 1.8;
+  max-width: 620px;
+  line-height: 1.9;
   margin-bottom: 52px;
 }
-.text-center { text-align: center; }
-.mx-auto { margin-left: auto; margin-right: auto; }
+
 @media (max-width: 768px) {
-  .section-title { font-size: 26px; }
+  .section-title { font-size: 27px; }
   .section-lead { margin-bottom: 36px; }
 }
 
-/* --- Grain overlay --- */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 200px;
-}
-
-/* --- Header --- */
 .header {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: rgba(255,255,255,0.88);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--header-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid transparent;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  box-shadow: var(--shadow-header);
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
 }
-.header.scrolled { border-bottom-color: var(--border); box-shadow: 0 1px 8px rgba(15,23,42,0.04); }
+
+.header.scrolled {
+  border-bottom-color: var(--line);
+}
+
 .header-inner {
-  max-width: var(--max-w); margin: 0 auto; padding: 0 28px;
-  display: flex; align-items: center; justify-content: space-between; height: 64px;
-}
-.header-logo {
-  font-family: var(--font-display);
-  font-size: 15px; font-weight: 700; color: var(--ink);
-  letter-spacing: 0.02em;
-}
-.header-nav { display: flex; align-items: center; gap: 32px; }
-.header-nav a { font-size: 13px; color: var(--ink-muted); font-weight: 500; letter-spacing: 0.01em; transition: color 0.2s; }
-.header-nav a:hover { color: var(--ink); }
-.nav-cta {
-  display: inline-block; padding: 9px 22px;
-  background: var(--ink); color: #fff !important;
-  border-radius: var(--radius-sm); font-size: 13px; font-weight: 600;
-  transition: background 0.2s, transform 0.2s;
-}
-.nav-cta:hover { background: #1e293b; transform: translateY(-1px); }
-
-.hamburger {
-  display: none; background: none; border: none; cursor: pointer; padding: 4px;
-  width: 32px; height: 32px; flex-direction: column; justify-content: center; align-items: center; gap: 5px;
-}
-.hamburger span { display: block; width: 20px; height: 1.5px; background: var(--ink); transition: transform 0.25s, opacity 0.25s; }
-.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
-.hamburger.active span:nth-child(2) { opacity: 0; }
-.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
-@media (max-width: 768px) {
-  .hamburger { display: flex; }
-  .header-nav {
-    position: fixed; top: 64px; left: 0; right: 0; bottom: 0;
-    background: rgba(255,255,255,0.98); backdrop-filter: blur(16px);
-    flex-direction: column; justify-content: flex-start; padding-top: 40px; gap: 0;
-    transform: translateX(100%); transition: transform 0.35s var(--ease);
-  }
-  .header-nav.open { transform: translateX(0); }
-  .header-nav a { font-size: 17px; padding: 16px 0; }
-  .nav-cta { margin-top: 16px; font-size: 15px; padding: 14px 32px; }
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
 }
 
-/* --- Hero --- */
-.hero {
-  min-height: 100vh;
-  display: flex; align-items: center;
-  padding-top: 64px;
-  position: relative; overflow: hidden;
-  background: var(--surface-warm);
-}
-.hero::before {
-  content: "";
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 700px 500px at 10% 80%, var(--accent-glow), transparent),
-    radial-gradient(ellipse 500px 500px at 90% 10%, rgba(217,119,6,0.07), transparent);
-  pointer-events: none;
-}
-.hero-inner {
-  max-width: var(--max-w); margin: 0 auto; padding: 0 28px;
-  display: grid; grid-template-columns: 1fr 1fr;
-  align-items: center; gap: 64px;
-  width: 100%;
-  position: relative; z-index: 1;
-}
-.hero-content { padding: 0; }
-.hero-label {
-  display: inline-block;
-  font-family: var(--font-display);
-  font-size: 11px; font-weight: 600;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--ink-faint);
-  margin-bottom: 24px;
-  padding: 6px 16px;
-  border: 1px solid var(--border);
-  border-radius: 100px;
-}
-.hero-name {
-  font-family: var(--font-display);
-  font-size: 56px; font-weight: 900;
+.header-brand {
+  display: inline-flex;
+  align-items: center;
   color: var(--ink);
+  font-size: 17px;
+  font-weight: 900;
   letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin-bottom: 8px;
+  white-space: nowrap;
 }
-.hero-name-en {
-  font-family: var(--font-display);
-  font-size: 13px; font-weight: 400;
-  color: var(--ink-faint);
-  letter-spacing: 0.16em;
-  margin-bottom: 28px;
+
+.header-nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
 }
+
+.header-nav a {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.header-nav a:hover { color: var(--ink); }
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 24px;
+  background: var(--warm);
+  color: var(--surface) !important;
+  border-radius: 12px;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+}
+
+.nav-cta:hover { background: var(--brick); }
+
+@media (max-width: 768px) {
+  .header-inner {
+    min-height: 64px;
+    padding: 9px 12px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .header-brand {
+    flex: 0 1 auto;
+    max-width: 190px;
+    font-size: 13px;
+    line-height: 1.35;
+    white-space: nowrap;
+    text-align: left;
+  }
+  .header-nav {
+    flex: 0 0 auto;
+    min-width: 0;
+    justify-content: flex-end;
+    overflow-x: visible;
+    gap: 8px;
+    padding-bottom: 0;
+  }
+  .header-nav a {
+    display: none;
+  }
+  .header-nav .nav-cta {
+    display: inline-flex;
+    padding: 10px 14px;
+    border-radius: 11px;
+    text-align: center;
+    background: var(--warm);
+    color: var(--surface) !important;
+    font-size: 0 !important;
+  }
+  .header-nav .nav-cta::before { content: "30分相談"; }
+  .header-nav .nav-cta::before { font-size: 12px; }
+}
+
+.hero {
+  padding: 142px 0 92px;
+  background: linear-gradient(to bottom, var(--surface-warm), var(--surface));
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 52px;
+  align-items: center;
+}
+
+.hero-content,
+.hero-visual {
+  min-width: 0;
+}
+
 .hero-title {
-  font-size: 17px; font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 16px;
-  letter-spacing: 0.04em;
+  font-size: 54px;
+  line-height: 1.18;
+  letter-spacing: -0.05em;
+  color: var(--ink);
+  font-weight: 900;
+  margin-bottom: 22px;
 }
+
 .hero-sub {
-  font-size: 15.5px; color: var(--ink-muted);
-  margin-bottom: 44px; line-height: 1.85;
+  max-width: 620px;
+  color: var(--ink-muted);
+  margin-bottom: 30px;
 }
-.btn-primary {
-  display: inline-block; padding: 16px 40px;
-  background: var(--accent); color: #fff; font-size: 14.5px; font-weight: 600;
-  border-radius: var(--radius-sm); border: none; cursor: pointer;
-  transition: all 0.25s var(--ease);
-  box-shadow: 0 4px 14px rgba(37,99,235,0.2);
-  letter-spacing: 0.02em;
+
+.hero-points {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  margin-bottom: 34px;
 }
-.btn-primary:hover {
-  background: var(--accent-hover); color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(37,99,235,0.28);
+
+.hero-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--ink-soft);
+  font-size: 14.5px;
 }
+
+.hero-points li::before {
+  content: "・";
+  color: var(--warm);
+  font-weight: 900;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.btn-primary,
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 24px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--surface);
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid var(--ink);
+  transition: transform 0.2s var(--ease), background 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.btn-primary:hover,
+.cta-button:hover {
+  background: var(--accent-hover);
+  color: var(--surface);
+  transform: translateY(-1px);
+}
+
 .btn-secondary-link {
-  display: inline-block; margin-top: 14px;
-  font-size: 13px; color: var(--ink-muted); font-weight: 500;
-  text-decoration: none; letter-spacing: 0.01em;
-  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-muted);
 }
+
 .btn-secondary-link:hover { color: var(--ink); }
 
-/* --- Hero mockup --- */
+.btn-resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--warm);
+}
+
+.btn-resource-link:hover { color: var(--ink); }
+
+.hero-trust-chips {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 0 18px;
+}
+
+.hero-trust-chips span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 253, 249, 0.72);
+  color: var(--ink-muted);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.hero-trust-chips span::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--warm);
+  flex: 0 0 auto;
+}
+
+.hero-note {
+  font-size: 12.5px;
+  color: var(--ink-faint);
+}
+
 .hero-visual { position: relative; }
-.mockup-browser {
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 24px 80px rgba(15,23,42,0.13), 0 4px 16px rgba(15,23,42,0.06);
+
+.strategy-board {
+  width: 100%;
+  max-width: 100%;
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow-card);
   overflow: hidden;
-  transform: perspective(900px) rotateY(-6deg) rotateX(2deg);
-  transition: transform 0.5s var(--ease);
-}
-.mockup-browser:hover { transform: perspective(900px) rotateY(-2deg) rotateX(1deg); }
-.mockup-bar {
-  background: #f1f0ed;
-  padding: 10px 16px;
-  display: flex; align-items: center; gap: 10px;
-  border-bottom: 1px solid #e2e0dc;
-}
-.mockup-dots { display: flex; gap: 6px; }
-.mockup-dots span {
-  width: 10px; height: 10px; border-radius: 50%;
-}
-.mockup-dots span:nth-child(1) { background: #fc615d; }
-.mockup-dots span:nth-child(2) { background: #fdbc40; }
-.mockup-dots span:nth-child(3) { background: #34c749; }
-.mockup-url {
-  flex: 1; background: #fff; border-radius: 6px;
-  padding: 4px 10px; font-size: 11px;
-  color: var(--ink-faint); font-family: var(--font-display);
-  letter-spacing: 0.01em;
-}
-.mockup-screen {
-  height: 320px; overflow: hidden;
-  background: linear-gradient(160deg, #1e3a5f 0%, #2563eb 60%, #1d4ed8 100%);
-  position: relative;
-}
-.mockup-screen-inner {
-  padding: 28px 24px;
-  color: #fff;
-}
-.ms-nav {
-  display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 28px;
-}
-.ms-logo { font-size: 12px; font-weight: 700; letter-spacing: 0.04em; opacity: 0.95; }
-.ms-links { display: flex; gap: 14px; }
-.ms-links span { font-size: 9px; opacity: 0.6; }
-.ms-hero-text { margin-bottom: 20px; }
-.ms-hero-text h2 { font-size: 20px; font-weight: 800; line-height: 1.3; margin-bottom: 6px; }
-.ms-hero-text p { font-size: 10px; opacity: 0.75; line-height: 1.6; }
-.ms-btn {
-  display: inline-block; padding: 7px 18px;
-  background: #fff; color: #2563eb;
-  border-radius: 6px; font-size: 10px; font-weight: 700;
-  margin-bottom: 24px;
-}
-.ms-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.ms-card {
-  background: rgba(255,255,255,0.12);
-  border-radius: 8px; padding: 10px;
-  border: 1px solid rgba(255,255,255,0.15);
-}
-.ms-card-icon { font-size: 14px; margin-bottom: 4px; }
-.ms-card-title { font-size: 8px; font-weight: 700; margin-bottom: 2px; }
-.ms-card-line { height: 2px; background: rgba(255,255,255,0.2); border-radius: 2px; margin-bottom: 2px; }
-.ms-card-line.short { width: 60%; }
-.hero-badge {
-  position: absolute; bottom: -16px; right: -16px;
-  background: #fff; border-radius: 12px;
-  padding: 12px 18px;
-  box-shadow: 0 8px 32px rgba(15,23,42,0.12);
-  display: flex; align-items: center; gap: 10px;
-  animation: float 3s ease-in-out infinite;
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-.hero-badge-icon { font-size: 20px; }
-.hero-badge-text { font-size: 11px; color: var(--ink); line-height: 1.4; }
-.hero-badge-text strong { display: block; font-size: 13px; font-weight: 700; }
-
-.hero-badge2 {
-  position: absolute; top: 20px; left: -20px;
-  background: #fff; border-radius: 12px;
-  padding: 10px 16px;
-  box-shadow: 0 8px 32px rgba(15,23,42,0.1);
-  display: flex; align-items: center; gap: 8px;
-  animation: float 3s ease-in-out infinite 1.5s;
-}
-.hero-badge2-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: #22c55e;
-  box-shadow: 0 0 0 3px rgba(34,197,94,0.2);
-}
-.hero-badge2-text { font-size: 11px; color: var(--ink); font-weight: 600; }
-
-@media (max-width: 960px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
-  .hero-visual { display: none; }
-}
-@media (max-width: 768px) {
-  .hero-name { font-size: 38px; }
-  .hero-title { font-size: 15px; }
-  .btn-primary { padding: 14px 32px; font-size: 14px; }
 }
 
-/* --- Problems --- */
-.problems-section { background: var(--surface); }
-.problems-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 28px; }
-@media (max-width: 768px) { .problems-grid { grid-template-columns: 1fr; gap: 14px; } }
-.problem-card {
-  display: flex; align-items: flex-start; gap: 18px;
-  padding: 24px 28px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: var(--surface);
-  transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
-}
-.problem-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
-.problem-num {
-  flex-shrink: 0;
-  width: 36px; height: 36px;
-  border-radius: 10px;
-  background: var(--accent-glow);
-  color: var(--accent);
-  font-family: var(--font-display);
-  font-size: 14px; font-weight: 700;
-  display: flex; align-items: center; justify-content: center;
-}
-.problem-text { font-size: 15px; font-weight: 600; color: var(--ink); line-height: 1.55; margin-bottom: 4px; }
-.problem-sub { font-size: 13px; color: var(--ink-faint); line-height: 1.6; }
-.problems-footer {
-  text-align: center; font-size: 13.5px; color: var(--ink-muted);
-  padding: 16px 24px;
-  border-radius: var(--radius-sm);
+.strategy-board-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--line);
   background: var(--surface-warm);
-  border: 1px solid var(--border);
 }
 
-/* --- Services --- */
-.services-section { background: var(--surface-warm); }
-.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-@media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; gap: 16px; } }
-.service-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 36px 28px;
-  transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+.strategy-board-head strong {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.strategy-board-head span {
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+.strategy-board-body {
+  padding: 22px;
+  display: grid;
+  gap: 16px;
+}
+
+.memo-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 18px 18px 16px;
+}
+
+.memo-card h3 {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.memo-card ul {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.memo-card li {
+  font-size: 13px;
+  color: var(--ink-soft);
+  padding-left: 14px;
   position: relative;
 }
-.service-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
-.service-card::before {
-  content: ""; position: absolute; top: 0; left: 28px; right: 28px; height: 3px;
-  border-radius: 0 0 3px 3px;
-}
-.service-card:nth-child(1)::before { background: var(--accent); }
-.service-card:nth-child(2)::before { background: var(--warm); }
-.service-card:nth-child(3)::before { background: #059669; }
-.service-num {
-  font-family: var(--font-display);
-  font-size: 72px; font-weight: 900;
-  line-height: 1; margin-bottom: -8px;
-  letter-spacing: -0.04em;
-}
-.service-card:nth-child(1) .service-num { color: rgba(37,99,235,0.12); }
-.service-card:nth-child(2) .service-num { color: rgba(217,119,6,0.12); }
-.service-card:nth-child(3) .service-num { color: rgba(5,150,105,0.12); }
-.service-card h3 { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 14px; }
-.service-card p { font-size: 14px; color: var(--ink-muted); line-height: 1.85; }
 
-/* --- Portfolio --- */
-.portfolio-section { background: var(--surface); }
-.portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-@media (max-width: 768px) { .portfolio-grid { grid-template-columns: 1fr; gap: 16px; } }
-.portfolio-card {
-  border-radius: var(--radius); overflow: hidden;
-  background: var(--surface); border: 1px solid var(--border);
-  transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
-}
-.portfolio-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); }
-.portfolio-thumb {
-  width: 100%; height: 210px; position: relative;
-  display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start;
-  overflow: hidden;
-}
-.portfolio-thumb--clinic { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); }
-.portfolio-thumb--restaurant { background: linear-gradient(135deg, #78350f 0%, #d97706 100%); }
-.portfolio-thumb--bonesetter { background: linear-gradient(135deg, #134e4a 0%, #0d9488 100%); }
-.pt-bar {
-  background: rgba(0,0,0,0.2); padding: 7px 12px;
-  display: flex; align-items: center; gap: 8px; flex-shrink: 0;
-}
-.pt-dots { display: flex; gap: 4px; }
-.pt-dots span { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.3); }
-.pt-url {
-  background: rgba(255,255,255,0.15); border-radius: 4px;
-  padding: 2px 10px; font-size: 9px; color: rgba(255,255,255,0.6);
-  flex: 1; font-family: var(--font-display); letter-spacing: 0.01em;
-}
-.pt-body {
-  flex: 1; display: flex; flex-direction: column; justify-content: center;
-  padding: 20px 20px 16px;
-}
-.pt-title {
-  font-size: 18px; font-weight: 800; color: #fff;
-  line-height: 1.4; margin-bottom: 16px;
-}
-.pt-btn {
-  display: inline-block; background: #fff;
-  font-size: 9px; font-weight: 700;
-  padding: 6px 14px; border-radius: 5px; width: fit-content;
-}
-.portfolio-body { padding: 24px 24px 28px; }
-.portfolio-body h3 { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
-.portfolio-body p { font-size: 13.5px; color: var(--ink-muted); line-height: 1.75; margin-bottom: 16px; }
-.portfolio-link {
-  font-family: var(--font-display);
-  font-size: 13px; font-weight: 600; color: var(--accent);
-  display: inline-flex; align-items: center; gap: 6px;
-  transition: gap 0.25s var(--ease);
-}
-.portfolio-link:hover { gap: 10px; }
-
-/* --- Pricing --- */
-.pricing-section { background: var(--surface-warm); }
-.pricing-scarcity {
-  display: inline-block;
-  font-size: 13.5px; font-weight: 600; color: var(--warm);
-  padding: 8px 20px;
-  background: rgba(217,119,6,0.08);
-  border: 1px solid rgba(217,119,6,0.15);
-  border-radius: 100px;
-  margin-bottom: 52px;
+.memo-card li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--warm);
+  position: absolute;
+  left: 0;
+  top: 10px;
 }
 
-/* Pricing cards */
-.pricing-cards {
+.memo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.memo-stat {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  max-width: 980px;
-  margin: 0 auto 72px;
-  align-items: start;
+  gap: 12px;
 }
-@media (max-width: 900px) {
-  .pricing-cards { grid-template-columns: 1fr; max-width: 480px; }
+
+.memo-stat-item {
+  background: var(--surface-warm);
+  border-radius: var(--radius-sm);
+  padding: 12px;
 }
-.pricing-card {
+
+.memo-stat-item strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.memo-stat-item span {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 980px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-title { font-size: 42px; }
+}
+
+@media (max-width: 768px) {
+  .hero { padding: 102px 0 72px; }
+  .hero-title { font-size: 34px; }
+  .hero-actions { flex-direction: column; align-items: stretch; width: 100%; }
+  .btn-primary, .cta-button { width: 100%; }
+  .btn-resource-link { justify-content: center; }
+  .hero-trust-chips { grid-template-columns: 1fr; }
+  .memo-grid { grid-template-columns: 1fr; }
+  .memo-stat { grid-template-columns: 1fr; }
+}
+
+.kpi-strip {
+  border-bottom: 1px solid var(--line);
   background: var(--surface);
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  padding: 32px 28px;
+}
+
+.kpi-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.kpi-item {
+  padding: 28px 22px;
+  text-align: center;
   position: relative;
-  transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
 }
-.pricing-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
-.pricing-card--featured {
-  border-color: var(--accent);
-  border-width: 2px;
-  box-shadow: 0 12px 40px rgba(37,99,235,0.13);
-  transform: translateY(-10px);
-}
-.pricing-card--featured:hover { transform: translateY(-13px); box-shadow: 0 20px 50px rgba(37,99,235,0.17); }
-.pricing-badge {
+
+.kpi-item + .kpi-item::before {
+  content: "";
   position: absolute;
-  top: -14px; left: 50%; transform: translateX(-50%);
-  background: var(--accent); color: #fff;
-  font-size: 11px; font-weight: 700;
-  padding: 4px 18px; border-radius: 100px;
-  white-space: nowrap; letter-spacing: 0.05em;
+  left: 0;
+  top: 28px;
+  bottom: 28px;
+  width: 1px;
+  background: var(--line);
 }
+
+.kpi-num {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.kpi-num-unit {
+  font-size: 15px;
+  color: var(--ink-muted);
+  letter-spacing: 0;
+}
+
+.kpi-label {
+  font-size: 12px;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .kpi-inner { grid-template-columns: 1fr; }
+  .kpi-item + .kpi-item::before {
+    left: 20px;
+    right: 20px;
+    top: 0;
+    bottom: auto;
+    width: auto;
+    height: 1px;
+  }
+}
+
+.problems-section {
+  background: var(--surface-warm);
+}
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.problem-card {
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px;
+  display: flex;
+  gap: 18px;
+}
+
+.problem-num {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--warm-soft);
+  color: var(--warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.problem-text {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.55;
+  margin-bottom: 6px;
+}
+
+.problem-sub {
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  line-height: 1.7;
+}
+
+.problems-footer {
+  margin-top: 24px;
+  padding: 18px 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  font-size: 13px;
+  color: var(--ink-muted);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .problems-grid { grid-template-columns: 1fr; }
+}
+
+.services-section { background: var(--surface); }
+
+.services-frame {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface-raised);
+  padding: 30px;
+  box-shadow: var(--shadow-soft);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.service-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 24px 24px;
+  background: var(--surface);
+  position: relative;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 3px;
+  border-radius: 0 0 999px 999px;
+}
+
+.service-card:nth-child(1)::before { background: var(--accent); }
+.service-card:nth-child(2)::before { background: var(--warm); }
+.service-card:nth-child(3)::before { background: var(--olive); }
+.service-card:nth-child(4)::before { background: var(--brick); }
+
+.service-eyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 16px;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 12px;
+  line-height: 1.45;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: var(--ink-muted);
+  line-height: 1.9;
+}
+
+.service-fit {
+  margin-top: 18px;
+  padding: 14px 15px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-warm);
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+.service-fit strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-size: 12px;
+}
+
+.services-option {
+  margin-top: 20px;
+  padding: 16px 18px;
+  background: var(--surface-warm);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 768px) {
+  .services-frame { padding: 18px; }
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+.trust-section {
+  background: var(--surface);
+}
+
+.resource-strip {
+  margin-bottom: 42px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface-warm);
+  padding: 26px 28px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+}
+
+.resource-strip-eyebrow {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-bottom: 8px;
+}
+
+.resource-strip h3 {
+  font-size: 22px;
+  line-height: 1.45;
+  color: var(--ink);
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.resource-strip p {
+  font-size: 14px;
+  color: var(--ink-muted);
+  line-height: 1.8;
+}
+
+.resource-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 196px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--surface);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.resource-button:hover {
+  color: var(--surface);
+  background: var(--accent-hover);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: 20px;
+}
+
+.trust-panel {
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-soft);
+  padding: 30px 28px;
+}
+
+.trust-panel--warm {
+  background: var(--surface-warm);
+}
+
+.trust-panel h3 {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.trust-panel p {
+  font-size: 14px;
+  color: var(--ink-muted);
+  line-height: 1.9;
+}
+
+.trust-list,
+.deliverables-list {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.trust-list li,
+.deliverables-list li {
+  padding-left: 18px;
+  position: relative;
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+.trust-list li::before,
+.deliverables-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--warm);
+  position: absolute;
+  left: 0;
+  top: 10px;
+}
+
+.trust-note {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+
+.deliverables-list li strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .trust-grid { grid-template-columns: 1fr; }
+  .resource-strip { grid-template-columns: 1fr; }
+  .resource-button { width: 100%; }
+}
+
+.usecase-section {
+  background: var(--surface-warm);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.usecase-board {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-soft);
+}
+
+.usecase-board-head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.usecase-board-title {
+  padding: 28px;
+  border-right: 1px solid var(--line);
+}
+
+.usecase-board-title p {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-bottom: 10px;
+}
+
+.usecase-board-title h3 {
+  font-size: 24px;
+  line-height: 1.45;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.usecase-board-copy {
+  padding: 28px;
+  font-size: 14px;
+  color: var(--ink-muted);
+  line-height: 1.9;
+}
+
+.usecase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.usecase-card {
+  padding: 26px 24px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.usecase-card:nth-child(3n) { border-right: none; }
+.usecase-card:nth-last-child(-n+3) { border-bottom: none; }
+
+.usecase-card span {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-bottom: 14px;
+}
+
+.usecase-card h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.usecase-card p {
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  line-height: 1.8;
+}
+
+.usecase-flow {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.usecase-flow p {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-warm);
+}
+
+.usecase-flow p + p {
+  background: var(--surface);
+}
+
+.usecase-flow b {
+  display: inline-block;
+  min-width: 48px;
+  margin-right: 6px;
+  font-family: var(--font-display);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--warm);
+}
+
+.usecase-card strong {
+  display: block;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+@media (max-width: 980px) {
+  .usecase-board-head { grid-template-columns: 1fr; }
+  .usecase-board-title { border-right: none; border-bottom: 1px solid var(--line); }
+  .usecase-grid { grid-template-columns: 1fr; }
+  .usecase-card {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .usecase-card:last-child { border-bottom: none; }
+}
+
+.portfolio-section {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.portfolio-card {
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.portfolio-thumb {
+  border-bottom: 1px solid var(--line);
+  padding: 18px;
+  background: var(--surface);
+}
+
+.portfolio-shell {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--surface-raised);
+}
+
+.pt-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-warm);
+}
+
+.pt-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.pt-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+
+.pt-url {
+  flex: 1;
+  font-family: var(--font-display);
+  font-size: 9px;
+  color: var(--ink-faint);
+  letter-spacing: 0.02em;
+}
+
+.pt-body {
+  min-height: 154px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pt-title {
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.pt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.pt-btn--clinic { background: var(--accent-soft); color: var(--accent); }
+.pt-btn--restaurant { background: var(--warm-soft); color: var(--warm); }
+.pt-btn--bonesetter { background: var(--olive-soft); color: var(--olive); }
+
+.portfolio-body { padding: 22px 20px 24px; }
+
+.portfolio-body h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.portfolio-body p {
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.portfolio-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.portfolio-link:hover { gap: 12px; }
+
+@media (max-width: 900px) {
+  .portfolio-grid { grid-template-columns: 1fr; }
+}
+
+.pricing-section { background: var(--surface); }
+
+.pricing-intro {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-warm);
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin-bottom: 48px;
+}
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+  margin-bottom: 62px;
+}
+
+.pricing-card {
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface-raised);
+  padding: 30px 26px;
+}
+
+.pricing-card--featured {
+  background: var(--surface-warm);
+  border-color: var(--line-strong);
+}
+
+.pricing-badge {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .pricing-plan-label {
   font-family: var(--font-display);
-  font-size: 11px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.14em;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   color: var(--ink-faint);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
-.pricing-card--featured .pricing-plan-label { color: var(--accent); }
+
 .pricing-amount {
-  display: flex; align-items: baseline; gap: 4px;
-  margin-bottom: 2px;
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  margin-bottom: 8px;
 }
+
 .pricing-amount-num {
   font-family: var(--font-display);
-  font-size: 48px; font-weight: 900;
-  color: var(--ink); letter-spacing: -0.04em; line-height: 1;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.05em;
 }
-.pricing-amount-unit { font-size: 15px; color: var(--ink-muted); font-weight: 600; }
+
+.pricing-amount-unit {
+  font-size: 15px;
+  color: var(--ink-muted);
+  font-weight: 700;
+}
+
 .pricing-monthly {
-  font-size: 13px; color: var(--ink-faint);
-  margin-bottom: 24px;
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin-bottom: 18px;
 }
-.pricing-monthly strong { color: var(--ink-soft); font-weight: 700; }
-.pricing-divider { height: 1px; background: var(--border); margin: 0 0 22px; }
+
+.pricing-summary {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+
+.pricing-divider {
+  height: 1px;
+  background: var(--line);
+  margin-bottom: 20px;
+}
+
 .pricing-features {
   list-style: none;
-  display: flex; flex-direction: column; gap: 9px;
-  margin-bottom: 28px;
+  display: grid;
+  gap: 10px;
+  margin-bottom: 24px;
 }
+
 .pricing-features li {
-  display: flex; align-items: flex-start; gap: 9px;
-  font-size: 13.5px; color: var(--ink-soft); line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.7;
 }
+
 .feat-icon {
-  flex-shrink: 0; margin-top: 1px;
-  width: 17px; height: 17px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 9px; font-weight: 900;
-}
-.feat-check { background: rgba(37,99,235,0.1); color: var(--accent); }
-.feat-check-green { background: rgba(5,150,105,0.1); color: #059669; }
-.feat-none { background: var(--surface-elevated); color: var(--ink-faint); font-size: 11px; }
-.pricing-cta {
-  display: block; width: 100%; padding: 13px;
-  text-align: center; border-radius: var(--radius-sm);
-  font-size: 14px; font-weight: 600;
-  transition: all 0.25s var(--ease);
-}
-.pricing-cta--primary {
-  background: var(--accent); color: #fff;
-  box-shadow: 0 4px 14px rgba(37,99,235,0.22);
-}
-.pricing-cta--primary:hover { background: var(--accent-hover); color: #fff; transform: translateY(-1px); box-shadow: 0 8px 20px rgba(37,99,235,0.3); }
-.pricing-cta--outline {
-  background: transparent; color: var(--ink);
-  border: 1.5px solid var(--border);
-}
-.pricing-cta--outline:hover { border-color: var(--ink-muted); background: var(--surface-warm); color: var(--ink); }
-
-/* Compare table */
-.compare-section { max-width: 980px; margin: 0 auto; }
-.compare-title {
-  text-align: center;
-  font-family: var(--font-display);
-  font-size: 17px; font-weight: 700; color: var(--ink);
-  margin-bottom: 20px; letter-spacing: -0.01em;
-}
-.compare-wrap {
-  overflow-x: auto;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-card);
-}
-.compare-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-.compare-table thead th {
-  padding: 16px 20px; text-align: center;
-  font-family: var(--font-display);
-  font-size: 11px; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 3px;
+  border-radius: 50%;
+  background: var(--surface-soft);
   color: var(--ink-muted);
-  background: var(--surface-warm);
-  border-bottom: 1px solid var(--border);
+  font-size: 10px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.compare-table thead th:first-child { text-align: left; }
-.compare-table thead th.th-std {
-  background: rgba(37,99,235,0.05); color: var(--accent);
-  border-left: 1px solid rgba(37,99,235,0.15);
-  border-right: 1px solid rgba(37,99,235,0.15);
-}
-.compare-table tbody td {
-  padding: 13px 20px; text-align: center;
-  border-bottom: 1px solid var(--border);
-  color: var(--ink-soft); font-size: 13.5px;
-}
-.compare-table tbody td:first-child {
-  text-align: left; font-weight: 600; color: var(--ink);
-  background: var(--surface-warm);
-}
-.compare-table tbody tr:last-child td { border-bottom: none; }
-.compare-table tbody td.td-std {
-  background: rgba(37,99,235,0.03);
-  border-left: 1px solid rgba(37,99,235,0.15);
-  border-right: 1px solid rgba(37,99,235,0.15);
-}
-.compare-table tbody tr:hover td { background: rgba(15,23,42,0.018); }
-.compare-table tbody tr:hover td.td-std { background: rgba(37,99,235,0.05); }
-.ct-check { color: var(--accent); font-size: 15px; font-weight: 800; }
-.ct-check-green { color: #059669; font-size: 15px; font-weight: 800; }
-.ct-dash { color: var(--border); font-size: 18px; }
-.ct-price { font-weight: 800; color: var(--ink); font-family: var(--font-display); font-size: 15px; }
-.ct-sub { font-size: 11px; color: var(--ink-faint); display: block; margin-top: 2px; }
 
-.pricing-note { text-align: center; font-size: 14px; color: var(--ink-faint); max-width: 640px; margin: 24px auto 0; line-height: 1.75; }
-.pricing-bottom-cta { text-align: center; margin-top: 36px; }
+.feat-check { background: var(--accent-soft); color: var(--accent); }
+.feat-check-warm { background: var(--warm-soft); color: var(--warm); }
+
+.pricing-deliverables {
+  margin: 0 0 24px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.pricing-deliverables p {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.pricing-deliverables ul {
+  list-style: none;
+  display: grid;
+  gap: 7px;
+}
+
+.pricing-deliverables li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 12.5px;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+.pricing-deliverables li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--warm);
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+
+.pricing-cta {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  text-align: center;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  transition: transform 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.pricing-cta:hover {
+  transform: translateY(-1px);
+  border-color: var(--line-strong);
+  color: var(--ink);
+}
+
+.pricing-cta--primary {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--surface);
+}
+
+.pricing-cta--primary:hover {
+  color: var(--surface);
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.compare-section {
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-soft);
+}
+
+.compare-title {
+  padding: 22px 24px 0;
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.compare-wrap { overflow-x: auto; }
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.compare-table thead th {
+  padding: 18px 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-warm);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.compare-table thead th:first-child { text-align: left; }
+
+.compare-table thead th.th-std {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.compare-table tbody td {
+  padding: 14px 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-soft);
+}
+
+.compare-table tbody td:first-child {
+  text-align: left;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--surface);
+}
+
+.compare-table tbody td.td-std {
+  background: rgba(82, 104, 125, 0.04);
+}
+
+.compare-table tbody tr:last-child td { border-bottom: none; }
+
+.ct-check {
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.ct-check-warm {
+  color: var(--warm);
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.ct-dash {
+  color: var(--ink-faint);
+  font-size: 16px;
+}
+
+.ct-price {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.pricing-note {
+  max-width: 700px;
+  margin: 24px auto 0;
+  font-size: 13.5px;
+  color: var(--ink-faint);
+  line-height: 1.8;
+  text-align: center;
+}
+
+.pricing-bottom-cta {
+  margin-top: 34px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .pricing-cards { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 768px) {
   .compare-table { font-size: 12px; }
   .compare-table thead th, .compare-table tbody td { padding: 10px 12px; }
 }
 
-/* --- KPI Strip --- */
-.kpi-strip {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 0;
+.process-section {
+  background: var(--surface-warm);
 }
-.kpi-inner {
-  max-width: var(--max-w); margin: 0 auto;
-  display: grid; grid-template-columns: repeat(3, 1fr);
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
 }
-.kpi-item {
-  padding: 32px 24px;
-  text-align: center;
-  position: relative;
+
+.process-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+  padding: 26px;
 }
-.kpi-item + .kpi-item::before {
-  content: "";
-  position: absolute; left: 0; top: 24px; bottom: 24px;
-  width: 1px; background: var(--border);
-}
-.kpi-num {
+
+.process-step {
   font-family: var(--font-display);
-  font-size: 40px; font-weight: 900;
-  color: var(--ink); letter-spacing: -0.04em;
-  line-height: 1; margin-bottom: 4px;
-  display: flex; align-items: baseline; justify-content: center; gap: 3px;
-}
-.kpi-num-unit {
-  font-size: 16px; font-weight: 700; color: var(--ink-muted); letter-spacing: 0;
-}
-.kpi-label {
-  font-size: 12px; color: var(--ink-faint);
-  letter-spacing: 0.04em; line-height: 1.5;
-}
-@media (max-width: 768px) {
-  .kpi-inner { grid-template-columns: repeat(3, 1fr); }
-  .kpi-num { font-size: 28px; }
-  .kpi-item { padding: 24px 12px; }
+  font-size: 12px;
+  color: var(--warm);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
 }
 
-/* --- Track Record --- */
-.track-section { background: var(--surface); }
-.track-record-card {
-  max-width: 640px; margin: 0 auto;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 36px;
+.process-card h3 {
+  font-size: 21px;
+  line-height: 1.45;
+  color: var(--ink);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.process-card p {
+  font-size: 14px;
+  color: var(--ink-muted);
+  line-height: 1.85;
+}
+
+.process-card ul {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.process-card li {
   position: relative;
-}
-.track-record-card::before {
-  content: ""; position: absolute; top: 0; left: 36px; right: 36px; height: 3px;
-  background: var(--warm); border-radius: 0 0 3px 3px;
-}
-.track-record-card h3 { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
-.track-year { font-size: 12.5px; color: var(--ink-faint); margin-bottom: 14px; letter-spacing: 0.04em; }
-.track-record-card p { font-size: 14px; color: var(--ink-muted); line-height: 1.85; }
-#portfolio-yuu {
-  margin-top: 20px; padding: 12px 16px;
-  background: var(--surface-elevated); border-radius: var(--radius-sm);
-  font-size: 13px; color: var(--ink-muted);
-  display: flex; align-items: center; gap: 8px;
-}
-.track-status-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--warm); flex-shrink: 0;
+  padding-left: 16px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.7;
 }
 
-/* --- Profile --- */
-.profile-section { background: var(--surface-warm); }
-.profile-inner { display: flex; align-items: flex-start; gap: 44px; max-width: 720px; margin: 0 auto; }
-.profile-photo {
-  flex-shrink: 0; width: 108px; height: 108px;
+.process-card li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
+  background: var(--warm);
+  position: absolute;
+  left: 0;
+  top: 10px;
+}
+
+@media (max-width: 900px) {
+  .process-grid { grid-template-columns: 1fr; }
+}
+
+.faq-section {
+  background: var(--surface);
+}
+
+.faq-list {
+  max-width: 860px;
+  margin: 0 auto;
+  border-top: 1px solid var(--line);
+}
+
+.faq-item {
+  display: grid;
+  grid-template-columns: 0.32fr 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-item h3 {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+.faq-item p {
+  font-size: 14px;
+  color: var(--ink-muted);
+  line-height: 1.9;
+}
+
+@media (max-width: 768px) {
+  .faq-item { grid-template-columns: 1fr; gap: 8px; }
+}
+
+.profile-section { background: var(--surface); }
+
+.profile-card {
+  max-width: 840px;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-soft);
+  padding: 34px;
+}
+
+.profile-inner {
+  display: grid;
+  grid-template-columns: 124px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.profile-photo {
+  width: 124px;
+  height: 124px;
+  border-radius: 22px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(15,23,42,0.12);
+  background: var(--surface-soft);
 }
+
 .profile-photo img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
-.profile-text h3 { font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+
+.profile-text h3 {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--ink);
+  margin-bottom: 6px;
+  letter-spacing: -0.03em;
+}
+
 .profile-name-en {
   font-family: var(--font-display);
-  font-size: 12px; color: var(--ink-faint); margin-bottom: 20px; letter-spacing: 0.1em;
-}
-.profile-text p { font-size: 15px; color: var(--ink-muted); line-height: 1.9; margin-bottom: 12px; }
-@media (max-width: 768px) {
-  .profile-inner { flex-direction: column; align-items: center; text-align: center; gap: 24px; }
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
-/* --- Contact --- */
+.profile-text p {
+  font-size: 15px;
+  color: var(--ink-muted);
+  line-height: 1.95;
+  margin-bottom: 12px;
+}
+
+.profile-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.profile-points span {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface-warm);
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 768px) {
+  .profile-card { padding: 24px; }
+  .profile-inner { grid-template-columns: 1fr; }
+  .profile-photo { width: 108px; height: 108px; }
+}
+
 .contact-section {
   background: var(--ink);
-  color: #fff;
-  position: relative;
-  overflow: hidden;
+  color: var(--surface);
 }
-.contact-section::before {
-  content: "";
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 600px 400px at 70% 50%, rgba(37,99,235,0.12), transparent);
-  pointer-events: none;
+
+.contact-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
 }
-.contact-inner { text-align: center; max-width: 640px; margin: 0 auto; position: relative; z-index: 1; }
-.contact-main-cta { font-family: var(--font-display); font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 16px; line-height: 1.4; }
-.contact-sub { font-size: 14.5px; color: #94a3b8; margin-bottom: 40px; line-height: 1.8; }
-.contact-form { text-align: left; display: flex; flex-direction: column; gap: 16px; }
-.contact-form-group { display: flex; flex-direction: column; gap: 6px; }
-.contact-form-group label { font-size: 13px; font-weight: 600; color: #cbd5e1; letter-spacing: 0.04em; }
+
+.contact-main-cta {
+  font-size: 34px;
+  line-height: 1.45;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--surface);
+  margin-bottom: 16px;
+}
+
+.contact-sub {
+  font-size: 14.5px;
+  color: var(--ink-faint);
+  line-height: 1.85;
+  margin-bottom: 22px;
+}
+
+.contact-assurance {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.contact-assurance span {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 253, 249, 0.18);
+  border-radius: 999px;
+  color: var(--surface-soft);
+  background: rgba(255, 253, 249, 0.06);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.contact-form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-form-group label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--surface-soft);
+  letter-spacing: 0.04em;
+}
+
+.required-pill {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 6px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: var(--danger-soft);
+  color: var(--danger-light);
+  font-size: 10px;
+  font-weight: 700;
+}
+
 .contact-form-group input,
 .contact-form-group textarea {
-  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
-  border-radius: var(--radius-sm); padding: 13px 16px;
-  font-size: 15px; color: #fff; font-family: var(--font-body);
+  width: 100%;
+  border: 1px solid rgba(255, 253, 249, 0.14);
+  border-radius: 14px;
+  background: rgba(255, 253, 249, 0.06);
+  padding: 14px 16px;
+  font-size: 15px;
+  font-family: var(--font-body);
+  color: var(--surface);
+  outline: none;
   transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
-  outline: none; width: 100%;
 }
+
 .contact-form-group input::placeholder,
-.contact-form-group textarea::placeholder { color: #475569; }
+.contact-form-group textarea::placeholder {
+  color: rgba(255, 253, 249, 0.38);
+}
+
 .contact-form-group input:focus,
-.contact-form-group textarea:focus { border-color: var(--accent); background: rgba(37,99,235,0.08); }
-.contact-form-group textarea { resize: vertical; min-height: 120px; }
+.contact-form-group textarea:focus {
+  border-color: rgba(255, 253, 249, 0.34);
+  background: rgba(255, 253, 249, 0.1);
+}
+
+.contact-form-group textarea {
+  min-height: 124px;
+  resize: vertical;
+}
+
 .contact-submit {
-  background: var(--accent); color: #fff; border: none; cursor: pointer;
-  padding: 16px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 700;
-  font-family: var(--font-body); width: 100%; margin-top: 4px;
-  box-shadow: 0 4px 16px rgba(37,99,235,0.3);
-  transition: all 0.25s var(--ease);
-}
-.contact-submit:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.4); }
-.contact-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-.contact-success { display: none; text-align: center; padding: 32px; background: rgba(5,150,105,0.15); border: 1px solid rgba(5,150,105,0.3); border-radius: var(--radius); }
-.contact-success p { color: #6ee7b7; font-size: 15px; line-height: 1.8; }
-.contact-social { display: flex; justify-content: center; gap: 20px; margin-top: 32px; flex-wrap: wrap; }
-.contact-social a { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: #94a3b8; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 6px 14px; transition: all 0.2s; }
-.contact-social a:hover { color: #e2e8f0; border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.08); }
-@media (max-width: 768px) {
-  .contact-main-cta { font-size: 21px; }
-}
-
-/* --- Footer --- */
-.footer {
-  text-align: center; padding: 28px 24px;
-  font-size: 14px; color: var(--ink-faint);
-  border-top: 1px solid var(--border);
+  width: 100%;
+  padding: 16px;
+  border: 1px solid var(--surface);
+  border-radius: 999px;
   background: var(--surface);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 800;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), opacity 0.2s var(--ease);
 }
 
-/* --- CTA button (reusable) --- */
-.cta-button {
-  display: inline-block; padding: 14px 36px;
-  background: var(--accent); color: #fff; font-size: 14px; font-weight: 600;
-  border-radius: var(--radius-sm); transition: all 0.25s var(--ease);
-  box-shadow: 0 4px 14px rgba(37,99,235,0.2);
-}
-.cta-button:hover { background: var(--accent-hover); color: #fff; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.28); }
+.contact-submit:hover { transform: translateY(-1px); }
+.contact-submit:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
 
-/* --- Animations --- */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.contact-policy {
+  font-size: 12px;
+  color: var(--ink-faint);
+  text-align: center;
+  margin-top: 8px;
+}
+
+.contact-policy a {
+  color: var(--surface-soft);
+  text-decoration: underline;
+}
+
+.contact-success {
+  display: none;
+  text-align: center;
+  padding: 28px;
+  border: 1px solid rgba(255, 253, 249, 0.18);
+  border-radius: var(--radius);
+  background: rgba(255, 253, 249, 0.08);
+}
+
+.contact-success p {
+  color: var(--surface-soft);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.contact-social {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.contact-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 253, 249, 0.18);
+  color: var(--surface-soft);
+  font-size: 13px;
+}
+
+.contact-social a:hover {
+  color: var(--surface);
+  border-color: rgba(255, 253, 249, 0.32);
+}
+
+@media (max-width: 768px) {
+  .contact-main-cta { font-size: 27px; }
+}
+
+.footer {
+  text-align: center;
+  padding: 28px 24px;
+  font-size: 13px;
+  color: var(--ink-faint);
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}
+
+.footer a { color: var(--ink-muted); }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
@@ -824,14 +1853,20 @@ body::after {
         "https://note.com/motoki_0418",
         "https://github.com/motoki418"
       ],
-      "jobTitle": "Webクリエイター・フリーランス",
-      "knowsAbout": ["ホームページ制作", "業務システム開発", "AI業務改善", "Web予約システム", "MEO対策"]
+      "jobTitle": "AI導入支援・AI顧問",
+      "knowsAbout": [
+        "生成AI導入支援",
+        "AIエージェント開発",
+        "AI活用研修",
+        "AI顧問",
+        "Web制作"
+      ]
     },
     {
       "@type": "ProfessionalService",
       "@id": "https://motoki418.github.io/portfolio/#business",
-      "name": "中村元揮 Web制作・AI業務改善",
-      "description": "札幌でホームページ制作・Web予約・AI業務改善をワンストップ対応。クリニック・飲食店・整骨院など地域密着型ビジネスに特化。最短1週間納品、月額1万円〜の保守サポート。",
+      "name": "中村元揮 AI導入支援・AI顧問",
+      "description": "札幌で生成AI導入支援、AIエージェント開発、AI活用研修・勉強会、AI顧問を提供。現場に合わせた設計から定着支援まで伴走します。",
       "url": "https://motoki418.github.io/portfolio/",
       "email": "snkrs418@gmail.com",
       "founder": { "@id": "https://motoki418.github.io/portfolio/#person" },
@@ -856,24 +1891,24 @@ body::after {
         "itemListElement": [
           {
             "@type": "Offer",
-            "name": "Lightプラン",
-            "price": "150000",
+            "name": "Starter",
+            "price": "30000",
             "priceCurrency": "JPY",
-            "description": "HP制作（スマホ対応）・電話ボタン・Googleマップ込み・テキスト修正月2回・SSL・バックアップ管理・メールサポート。月額保守1万円込み。"
+            "description": "現状ヒアリング、活用候補の整理、小さく始めるための提案メモをまとめる初回プラン。"
           },
           {
             "@type": "Offer",
-            "name": "Standardプラン",
+            "name": "Project",
             "price": "300000",
             "priceCurrency": "JPY",
-            "description": "HP制作（スマホ対応）・Web予約システム・テキスト修正月5回・SSL・バックアップ管理・MEO対策。月額保守1.5万円込み。"
+            "description": "対象業務の選定、ワークフロー設計、必要に応じた簡易ツールやAIエージェント構築まで行う導入支援。"
           },
           {
             "@type": "Offer",
-            "name": "Proプラン",
-            "price": "500000",
+            "name": "Advisor",
+            "price": "50000",
             "priceCurrency": "JPY",
-            "description": "HP制作（スマホ対応）・Web予約システム・AIチャットボット・MEO対策・テキスト修正月10回・優先サポート。月額保守4万円込み。"
+            "description": "月次の相談、改善提案、定着支援を継続的に伴走するAI顧問プラン。"
           }
         ]
       }
@@ -882,10 +1917,16 @@ body::after {
       "@type": "WebSite",
       "@id": "https://motoki418.github.io/portfolio/#website",
       "url": "https://motoki418.github.io/portfolio/",
-      "name": "中村元揮 | 札幌のWeb制作・AI業務改善",
-      "description": "札幌でホームページ制作・Web予約・AI業務改善をワンストップ対応。クリニック・飲食店・整骨院など地域密着型ビジネスに特化。最短1週間納品、月額1万円〜の保守サポート。",
+      "name": "札幌の生成AI・AIエージェント導入支援｜中村元揮",
+      "description": "札幌で生成AI導入支援、AIエージェント開発、AI活用研修・勉強会、AI顧問を提供。現場に合わせた設計から定着支援まで伴走します。",
       "inLanguage": "ja",
-      "author": { "@id": "https://motoki418.github.io/portfolio/#person" }
+      "author": { "@id": "https://motoki418.github.io/portfolio/#person" },
+      "hasPart": {
+        "@type": "DigitalDocument",
+        "name": "中小企業向け AI導入チェックリスト",
+        "url": "https://motoki418.github.io/portfolio/downloads/ai-readiness-checklist.pdf",
+        "encodingFormat": "application/pdf"
+      }
     }
   ]
 }
@@ -893,491 +1934,711 @@ body::after {
 </head>
 <body>
 
-<!-- Header -->
 <header class="header" id="header">
   <div class="header-inner">
-    <a href="#hero" class="header-logo"></a>
-    <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+    <a href="#hero" class="header-brand">札幌の生成AI・AIエージェント導入支援</a>
     <nav class="header-nav" id="nav">
       <a href="#services">できること</a>
-      <a href="#portfolio">制作サンプル</a>
-      <a href="#pricing">料金</a>
-      <a href="#profile">プロフィール</a>
-      <a href="#contact" class="nav-cta">お問い合わせ</a>
+      <a href="#usecases">業種別</a>
+      <a href="#contact">お問い合わせ</a>
+      <a href="#contact" class="nav-cta">30分無料相談</a>
     </nav>
   </div>
 </header>
 
-<!-- Hero -->
 <section class="hero" id="hero">
-  <div class="hero-inner">
+  <div class="container hero-inner">
     <div class="hero-content">
-      <span class="hero-label">Sapporo / Web & AI</span>
-      <h1 class="hero-name">中村元揮</h1>
-      <p class="hero-name-en">Motoki Nakamura</p>
-      <p class="hero-title">予約電話を減らし、新患・新規客を増やす</p>
-      <p class="hero-sub">予約電話の対応、サイトの更新、手作業の繰り返し——その時間、本業に使えていますか？ホームページ・Web予約・AI業務効率化まで、最短1週間で丸ごとサポートします。</p>
-      <a href="#contact" class="btn-primary">御社専用のデモサイトを無料でお作りします</a>
-      <a href="#pricing" class="btn-secondary-link">まず料金だけ確認する →</a>
+      <h1 class="hero-title">議事録・資料作成・<br>社内確認を<br>AIで軽くする</h1>
+      <p class="hero-sub">札幌・北海道の中小企業向けに、生成AIとAIエージェントの導入を現実的に支援します。まずは毎週くり返している文章作成、確認、整理作業から、無理なく減らせるところを一緒に見つけます。</p>
+      <ul class="hero-points">
+        <li>毎週くり返す文章作成、確認、整理作業から優先して見直します。</li>
+        <li>相談後は、社内で話せる整理メモと最初に試すテーマをお返しします。</li>
+        <li>開発経験をもとに、必要なら簡易ツールやワークフロー試作まで対応します。</li>
+      </ul>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">30分無料相談を申し込む</a>
+        <a href="downloads/ai-readiness-checklist.html" class="btn-resource-link">AI導入チェックリストを見る →</a>
+      </div>
+      <div class="hero-trust-chips">
+        <span>札幌・北海道の中小企業向け</span>
+        <span>初回相談後に整理メモ返却</span>
+        <span>開発経験をもとに実装まで対応</span>
+        <span>通常24時間以内に返信</span>
+      </div>
+      <p class="hero-note">売り込み前提ではなく、今すぐ導入すべきかどうかから整理します。</p>
     </div>
-    <div class="hero-visual">
-      <div class="mockup-browser">
-        <div class="mockup-bar">
-          <div class="mockup-dots"><span></span><span></span><span></span></div>
-          <div class="mockup-url">sample-clinic-aoba.vercel.app</div>
+    <div class="hero-visual reveal reveal-delay-1">
+      <div class="strategy-board">
+        <div class="strategy-board-head">
+          <strong>相談後にお返しする整理メモ例</strong>
+          <span>after 30 min</span>
         </div>
-        <div class="mockup-screen">
-          <div class="mockup-screen-inner">
-            <div class="ms-nav">
-              <div class="ms-logo">あおば内科クリニック</div>
-              <div class="ms-links"><span>診療案内</span><span>アクセス</span><span>予約</span></div>
+        <div class="strategy-board-body">
+          <div class="memo-card">
+            <h3>まず整理すること</h3>
+            <ul>
+              <li>どの業務が重いのか</li>
+              <li>AIに任せる部分と人が確認する部分</li>
+              <li>最初に試す1〜2テーマ</li>
+            </ul>
+          </div>
+          <div class="memo-grid">
+            <div class="memo-card">
+              <h3>相談後に残るもの</h3>
+              <ul>
+                <li>業務整理メモ</li>
+                <li>優先順位リスト</li>
+                <li>初回プロンプト案</li>
+              </ul>
             </div>
-            <div class="ms-hero-text">
-              <h2>あなたの健康を、<br>地域で支える</h2>
-              <p>内科・生活習慣病・健康診断<br>月〜土曜日 9:00〜18:00</p>
+            <div class="memo-card">
+              <h3>次の進め方</h3>
+              <ul>
+                <li>Starterで整理</li>
+                <li>Projectで試作</li>
+                <li>Advisorで定着改善</li>
+              </ul>
             </div>
-            <div class="ms-btn">Web予約はこちら →</div>
-            <div class="ms-cards">
-              <div class="ms-card">
-                <div class="ms-card-icon">🏥</div>
-                <div class="ms-card-title">内科</div>
-                <div class="ms-card-line"></div>
-                <div class="ms-card-line short"></div>
-              </div>
-              <div class="ms-card">
-                <div class="ms-card-icon">💊</div>
-                <div class="ms-card-title">処方箋</div>
-                <div class="ms-card-line"></div>
-                <div class="ms-card-line short"></div>
-              </div>
-              <div class="ms-card">
-                <div class="ms-card-icon">📋</div>
-                <div class="ms-card-title">健康診断</div>
-                <div class="ms-card-line"></div>
-                <div class="ms-card-line short"></div>
-              </div>
+          </div>
+          <div class="memo-stat">
+            <div class="memo-stat-item">
+              <strong>30分</strong>
+              <span>現状を聞く</span>
+            </div>
+            <div class="memo-stat-item">
+              <strong>整理メモ</strong>
+              <span>社内共有用</span>
+            </div>
+            <div class="memo-stat-item">
+              <strong>24h</strong>
+              <span>初回返信の目安</span>
             </div>
           </div>
         </div>
-      </div>
-      <div class="hero-badge">
-        <div class="hero-badge-icon">⚡</div>
-        <div class="hero-badge-text"><strong>最短1週間</strong>で納品</div>
-      </div>
-      <div class="hero-badge2">
-        <div class="hero-badge2-dot"></div>
-        <div class="hero-badge2-text">無料デモ作成中</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- KPI Strip -->
 <div class="kpi-strip">
   <div class="kpi-inner">
     <div class="kpi-item reveal">
-      <div class="kpi-num"><span class="kpi-count" data-target="7">7</span><span class="kpi-num-unit">日〜</span></div>
-      <div class="kpi-label">最短納品日数</div>
+      <div class="kpi-num"><span class="kpi-count" data-target="30">30</span><span class="kpi-num-unit">分</span></div>
+      <div class="kpi-label">無料相談で<br>現状を整理</div>
     </div>
     <div class="kpi-item reveal reveal-delay-1">
-      <div class="kpi-num">¥<span class="kpi-count" data-target="10000" style="font-size:30px">10,000</span><span class="kpi-num-unit">/月〜</span></div>
-      <div class="kpi-label">月額料金<br><span style="font-size:10px; letter-spacing:0.02em;">修正・管理・サポート込み</span></div>
+      <div class="kpi-num"><span class="kpi-count" data-target="2">2</span><span class="kpi-num-unit">週間〜</span></div>
+      <div class="kpi-label">小さく導入を<br>始める目安</div>
     </div>
     <div class="kpi-item reveal reveal-delay-2">
       <div class="kpi-num"><span class="kpi-count" data-target="24">24</span><span class="kpi-num-unit">h</span></div>
-      <div class="kpi-label">以内にご返信</div>
+      <div class="kpi-label">通常24時間以内に<br>初回ご返信</div>
     </div>
   </div>
 </div>
 
-<!-- Problems -->
 <section class="problems-section" id="problems">
   <div class="container">
     <div class="text-center">
       <span class="section-label reveal">Problems</span>
-      <h2 class="section-title reveal">こんなお悩みありませんか？</h2>
+      <h2 class="section-title reveal">AIを入れたいけれど、<br>こう止まりやすい</h2>
     </div>
-    <p class="section-lead text-center mx-auto reveal">一つでも当てはまれば、お力になれるかもしれません。</p>
+    <p class="section-lead text-center mx-auto reveal">実際のご相談では、「AIを使いたい」より先に、現場のどこで詰まっているかを整理することが多いです。</p>
     <div class="problems-grid">
       <div class="problem-card reveal">
         <div class="problem-num">01</div>
         <div>
-          <p class="problem-text">サイトが古くてスマホで見づらい</p>
-          <p class="problem-sub">患者・お客様の7割はスマホで検索しています</p>
+          <p class="problem-text">ChatGPTを契約したが、社員があまり使っていない</p>
+          <p class="problem-sub">便利そうに見えても、誰がどの業務で使うかが決まっていないと、日常業務に入りません。</p>
         </div>
       </div>
       <div class="problem-card reveal reveal-delay-1">
         <div class="problem-num">02</div>
         <div>
-          <p class="problem-text">予約の電話対応に時間を取られる</p>
-          <p class="problem-sub">1日10件の予約電話なら、対応だけで毎日1時間近く消えています</p>
+          <p class="problem-text">議事録や資料作成が毎回重く、後回しになる</p>
+          <p class="problem-sub">会議後の整理、提案書の下書き、社内説明文など、毎回ゼロから作る作業が積み上がっている状態です。</p>
         </div>
       </div>
       <div class="problem-card reveal reveal-delay-2">
         <div class="problem-num">03</div>
         <div>
-          <p class="problem-text">更新のたびに制作会社にお金がかかる</p>
-          <p class="problem-sub">修正依頼1回あたり5,000〜2万円が相場。年間で数十万になることも</p>
+          <p class="problem-text">情報漏えいが不安で、社内展開が止まっている</p>
+          <p class="problem-sub">何を入れてよいか、どこまでAIに任せるか、人が確認すべき範囲はどこかを決める必要があります。</p>
         </div>
       </div>
       <div class="problem-card reveal reveal-delay-3">
         <div class="problem-num">04</div>
         <div>
-          <p class="problem-text">毎日の繰り返し作業で、やりたい仕事が後回しになる</p>
-          <p class="problem-sub">予約台帳・顧客管理・データ入力など、自動化すると週5〜10時間の削減も珍しくありません</p>
+          <p class="problem-text">何をAI化すべきか決められない</p>
+          <p class="problem-sub">大きく作る前に、削減効果が見えやすく、現場が使いやすい業務を1つ選ぶことが重要です。</p>
         </div>
       </div>
     </div>
-    <div class="problems-footer reveal">クリニック・飲食店・接骨院など、地域密着型ビジネスに特化しています</div>
+    <div class="problems-footer reveal">札幌・北海道の中小企業向けに、派手さよりも現実的な導入と定着を重視して支援します。</div>
   </div>
 </section>
 
-<!-- Services -->
 <section class="services-section" id="services">
   <div class="container">
     <div class="text-center">
       <span class="section-label reveal">Services</span>
       <h2 class="section-title reveal">できること</h2>
     </div>
-    <p class="section-lead text-center mx-auto reveal">課題に合わせて、最適なプランをご提案します</p>
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="service-num">01</div>
-        <h3>ホームページ制作</h3>
-        <p>レスポンシブデザイン・予約導線設計・Googleマップ連携。スマホでも見やすく、患者・お客様が迷わず予約できるサイトを制作します。</p>
+    <p class="section-lead text-center mx-auto reveal">相談だけで終わらず、整理、試作、社内展開、継続改善まで、必要な深さでご一緒します。</p>
+    <div class="services-frame reveal">
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-eyebrow">01 / Advisory</span>
+          <h3>生成AI導入支援</h3>
+          <p>現状の業務を見ながら、どこにAIが効くかを整理します。ツール選定、ルール設計、小さく始める順番づけまで含めて支援します。</p>
+          <div class="service-fit"><strong>こんな会社向け</strong>何から始めるべきか決めたい、ChatGPTを契約したが活用が止まっている。</div>
+        </div>
+        <div class="service-card">
+          <span class="service-eyebrow">02 / Build</span>
+          <h3>AIエージェント開発</h3>
+          <p>定型作業や情報整理を支える簡易ツール、ワークフロー、自動化の仕組みを設計します。必要に応じて最小構成で試作します。</p>
+          <div class="service-fit"><strong>こんな会社向け</strong>転記、通知、下書き作成、情報整理などの定型作業を小さく自動化したい。</div>
+        </div>
+        <div class="service-card">
+          <span class="service-eyebrow">03 / Training</span>
+          <h3>AI活用研修・勉強会</h3>
+          <p>「触ってみる」で終わらないよう、業務に近い題材で社内向けの勉強会やレクチャーを行います。現場メンバーが使える状態を目指します。</p>
+          <div class="service-fit"><strong>こんな会社向け</strong>社員に安全な使い方と、部署ごとの使いどころを覚えてほしい。</div>
+        </div>
+        <div class="service-card">
+          <span class="service-eyebrow">04 / Monthly</span>
+          <h3>AI顧問（月次契約）</h3>
+          <p>継続的な壁打ち相手として、月次の振り返り、次の打ち手、社内相談、運用改善を伴走します。内製化したい企業とも相性が良いです。</p>
+          <div class="service-fit"><strong>こんな会社向け</strong>月次で相談しながら、社内にAI活用を定着させたい。</div>
+        </div>
       </div>
-      <div class="service-card reveal reveal-delay-1">
-        <div class="service-num">02</div>
-        <h3>業務システム開発</h3>
-        <p>予約管理・顧客管理・売上管理など、御社の業務に合わせたシステムを構築。手作業を減らし、本業に集中できる環境を作ります。</p>
+      <div class="services-option">必要に応じて、公開導線の整理や簡易サイト制作までまとめて対応できます。AIだけ切り離さず、事業全体の導線として見ます。</div>
+    </div>
+  </div>
+</section>
+
+<section class="trust-section" id="trust">
+  <div class="container">
+    <div class="resource-strip reveal">
+      <div>
+        <p class="resource-strip-eyebrow">Free PDF</p>
+        <h3>中小企業向け AI導入チェックリスト</h3>
+        <p>最初に見るべき業務、導入前に確認すること、30分相談で整理できることをまとめた社内共有用のチェックリストです。</p>
       </div>
-      <div class="service-card reveal reveal-delay-2">
-        <div class="service-num">03</div>
-        <h3>AI業務改善</h3>
-        <p>既存の業務フローにAIを組み込み、メール対応・データ整理・レポート作成などを効率化。「何から始めればいいかわからない」という段階からサポートします。</p>
+      <a href="downloads/ai-readiness-checklist.html" class="resource-button">チェックリストを開く</a>
+    </div>
+    <div class="text-center">
+      <span class="section-label reveal">Trust</span>
+      <h2 class="section-title reveal">相談前に、進め方が<br>見えるようにしています</h2>
+    </div>
+    <p class="section-lead text-center mx-auto reveal">初回相談で何が分かるのか、相談後に何が手元に残るのかを先に明確にします。社内で検討しやすい材料をつくるところから始めます。</p>
+    <div class="trust-grid">
+      <div class="trust-panel reveal">
+        <h3>こういう会社の相談先として向いています</h3>
+        <p>AIに強い専任者がまだいない会社や、まず1つの業務から小さく始めたい会社と相性がいいです。いきなり全社導入を目指すより、現場で回る形を一緒に作っていく進め方です。</p>
+        <ul class="trust-list">
+          <li>何から始めればいいか分からず、まず整理役がほしい</li>
+          <li>非エンジニア中心の組織でも使える形にしたい</li>
+          <li>単なる研修ではなく、業務に当てはめるところまで見てほしい</li>
+          <li>AIだけでなく、必要なら公開導線や簡易サイトまでまとめて相談したい</li>
+        </ul>
+        <p class="trust-note">合わない場合は、今はまだ導入しないほうがいいという判断もそのままお伝えします。</p>
+      </div>
+      <div class="trust-panel trust-panel--warm reveal reveal-delay-1">
+        <h3>初回相談のあとに残すもの</h3>
+        <p>相談だけで終わっても、次に社内で話せる材料が手元に残るように進めます。導入の可否を判断できる、短い実務メモをお返しします。</p>
+        <ul class="deliverables-list">
+          <li><strong>業務整理メモ</strong>どの業務が重いのか、どこがAI向きかを短く整理します。</li>
+          <li><strong>優先順位リスト</strong>まず試す業務、後回しでよい業務、人が確認すべき業務を分けます。</li>
+          <li><strong>初回プロンプト案</strong>会議メモ、メール、資料作成など、すぐ試せる形のたたき台を作ります。</li>
+          <li><strong>社内共有用メモ</strong>相談後に社内で検討しやすいよう、進め方と注意点を簡潔に残します。</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Portfolio -->
+<section class="usecase-section" id="usecases">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label reveal">Use Cases</span>
+      <h2 class="section-title reveal">この業種・部門なら、<br>こういう業務から効率化できます</h2>
+    </div>
+    <p class="section-lead text-center mx-auto reveal">全社導入から始める必要はありません。業種や部門ごとに、毎週くり返している作業をひとつ選び、短く試すところから始めます。</p>
+    <div class="usecase-board reveal">
+      <div class="usecase-board-head">
+        <div class="usecase-board-title">
+          <p>Industry Examples</p>
+          <h3>相談前に、自社で使えそうな場面を想像できるようにする。</h3>
+        </div>
+        <div class="usecase-board-copy">
+          生成AIやAIエージェントは、抽象的な説明だけだと判断しづらい領域です。業種や部門ごとに、まず効きやすい業務を具体化し、初回相談で優先順位を一緒に整理します。
+        </div>
+      </div>
+      <div class="usecase-grid">
+        <div class="usecase-card">
+          <span>01 / 士業・専門職</span>
+          <h3>書類作成、調査、要約の負担を減らす</h3>
+          <p>契約書、申請書、報告書、法令・制度調査、顧客向け説明文のたたき台を整理します。</p>
+          <div class="usecase-flow">
+            <p><b>Before</b>ヒアリング内容を見ながら、書類項目を手作業で拾っている。</p>
+            <p><b>After</b>必要項目の抜き出しと説明文の下書きまで進める。</p>
+          </div>
+          <strong>例：ヒアリング内容から必要項目を抜き出し、申請書類や説明資料の下書きを作る。</strong>
+        </div>
+        <div class="usecase-card">
+          <span>02 / 営業・セールス</span>
+          <h3>提案準備と顧客対応を速くする</h3>
+          <p>商談メモの整理、提案書の下書き、メール返信、トークスクリプト、過去案件の再利用を支援します。</p>
+          <div class="usecase-flow">
+            <p><b>Before</b>商談後のメモ整理と返信文作成が後回しになる。</p>
+            <p><b>After</b>課題、提案内容、次回アクション、返信文をまとめて整理する。</p>
+          </div>
+          <strong>例：商談メモから課題・提案内容・次回アクションを整理し、返信文まで作る。</strong>
+        </div>
+        <div class="usecase-card">
+          <span>03 / 店舗・地域ビジネス</span>
+          <h3>発信、予約、問い合わせ対応を整える</h3>
+          <p>SNS投稿、キャンペーン文、問い合わせ返信、口コミ返信、予約前後の案内文を作りやすくします。</p>
+          <div class="usecase-flow">
+            <p><b>Before</b>SNS、LINE、口コミ返信を毎回ゼロから考えている。</p>
+            <p><b>After</b>メニューや空き状況をもとに、案内文のたたき台を作る。</p>
+          </div>
+          <strong>例：今月のメニューや空き状況から、SNS文とLINE配信用の案内文を作る。</strong>
+        </div>
+        <div class="usecase-card">
+          <span>04 / 医療・治療院</span>
+          <h3>説明文と院内共有を分かりやすくする</h3>
+          <p>よくある質問、来院前案内、症状別説明、スタッフ向け手順書、院内マニュアルを整理します。</p>
+          <div class="usecase-flow">
+            <p><b>Before</b>専門用語の説明や院内共有文を作るのに時間がかかる。</p>
+            <p><b>After</b>患者さん向け、スタッフ向けに分けて分かりやすく整理する。</p>
+          </div>
+          <strong>例：患者さん向け説明を、専門用語を抑えた分かりやすい文章に直す。</strong>
+        </div>
+        <div class="usecase-card">
+          <span>05 / 管理部門・バックオフィス</span>
+          <h3>定型文書と社内確認を軽くする</h3>
+          <p>議事録、稟議の下書き、社内FAQ、規程確認、Excel集計、月次レポート作成を支援します。</p>
+          <div class="usecase-flow">
+            <p><b>Before</b>議事録、稟議、FAQ、月次レポートが担当者依存になっている。</p>
+            <p><b>After</b>決定事項、未決事項、タスク、確認点を一定の型で整理する。</p>
+          </div>
+          <strong>例：会議メモから決定事項、未決事項、担当者別タスクを自動で整理する。</strong>
+        </div>
+        <div class="usecase-card">
+          <span>06 / 経営者・小規模チーム</span>
+          <h3>判断材料と実行タスクを整理する</h3>
+          <p>アイデアの壁打ち、競合調査、採用文、社内ルール、優先順位づけを短時間で形にします。</p>
+          <div class="usecase-flow">
+            <p><b>Before</b>頭の中の方針やアイデアが整理されず、実行が後回しになる。</p>
+            <p><b>After</b>今週やること、任せること、後回しにすることへ分解する。</p>
+          </div>
+          <strong>例：頭の中の方針を整理し、今週やること・任せること・後回しにすることに分ける。</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="portfolio-section" id="portfolio">
   <div class="container">
     <div class="text-center">
       <span class="section-label reveal">Works</span>
-      <h2 class="section-title reveal">制作サンプル</h2>
+      <h2 class="section-title reveal">必要に応じてWeb周りも対応できます</h2>
     </div>
-    <p class="section-lead text-center mx-auto reveal">実際のデモサイトをご覧いただけます</p>
+    <p class="section-lead text-center mx-auto reveal">AI支援が主軸です。公開導線、簡易LP、問い合わせフォームなどが必要な場合だけ、補助的にまとめて見ます。</p>
     <div class="portfolio-grid">
       <div class="portfolio-card reveal">
-        <div class="portfolio-thumb portfolio-thumb--clinic">
-          <div class="pt-bar"><div class="pt-dots"><span></span><span></span><span></span></div><div class="pt-url">sample-clinic-aoba.vercel.app</div></div>
-          <div class="pt-body">
-            <div class="pt-title">あなたの健康を、<br>地域で支える</div>
-            <div class="pt-btn" style="color:#2563eb;">Web予約はこちら →</div>
+        <div class="portfolio-thumb">
+          <div class="portfolio-shell">
+            <div class="pt-bar"><div class="pt-dots"><span></span><span></span><span></span></div><div class="pt-url">sample-clinic-aoba.vercel.app</div></div>
+            <div class="pt-body">
+              <div class="pt-title">情報整理と予約導線を<br>静かに整える</div>
+              <div class="pt-btn pt-btn--clinic">医療系サンプル</div>
+            </div>
           </div>
         </div>
         <div class="portfolio-body">
           <h3>あおば内科クリニック</h3>
-          <p>内科クリニック向けサンプル。Web予約導線・診療案内・アクセスマップを備えたレスポンシブデザイン。</p>
-          <a href="https://sample-clinic-aoba.vercel.app" target="_blank" class="portfolio-link">サイトを見る <span>&rarr;</span></a>
+          <p>内科クリニック向けサンプル。診療案内、アクセス、Web予約導線を分かりやすく整理した構成です。</p>
+          <a href="https://sample-clinic-aoba.vercel.app" target="_blank" class="portfolio-link">サンプルを見る <span>&rarr;</span></a>
         </div>
       </div>
       <div class="portfolio-card reveal reveal-delay-1">
-        <div class="portfolio-thumb portfolio-thumb--restaurant">
-          <div class="pt-bar"><div class="pt-dots"><span></span><span></span><span></span></div><div class="pt-url">sample-restaurant-daichi.vercel.app</div></div>
-          <div class="pt-body">
-            <div class="pt-title">炭火の香りと、<br>素材の旨みを</div>
-            <div class="pt-btn" style="color:#d97706;">席を予約する →</div>
+        <div class="portfolio-thumb">
+          <div class="portfolio-shell">
+            <div class="pt-bar"><div class="pt-dots"><span></span><span></span><span></span></div><div class="pt-url">sample-restaurant-daichi.vercel.app</div></div>
+            <div class="pt-body">
+              <div class="pt-title">店の魅力を言葉と導線で<br>伝える</div>
+              <div class="pt-btn pt-btn--restaurant">飲食店サンプル</div>
+            </div>
           </div>
         </div>
         <div class="portfolio-body">
           <h3>炭火キッチン だいち</h3>
-          <p>飲食店向けサンプル。メニュー紹介・店舗情報・予約ボタンを配置した集客重視のデザイン。</p>
-          <a href="https://sample-restaurant-daichi.vercel.app" target="_blank" class="portfolio-link">サイトを見る <span>&rarr;</span></a>
+          <p>飲食店向けサンプル。メニュー、店舗情報、予約導線を整理し、来店前に必要な情報を迷わず読める形にしています。</p>
+          <a href="https://sample-restaurant-daichi.vercel.app" target="_blank" class="portfolio-link">サンプルを見る <span>&rarr;</span></a>
         </div>
       </div>
       <div class="portfolio-card reveal reveal-delay-2">
-        <div class="portfolio-thumb portfolio-thumb--bonesetter">
-          <div class="pt-bar"><div class="pt-dots"><span></span><span></span><span></span></div><div class="pt-url">sample-bonesetter-genki.vercel.app</div></div>
-          <div class="pt-body">
-            <div class="pt-title">体の悩みを、<br>根本から解決</div>
-            <div class="pt-btn" style="color:#0d9488;">初回無料相談 →</div>
+        <div class="portfolio-thumb">
+          <div class="portfolio-shell">
+            <div class="pt-bar"><div class="pt-dots"><span></span><span></span><span></span></div><div class="pt-url">sample-bonesetter-genki.vercel.app</div></div>
+            <div class="pt-body">
+              <div class="pt-title">初回相談につながる<br>安心感を設計する</div>
+              <div class="pt-btn pt-btn--bonesetter">整骨院サンプル</div>
+            </div>
           </div>
         </div>
         <div class="portfolio-body">
           <h3>げんき整骨院</h3>
-          <p>整骨院向けサンプル。施術メニュー・スタッフ紹介・初めての方への案内を分かりやすく構成。</p>
-          <a href="https://sample-bonesetter-genki.vercel.app" target="_blank" class="portfolio-link">サイトを見る <span>&rarr;</span></a>
+          <p>整骨院向けサンプル。初めての方が不安なく読める順番で、施術案内や相談導線をまとめた構成です。</p>
+          <a href="https://sample-bonesetter-genki.vercel.app" target="_blank" class="portfolio-link">サンプルを見る <span>&rarr;</span></a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Pricing -->
 <section class="pricing-section" id="pricing">
   <div class="container">
     <div class="text-center">
       <span class="section-label reveal">Pricing</span>
-      <h2 class="section-title reveal">料金プラン</h2>
+      <h2 class="section-title reveal">料金の目安</h2>
     </div>
-    <div class="text-center"><span class="pricing-scarcity reveal">毎月先着3社限定 ・ 今月残り3枠</span></div>
+    <p class="section-lead text-center mx-auto reveal">まずは小さく始めることを前提にしています。初回相談のなかで、無理に広げず、どこまでやるのが適切かを一緒に決めます。</p>
+    <div class="text-center"><span class="pricing-intro reveal">相談だけで終えても大丈夫です。向いている場合だけ、次の打ち手をご提案します。</span></div>
 
-    <!-- 3 pricing cards -->
     <div class="pricing-cards">
-      <!-- ライト -->
       <div class="pricing-card reveal">
-        <p class="pricing-plan-label">Light</p>
+        <p class="pricing-plan-label">Starter</p>
         <div class="pricing-amount">
-          <span class="pricing-amount-num">15</span>
+          <span class="pricing-amount-num">3</span>
           <span class="pricing-amount-unit">万円</span>
         </div>
-        <p class="pricing-monthly">月額 <strong>1万円</strong> / 保守込み</p>
+        <p class="pricing-monthly">初回の整理・提案向け / 単発</p>
+        <p class="pricing-summary">まず状況を整理して、小さく試すテーマを決めたい企業向けです。</p>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
-          <li><span class="feat-icon feat-check">✓</span>HP制作（スマホ対応）</li>
-          <li><span class="feat-icon feat-check">✓</span>電話ボタン・Googleマップ込み</li>
-          <li><span class="feat-icon feat-check">✓</span>テキスト修正 月2回まで</li>
-          <li><span class="feat-icon feat-check">✓</span>SSL・バックアップ管理</li>
-          <li><span class="feat-icon feat-check">✓</span>メールサポート（2営業日以内）</li>
-          <li><span class="feat-icon feat-none">—</span><span style="color:var(--ink-faint)">Web予約システム</span></li>
-          <li><span class="feat-icon feat-none">—</span><span style="color:var(--ink-faint)">AIチャットボット</span></li>
-          <li><span class="feat-icon feat-none">—</span><span style="color:var(--ink-faint)">MEO対策</span></li>
+          <li><span class="feat-icon feat-check">✓</span>現状ヒアリング</li>
+          <li><span class="feat-icon feat-check">✓</span>AI活用候補の洗い出し</li>
+          <li><span class="feat-icon feat-check">✓</span>優先順位の整理メモ</li>
+          <li><span class="feat-icon feat-check">✓</span>次の一歩の提案</li>
         </ul>
-        <a href="#contact" class="pricing-cta pricing-cta--outline">まず話だけ聞いてみる（無料）</a>
+        <div class="pricing-deliverables">
+          <p>手元に残るもの</p>
+          <ul>
+            <li>業務整理メモ</li>
+            <li>優先順位リスト</li>
+            <li>次の一歩の提案</li>
+          </ul>
+        </div>
+        <a href="#contact" class="pricing-cta">30分無料相談から始める</a>
       </div>
 
-      <!-- スタンダード（featured） -->
       <div class="pricing-card pricing-card--featured reveal reveal-delay-1">
-        <span class="pricing-badge">最も選ばれています</span>
-        <p class="pricing-plan-label">Standard</p>
+        <span class="pricing-badge">Standard</span>
+        <p class="pricing-plan-label">Project</p>
         <div class="pricing-amount">
           <span class="pricing-amount-num">30</span>
-          <span class="pricing-amount-unit">万円</span>
+          <span class="pricing-amount-unit">万円〜</span>
         </div>
-        <p class="pricing-monthly">月額 <strong>1.5万円</strong> / 保守込み</p>
+        <p class="pricing-monthly">導入支援・試作 / 2週間〜</p>
+        <p class="pricing-summary">対象業務を決め、必要な設計や試作まで進める、いちばん相談されやすいプランです。</p>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
-          <li><span class="feat-icon feat-check">✓</span>HP制作（スマホ対応）</li>
-          <li><span class="feat-icon feat-check">✓</span>電話ボタン・Googleマップ込み</li>
-          <li><span class="feat-icon feat-check">✓</span>テキスト修正 月5回まで</li>
-          <li><span class="feat-icon feat-check">✓</span>SSL・バックアップ管理</li>
-          <li><span class="feat-icon feat-check">✓</span>メールサポート（1営業日以内）</li>
-          <li><span class="feat-icon feat-check">✓</span>Web予約システム</li>
-          <li><span class="feat-icon feat-check">✓</span>AIチャットボット</li>
-          <li><span class="feat-icon feat-check">✓</span>アクセス解析レポート（月1回）</li>
-          <li><span class="feat-icon feat-none">—</span><span style="color:var(--ink-faint)">MEO対策</span></li>
+          <li><span class="feat-icon feat-check">✓</span>対象業務の選定</li>
+          <li><span class="feat-icon feat-check">✓</span>プロンプト・運用設計</li>
+          <li><span class="feat-icon feat-check">✓</span>必要に応じた簡易開発</li>
+          <li><span class="feat-icon feat-check">✓</span>社内共有用の導入メモ</li>
         </ul>
-        <a href="#contact" class="pricing-cta pricing-cta--primary">無料デモを見る</a>
+        <div class="pricing-deliverables">
+          <p>手元に残るもの</p>
+          <ul>
+            <li>プロンプト集</li>
+            <li>簡易ワークフロー</li>
+            <li>社内説明メモと試作物</li>
+          </ul>
+        </div>
+        <a href="#contact" class="pricing-cta pricing-cta--primary">相談して進め方を決める</a>
       </div>
 
-      <!-- プロ -->
       <div class="pricing-card reveal reveal-delay-2">
-        <p class="pricing-plan-label">Pro</p>
+        <p class="pricing-plan-label">Advisor</p>
         <div class="pricing-amount">
-          <span class="pricing-amount-num">50</span>
-          <span class="pricing-amount-unit">万円</span>
+          <span class="pricing-amount-num">5</span>
+          <span class="pricing-amount-unit">万円 / 月</span>
         </div>
-        <p class="pricing-monthly">月額 <strong>4万円</strong> / 保守込み</p>
+        <p class="pricing-monthly">継続伴走・定着支援 / 月次</p>
+        <p class="pricing-summary">導入後も継続的に相談しながら、社内に定着させたい企業向けです。</p>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
-          <li><span class="feat-icon feat-check">✓</span>HP制作（スマホ対応）</li>
-          <li><span class="feat-icon feat-check">✓</span>電話ボタン・Googleマップ込み</li>
-          <li><span class="feat-icon feat-check">✓</span>テキスト修正 無制限</li>
-          <li><span class="feat-icon feat-check">✓</span>SSL・バックアップ管理</li>
-          <li><span class="feat-icon feat-check">✓</span>優先サポート（即日対応）</li>
-          <li><span class="feat-icon feat-check">✓</span>Web予約システム</li>
-          <li><span class="feat-icon feat-check">✓</span>AIチャットボット</li>
-          <li><span class="feat-icon feat-check">✓</span>アクセス解析レポート（月1回）</li>
-          <li><span class="feat-icon feat-check-green">✓</span>MEO対策（Googleマップ上位表示）</li>
-          <li><span class="feat-icon feat-check-green">✓</span>月次改善コンサルティング</li>
+          <li><span class="feat-icon feat-check-warm">✓</span>月次の振り返りと提案</li>
+          <li><span class="feat-icon feat-check-warm">✓</span>社内相談の壁打ち</li>
+          <li><span class="feat-icon feat-check-warm">✓</span>改善テーマの優先順位づけ</li>
+          <li><span class="feat-icon feat-check-warm">✓</span>運用の見直しと定着支援</li>
         </ul>
-        <a href="#contact" class="pricing-cta pricing-cta--outline">まず話だけ聞いてみる（無料）</a>
+        <div class="pricing-deliverables">
+          <p>手元に残るもの</p>
+          <ul>
+            <li>月次改善ログ</li>
+            <li>次月の優先テーマ</li>
+            <li>運用見直しメモ</li>
+          </ul>
+        </div>
+        <a href="#contact" class="pricing-cta">継続支援について相談する</a>
       </div>
     </div>
 
-    <!-- 比較表 -->
     <div class="compare-section reveal">
-      <h3 class="compare-title">プラン詳細比較</h3>
+      <h3 class="compare-title">プラン比較</h3>
       <div class="compare-wrap">
         <table class="compare-table">
           <thead>
             <tr>
-              <th style="width:36%">機能・サービス</th>
-              <th>ライト</th>
-              <th class="th-std">スタンダード ★</th>
-              <th>プロ</th>
+              <th style="width:30%">項目</th>
+              <th>Starter</th>
+              <th class="th-std">Project</th>
+              <th>Advisor</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>初期費用</td>
-              <td><span class="ct-price">15万円</span></td>
-              <td class="td-std"><span class="ct-price">30万円</span></td>
-              <td><span class="ct-price">50万円</span></td>
+              <td>向いているケース</td>
+              <td>まず整理したい</td>
+              <td class="td-std">小さく導入したい</td>
+              <td>社内に定着させたい</td>
             </tr>
             <tr>
-              <td>月額（保守込み）</td>
-              <td><span class="ct-price">1万円</span></td>
-              <td class="td-std"><span class="ct-price">1.5万円</span></td>
-              <td><span class="ct-price">4万円</span></td>
+              <td>提供形態</td>
+              <td>単発</td>
+              <td class="td-std">個別導入支援</td>
+              <td>月次伴走</td>
             </tr>
             <tr>
-              <td>納品目安</td>
-              <td>最短1週間</td>
-              <td class="td-std">2〜3週間</td>
-              <td>3〜4週間</td>
+              <td>期間の目安</td>
+              <td>1回</td>
+              <td class="td-std">2週間〜</td>
+              <td>月次契約</td>
             </tr>
             <tr>
-              <td>HP制作（スマホ対応）</td>
+              <td>手元に残るもの</td>
+              <td>整理メモ・優先順位</td>
+              <td class="td-std">プロンプト集・試作物</td>
+              <td>月次改善ログ</td>
+            </tr>
+            <tr>
+              <td>現状ヒアリング</td>
               <td><span class="ct-check">✓</span></td>
               <td class="td-std"><span class="ct-check">✓</span></td>
               <td><span class="ct-check">✓</span></td>
             </tr>
             <tr>
-              <td>電話ボタン・Googleマップ</td>
+              <td>活用候補の整理</td>
               <td><span class="ct-check">✓</span></td>
               <td class="td-std"><span class="ct-check">✓</span></td>
               <td><span class="ct-check">✓</span></td>
             </tr>
             <tr>
-              <td>テキスト修正</td>
-              <td>月2回</td>
-              <td class="td-std">月5回</td>
-              <td>無制限</td>
+              <td>研修・勉強会</td>
+              <td><span class="ct-dash">—</span></td>
+              <td class="td-std">必要に応じて</td>
+              <td>継続相談内で対応</td>
             </tr>
             <tr>
-              <td>SSL・バックアップ管理</td>
-              <td><span class="ct-check">✓</span></td>
-              <td class="td-std"><span class="ct-check">✓</span></td>
-              <td><span class="ct-check">✓</span></td>
-            </tr>
-            <tr>
-              <td>Web予約システム</td>
+              <td>簡易開発・エージェント</td>
               <td><span class="ct-dash">—</span></td>
               <td class="td-std"><span class="ct-check">✓</span></td>
-              <td><span class="ct-check">✓</span></td>
+              <td>改善に応じて相談</td>
             </tr>
             <tr>
-              <td>AIチャットボット</td>
+              <td>運用ルール設計</td>
               <td><span class="ct-dash">—</span></td>
               <td class="td-std"><span class="ct-check">✓</span></td>
               <td><span class="ct-check">✓</span></td>
             </tr>
             <tr>
-              <td>アクセス解析レポート</td>
+              <td>継続伴走</td>
               <td><span class="ct-dash">—</span></td>
-              <td class="td-std">月1回</td>
-              <td>月1回</td>
+              <td class="td-std">初期導入まで</td>
+              <td><span class="ct-check-warm">✓</span></td>
             </tr>
             <tr>
-              <td>MEO対策（Googleマップ上位表示）</td>
-              <td><span class="ct-dash">—</span></td>
-              <td class="td-std"><span class="ct-dash">—</span></td>
-              <td><span class="ct-check-green">✓</span></td>
-            </tr>
-            <tr>
-              <td>月次改善コンサルティング</td>
-              <td><span class="ct-dash">—</span></td>
-              <td class="td-std"><span class="ct-dash">—</span></td>
-              <td><span class="ct-check-green">✓</span></td>
-            </tr>
-            <tr>
-              <td>AI・チャットボット追加</td>
-              <td><span class="ct-dash">—</span></td>
-              <td class="td-std"><span class="ct-dash">—</span></td>
-              <td>別途お見積もり</td>
-            </tr>
-            <tr>
-              <td>サポート対応</td>
-              <td>メール<span class="ct-sub">2営業日以内</span></td>
-              <td class="td-std">メール<span class="ct-sub">1営業日以内</span></td>
-              <td>優先対応<span class="ct-sub">即日〜翌営業日</span></td>
+              <td>料金</td>
+              <td><span class="ct-price">3万円</span></td>
+              <td class="td-std"><span class="ct-price">30万円〜</span></td>
+              <td><span class="ct-price">5万円 / 月</span></td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
 
-    <p class="pricing-note reveal">※ 一般的な制作会社の相場は初期50〜100万円、月額2〜5万円。当サービスはフリーランスならではのコスト効率で、品質はそのままに大幅に費用を抑えています。<br>チャットボット・AI業務改善のオプション追加は別途ご相談ください。</p>
+    <p class="pricing-note reveal">実際の金額は、対象業務の数、社内調整の有無、必要な試作範囲で変わります。初回相談では、無理に大きくせず、今の段階で必要な範囲だけをご提案します。</p>
     <div class="pricing-bottom-cta reveal">
-      <a href="#contact" class="cta-button">まずは無料でデモサイトを見てみる</a>
+      <a href="#contact" class="cta-button">30分無料相談を申し込む</a>
     </div>
   </div>
 </section>
 
-<!-- Track Record -->
-<section class="track-section section-alt">
+<section class="process-section" id="process">
   <div class="container">
     <div class="text-center">
-      <span class="section-label reveal">Track Record</span>
-      <h2 class="section-title reveal">実績</h2>
+      <span class="section-label reveal">Process</span>
+      <h2 class="section-title reveal">プランに合わせた進め方</h2>
     </div>
-    <p class="section-lead text-center mx-auto reveal">お客様のビジネスを支援しています</p>
-    <div class="track-record-card reveal">
-      <h3>HP制作案件 &#8212; 小売業のホームページを制作</h3>
-      <p class="track-year">2026年</p>
-      <p>お客様の要望をヒアリングし、集客に強いサイトを構築。商品の魅力が伝わるデザインと、お問い合わせまでの導線を設計しました。</p>
-      <div id="portfolio-yuu"><span class="track-status-dot"></span>詳細・サイトURLは近日公開予定です</div>
+    <p class="section-lead text-center mx-auto reveal">Starterは整理、Projectは試作、Advisorは定着改善です。最初から大きく作らず、相談内容に合わせて必要な範囲だけ進めます。</p>
+    <div class="process-grid">
+      <div class="process-card reveal">
+        <p class="process-step">Starter / 1回</p>
+        <h3>まず整理する</h3>
+        <p>現状を聞き、AIを使う業務と使わない業務を分けます。まず試すテーマを絞り、社内で共有できる整理メモを作ります。</p>
+        <ul>
+          <li>対象業務の洗い出し</li>
+          <li>導入テーマの優先順位づけ</li>
+          <li>次の一歩の提案</li>
+        </ul>
+      </div>
+      <div class="process-card reveal reveal-delay-1">
+        <p class="process-step">Project / 2週間〜</p>
+        <h3>小さく試作する</h3>
+        <p>ひとつの業務で試し、プロンプトや手順を整えます。必要に応じて、簡易ワークフローやAIエージェントの試作まで進めます。</p>
+        <ul>
+          <li>プロンプト・テンプレート作成</li>
+          <li>必要に応じた簡易ツール試作</li>
+          <li>社内説明メモの作成</li>
+        </ul>
+      </div>
+      <div class="process-card reveal reveal-delay-2">
+        <p class="process-step">Advisor / 月次</p>
+        <h3>定着と改善を続ける</h3>
+        <p>使ってみた結果を見ながら、残す運用と直す運用を整理します。次に広げる業務や、社内相談の扱い方を月次で見直します。</p>
+        <ul>
+          <li>運用状況のレビュー</li>
+          <li>テンプレートとルールの改善</li>
+          <li>次の展開テーマの整理</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Profile -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label reveal">FAQ</span>
+      <h2 class="section-title reveal">よくある質問</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <h3>相談だけで終わっても本当に大丈夫ですか？</h3>
+        <p>大丈夫です。初回相談では、今AIを入れるべきか、まだ整理を優先すべきかも含めてお伝えします。無理に契約を前提に進めません。</p>
+      </div>
+      <div class="faq-item">
+        <h3>生成AIを使ったことがなくても相談できますか？</h3>
+        <p>問題ありません。ツール名や専門用語から入らず、今の業務で時間がかかっている作業を聞くところから始めます。</p>
+      </div>
+      <div class="faq-item">
+        <h3>社内データをAIに入れて大丈夫ですか？</h3>
+        <p>最初から社内データを入れる前提にはしません。機密情報を入れない運用、入力してよい情報の範囲、人が確認する箇所を整理してから進めます。</p>
+      </div>
+      <div class="faq-item">
+        <h3>NDAや情報管理には対応できますか？</h3>
+        <p>必要に応じてNDA締結を前提に進めます。機密情報をAIに入れないためのルール整理や、利用範囲の切り分けも支援します。</p>
+      </div>
+      <div class="faq-item">
+        <h3>社員が使わなかったらどうしますか？</h3>
+        <p>使われない理由を確認し、業務に近いテンプレートや手順に直します。最初から全社展開せず、実際に困っている1つの作業に絞って始めます。</p>
+      </div>
+      <div class="faq-item">
+        <h3>小規模企業でも相談できますか？</h3>
+        <p>相談できます。1人社長や少人数チームでも、議事録、メール、資料作成、問い合わせ対応など、毎週くり返す業務から整理できます。</p>
+      </div>
+      <div class="faq-item">
+        <h3>ChatGPTなどのツール費用は含まれますか？</h3>
+        <p>各種AIツールやAPIの利用料は、原則として実費をご負担いただきます。無駄な契約が増えないよう、最小構成から提案します。</p>
+      </div>
+      <div class="faq-item">
+        <h3>契約期間は決まっていますか？</h3>
+        <p>Starterは単発、Projectは2週間程度から、Advisorは月次契約を想定しています。実際の期間は対象業務と社内体制に合わせて調整します。</p>
+      </div>
+      <div class="faq-item">
+        <h3>Web制作も一緒に相談できますか？</h3>
+        <p>可能です。AI導入が主軸ですが、公開導線、簡易LP、問い合わせフォームなど、事業上必要なWeb周りもまとめて相談できます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="profile-section" id="profile">
   <div class="container">
     <div class="text-center">
       <span class="section-label reveal">Profile</span>
       <h2 class="section-title reveal">プロフィール</h2>
     </div>
-    <div class="section-lead" style="margin-bottom:40px">&nbsp;</div>
-    <div class="profile-inner reveal">
-      <div class="profile-photo">
-        <img src="profile.png" alt="中村元揮">
-      </div>
-      <div class="profile-text">
-        <h3>中村元揮</h3>
-        <p class="profile-name-en">Motoki Nakamura</p>
-        <p>札幌在住。地域のクリニック・飲食店の集客改善と業務効率化を、WebとAIでまるごと支援しています。</p>
-        <p>IT企業での3年間のシステム開発経験を活かし、最新技術で制作コストを抑えた高品質なサイトを実現します。ホームページ制作から業務システム、AI導入まで、デジタル化のあらゆるご相談に対応いたします。</p>
+    <p class="section-lead text-center mx-auto reveal">相談から実装まで、基本的に本人が直接対応します。整理だけで終わらせず、現場で使う形への落とし込みまで担当します。</p>
+    <div class="profile-card reveal">
+      <div class="profile-inner">
+        <div class="profile-photo">
+          <img src="profile.png" alt="中村元揮">
+        </div>
+        <div class="profile-text">
+          <h3>中村元揮</h3>
+          <p class="profile-name-en">Motoki Nakamura</p>
+          <p>札幌在住。中小企業向けに、生成AIの導入支援、AIエージェントの試作、社内で使い続けるための整理と定着支援を行っています。ご相談から実装まで、基本的に本人が直接対応します。</p>
+          <p>IT企業でのシステム開発経験を土台に、技術だけに寄りすぎず、現場の業務に合わせて整えることを大切にしています。派手な演出より、実際に運用できる形をつくるのが役割です。</p>
+          <p>AIの相談だけでなく、公開導線や簡易サイト制作までまとめて見られるので、「誰に何を頼めばいいか分からない」段階でも相談しやすい窓口として動けます。ご相談から実装まで、基本的に自分で直接対応します。</p>
+          <div class="profile-points">
+            <span>相談から実装まで本人対応</span>
+            <span>札幌拠点</span>
+            <span>開発経験あり</span>
+            <span>AI導入の伴走支援</span>
+            <span>Web制作も対応可能</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Contact -->
 <section class="contact-section" id="contact">
   <div class="container">
     <div class="contact-inner">
-      <p class="contact-main-cta reveal">御社専用のデモサイトを<br>無料でお作りします</p>
-      <p class="contact-sub reveal">初回1時間の相談は無料です。お気軽にご連絡ください。<br>24時間以内にお返事いたします。<br><span style="font-size:13px; opacity:0.7;">しつこい営業は一切しません。断るのも自由です。</span></p>
+      <p class="contact-main-cta reveal">まず30分、<br>現状を聞かせてください</p>
+      <p class="contact-sub reveal">まだ課題が言語化できていなくても大丈夫です。どの業務が重いのか、AIで何ができそうか、今すぐ着手すべきかどうかも含めて一緒に整理します。初回相談後は、社内で共有できる簡単な整理メモもお返しします。</p>
+      <div class="contact-assurance reveal">
+        <span>売り込みなし</span>
+        <span>オンライン相談可</span>
+        <span>相談後に整理メモ返却</span>
+      </div>
       <form class="contact-form reveal" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="fa0c4986-834c-439c-bb39-e36f5be2f3c3">
-        <input type="hidden" name="subject" value="ポートフォリオサイトからのお問い合わせ">
-        <input type="hidden" name="from_name" value="中村元揮 ポートフォリオ">
+        <input type="hidden" name="subject" value="AI導入支援サイトからのご相談">
+        <input type="hidden" name="from_name" value="中村元揮 AI導入支援">
         <input type="checkbox" name="botcheck" style="display:none">
         <div class="contact-form-group">
-          <label for="cf-name">お名前 <span style="color:#f87171; font-size:11px; font-weight:700; background:rgba(248,113,113,0.12); padding:1px 6px; border-radius:4px; margin-left:4px;">必須</span></label>
+          <label for="cf-name">お名前 <span class="required-pill">必須</span></label>
           <input type="text" id="cf-name" name="name" placeholder="山田 太郎" required>
         </div>
         <div class="contact-form-group">
-          <label for="cf-company">会社名・クリニック名 <span style="color:#f87171; font-size:11px; font-weight:700; background:rgba(248,113,113,0.12); padding:1px 6px; border-radius:4px; margin-left:4px;">必須</span></label>
-          <input type="text" id="cf-company" name="company" placeholder="〇〇クリニック" required>
+          <label for="cf-company">会社名・屋号 <span class="required-pill">必須</span></label>
+          <input type="text" id="cf-company" name="company" placeholder="株式会社〇〇 / 〇〇商店" required>
         </div>
         <div class="contact-form-group">
-          <label for="cf-email">メールアドレス <span style="color:#f87171; font-size:11px; font-weight:700; background:rgba(248,113,113,0.12); padding:1px 6px; border-radius:4px; margin-left:4px;">必須</span></label>
+          <label for="cf-email">メールアドレス <span class="required-pill">必須</span></label>
           <input type="email" id="cf-email" name="email" placeholder="example@example.com" required>
         </div>
         <div class="contact-form-group">
-          <label for="cf-message">お問い合わせ内容 <span style="color:#f87171; font-size:11px; font-weight:700; background:rgba(248,113,113,0.12); padding:1px 6px; border-radius:4px; margin-left:4px;">必須</span></label>
-          <textarea id="cf-message" name="message" placeholder="ご質問・ご相談内容をご記入ください" required></textarea>
+          <label for="cf-message">ご相談内容 <span class="required-pill">必須</span></label>
+          <textarea id="cf-message" name="message" placeholder="例：ChatGPTを契約したが使われていない、議事録作成を減らしたい、社内データの扱いが不安、など。" required></textarea>
         </div>
-        <button type="submit" class="contact-submit" id="contactSubmit">送信する</button>
-        <p style="font-size:12px; color:#64748b; text-align:center; margin-top:8px;">送信することで<a href="privacy.html" target="_blank" style="color:#94a3b8; text-decoration:underline;">プライバシーポリシー</a>に同意したものとみなします。</p>
+        <button type="submit" class="contact-submit" id="contactSubmit">30分無料相談を申し込む</button>
+        <p class="contact-policy">送信することで<a href="privacy.html" target="_blank">プライバシーポリシー</a>に同意したものとみなします。</p>
       </form>
       <div class="contact-success" id="contactSuccess">
-        <p>お問い合わせありがとうございます。<br>24時間以内にご返信いたします。</p>
+        <p>お問い合わせありがとうございます。<br>24時間以内に初回のご返信をいたします。</p>
       </div>
       <div class="contact-social">
         <a href="https://x.com/motoki0418" target="_blank">
@@ -1393,30 +2654,14 @@ body::after {
   </div>
 </section>
 
-<footer class="footer">&copy; 2026 中村元揮 &nbsp;|&nbsp; <a href="privacy.html" style="color:var(--ink-faint);">プライバシーポリシー</a></footer>
+<footer class="footer">&copy; 2026 中村元揮 &nbsp;|&nbsp; <a href="privacy.html">プライバシーポリシー</a></footer>
 
 <script>
-// Header scroll
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 10);
 });
 
-// Hamburger
-const hamburger = document.getElementById('hamburger');
-const nav = document.getElementById('nav');
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  nav.classList.toggle('open');
-});
-nav.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    nav.classList.remove('open');
-  });
-});
-
-// Contact form
 const contactForm = document.getElementById('contactForm');
 const contactSubmit = document.getElementById('contactSubmit');
 const contactSuccess = document.getElementById('contactSuccess');
@@ -1425,33 +2670,39 @@ if (contactForm) {
     e.preventDefault();
     contactSubmit.disabled = true;
     contactSubmit.textContent = '送信中…';
-    const data = new FormData(contactForm);
-    const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
-    const json = await res.json();
-    if (json.success) {
-      contactForm.style.display = 'none';
-      contactSuccess.style.display = 'block';
-    } else {
+    try {
+      const data = new FormData(contactForm);
+      const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+      const json = await res.json();
+      if (json.success) {
+        contactForm.style.display = 'none';
+        contactSuccess.style.display = 'block';
+      } else {
+        throw new Error('submit failed');
+      }
+    } catch (error) {
       contactSubmit.disabled = false;
-      contactSubmit.textContent = '送信する';
+      contactSubmit.textContent = '30分無料相談を申し込む';
       alert('送信に失敗しました。時間をおいて再度お試しください。');
     }
   });
 }
 
-// Scroll reveal
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
 }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-// KPI count up
-const easeOut = t => 1 - Math.pow(1 - t, 3);
+const easeOut = (t) => 1 - Math.pow(1 - t, 3);
 const countObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
+  entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
     const el = entry.target;
-    const target = parseInt(el.dataset.target);
+    const target = parseInt(el.dataset.target, 10);
     const duration = 1400;
     const start = performance.now();
     const tick = (now) => {
@@ -1464,7 +2715,8 @@ const countObserver = new IntersectionObserver((entries) => {
     countObserver.unobserve(el);
   });
 }, { threshold: 0.6 });
-document.querySelectorAll('.kpi-count').forEach(el => {
+
+document.querySelectorAll('.kpi-count').forEach((el) => {
   el.textContent = '0';
   countObserver.observe(el);
 });
