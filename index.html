@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>札幌の生成AI・AIエージェント導入支援｜中村元揮</title>
-<meta name="description" content="札幌で生成AI導入支援、AIエージェント開発、AI活用研修・勉強会、AI顧問を提供。現場に合わせた設計から定着支援まで伴走します。30分無料相談、24時間以内にご返信。">
+<meta name="description" content="札幌で生成AI導入支援、AIエージェント導入・活用支援、AI活用研修・勉強会、AI顧問を提供。現場に合わせた設計から定着支援まで伴走します。30分無料相談、24時間以内にご返信。">
 <meta property="og:title" content="札幌の生成AI・AIエージェント導入支援｜中村元揮">
-<meta property="og:description" content="札幌で生成AI導入支援、AIエージェント開発、AI活用研修・勉強会、AI顧問を提供。現場に合わせた設計から定着支援まで伴走します。">
+<meta property="og:description" content="札幌で生成AI導入支援、AIエージェント導入・活用支援、AI活用研修・勉強会、AI顧問を提供。現場に合わせた設計から定着支援まで伴走します。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://motoki418.github.io/portfolio/">
 <meta property="og:image" content="https://motoki418.github.io/portfolio/profile.png">
@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://motoki418.github.io/portfolio/profile.png">
 <meta name="twitter:title" content="札幌の生成AI・AIエージェント導入支援｜中村元揮">
-<meta name="twitter:description" content="札幌で生成AI導入支援、AIエージェント開発、AI活用研修・勉強会、AI顧問を提供。現場に合わせた設計から定着支援まで伴走します。">
+<meta name="twitter:description" content="札幌で生成AI導入支援、AIエージェント導入・活用支援、AI活用研修・勉強会、AI顧問を提供。現場に合わせた設計から定着支援まで伴走します。">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KV15FJJDYL"></script>
 <script>
@@ -196,6 +196,32 @@ section { padding: 104px 0; }
 
 .nav-cta:hover { background: var(--brick); }
 
+@media (max-width: 980px) {
+  .header-inner {
+    padding: 0 20px;
+    gap: 14px;
+  }
+  .header-brand {
+    max-width: 220px;
+    font-size: 14px;
+    line-height: 1.35;
+    white-space: normal;
+  }
+  .header-nav {
+    gap: 14px;
+  }
+  .header-nav a {
+    font-size: 13px;
+  }
+  .header-nav a[href="#contact"]:not(.nav-cta) {
+    display: none;
+  }
+  .nav-cta {
+    padding: 11px 16px;
+    font-size: 13px !important;
+  }
+}
+
 @media (max-width: 768px) {
   .header-inner {
     min-height: 64px;
@@ -207,10 +233,10 @@ section { padding: 104px 0; }
   }
   .header-brand {
     flex: 0 1 auto;
-    max-width: 190px;
-    font-size: 13px;
+    max-width: calc(100% - 106px);
+    font-size: 12.5px;
     line-height: 1.35;
-    white-space: nowrap;
+    white-space: normal;
     text-align: left;
   }
   .header-nav {
@@ -1005,127 +1031,6 @@ section { padding: 104px 0; }
   .usecase-card:last-child { border-bottom: none; }
 }
 
-.portfolio-section {
-  background: var(--surface);
-  border-bottom: 1px solid var(--line);
-}
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.portfolio-card {
-  background: var(--surface-raised);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-.portfolio-thumb {
-  border-bottom: 1px solid var(--line);
-  padding: 18px;
-  background: var(--surface);
-}
-
-.portfolio-shell {
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  overflow: hidden;
-  background: var(--surface-raised);
-}
-
-.pt-bar {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 10px;
-  border-bottom: 1px solid var(--line);
-  background: var(--surface-warm);
-}
-
-.pt-dots {
-  display: flex;
-  gap: 4px;
-}
-
-.pt-dots span {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--line-strong);
-}
-
-.pt-url {
-  flex: 1;
-  font-family: var(--font-display);
-  font-size: 9px;
-  color: var(--ink-faint);
-  letter-spacing: 0.02em;
-}
-
-.pt-body {
-  min-height: 154px;
-  padding: 18px 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.pt-title {
-  font-size: 17px;
-  line-height: 1.5;
-  font-weight: 800;
-  color: var(--ink);
-  margin-bottom: 14px;
-}
-
-.pt-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  padding: 7px 12px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.pt-btn--clinic { background: var(--accent-soft); color: var(--accent); }
-.pt-btn--restaurant { background: var(--warm-soft); color: var(--warm); }
-.pt-btn--bonesetter { background: var(--olive-soft); color: var(--olive); }
-
-.portfolio-body { padding: 22px 20px 24px; }
-
-.portfolio-body h3 {
-  font-size: 17px;
-  font-weight: 800;
-  color: var(--ink);
-  margin-bottom: 8px;
-}
-
-.portfolio-body p {
-  font-size: 13.5px;
-  color: var(--ink-muted);
-  line-height: 1.8;
-  margin-bottom: 14px;
-}
-
-.portfolio-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.portfolio-link:hover { gap: 12px; }
-
-@media (max-width: 900px) {
-  .portfolio-grid { grid-template-columns: 1fr; }
-}
-
 .pricing-section { background: var(--surface); }
 
 .pricing-intro {
@@ -1145,6 +1050,37 @@ section { padding: 104px 0; }
   gap: 20px;
   align-items: start;
   margin-bottom: 62px;
+}
+
+.pricing-project {
+  margin-bottom: 28px;
+}
+
+.pricing-project .pricing-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.pricing-project-main {
+  min-width: 0;
+}
+
+.pricing-project-detail {
+  display: grid;
+  gap: 16px;
+}
+
+.pricing-subnote {
+  margin: -34px 0 28px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: var(--ink-muted);
 }
 
 .pricing-card {
@@ -1296,6 +1232,54 @@ section { padding: 104px 0; }
   top: 8px;
 }
 
+.advisor-options {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.advisor-option {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  padding: 14px 15px;
+}
+
+.advisor-option--plus {
+  background: var(--surface-warm);
+  border-color: var(--line-strong);
+}
+
+.advisor-option-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.advisor-option-name {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.advisor-option-price {
+  font-size: 14px;
+  color: var(--ink);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.advisor-option p {
+  font-size: 12.5px;
+  color: var(--ink-muted);
+  line-height: 1.7;
+}
+
 .pricing-cta {
   display: block;
   width: 100%;
@@ -1428,8 +1412,82 @@ section { padding: 104px 0; }
   text-align: center;
 }
 
+.advisor-bridge {
+  margin: 34px auto 0;
+  max-width: 860px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: 20px;
+  align-items: stretch;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface-warm);
+  overflow: hidden;
+}
+
+.advisor-bridge-head {
+  padding: 24px;
+  border-right: 1px solid var(--line);
+  background: var(--surface-raised);
+}
+
+.advisor-bridge-head p {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-bottom: 10px;
+}
+
+.advisor-bridge-head h3 {
+  font-size: 21px;
+  line-height: 1.45;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.advisor-bridge-body {
+  padding: 24px;
+}
+
+.advisor-bridge-body p {
+  font-size: 14px;
+  color: var(--ink-muted);
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+
+.advisor-bridge-body ul {
+  list-style: none;
+  display: grid;
+  gap: 9px;
+}
+
+.advisor-bridge-body li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+.advisor-bridge-body li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--warm);
+  position: absolute;
+  left: 0;
+  top: 10px;
+}
+
 @media (max-width: 900px) {
+  .pricing-project .pricing-card { grid-template-columns: 1fr; }
   .pricing-cards { grid-template-columns: 1fr; }
+  .advisor-bridge { grid-template-columns: 1fr; }
+  .advisor-bridge-head { border-right: none; border-bottom: 1px solid var(--line); }
 }
 
 @media (max-width: 768px) {
@@ -1856,7 +1914,7 @@ section { padding: 104px 0; }
       "jobTitle": "AI導入支援・AI顧問",
       "knowsAbout": [
         "生成AI導入支援",
-        "AIエージェント開発",
+        "AIエージェント導入・活用支援",
         "AI活用研修",
         "AI顧問",
         "Web制作"
@@ -1866,7 +1924,7 @@ section { padding: 104px 0; }
       "@type": "ProfessionalService",
       "@id": "https://motoki418.github.io/portfolio/#business",
       "name": "中村元揮 AI導入支援・AI顧問",
-      "description": "札幌で生成AI導入支援、AIエージェント開発、AI活用研修・勉強会、AI顧問を提供。現場に合わせた設計から定着支援まで伴走します。",
+      "description": "札幌で生成AI導入支援、AIエージェント導入・活用支援、AI活用研修・勉強会、AI顧問を提供。現場に合わせた設計から定着支援まで伴走します。",
       "url": "https://motoki418.github.io/portfolio/",
       "email": "snkrs418@gmail.com",
       "founder": { "@id": "https://motoki418.github.io/portfolio/#person" },
@@ -1892,23 +1950,77 @@ section { padding: 104px 0; }
           {
             "@type": "Offer",
             "name": "Starter",
-            "price": "30000",
+            "price": "50000",
             "priceCurrency": "JPY",
-            "description": "現状ヒアリング、活用候補の整理、小さく始めるための提案メモをまとめる初回プラン。"
+            "description": "無料相談後に必要な場合だけ実施するAI活用診断・整理パック。2〜3時間を目安に、活用候補、優先順位、次に試すことを整理。",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI活用診断・整理パック",
+              "serviceType": "生成AI導入支援",
+              "provider": { "@id": "https://motoki418.github.io/portfolio/#business" },
+              "areaServed": "札幌市・北海道・オンライン",
+              "audience": "中小企業・小規模チーム"
+            }
           },
           {
             "@type": "Offer",
             "name": "Project",
             "price": "300000",
             "priceCurrency": "JPY",
-            "description": "対象業務の選定、ワークフロー設計、必要に応じた簡易ツールやAIエージェント構築まで行う導入支援。"
+            "description": "初月の導入設計・試作フェーズ。2〜4週間、15〜25時間を目安に、対象業務の選定、プロンプト・運用設計、小さな試作を行い、2ヶ月目以降の伴走改善につなげる支援。",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AIエージェント導入・活用支援",
+              "serviceType": "AIエージェント導入支援",
+              "provider": { "@id": "https://motoki418.github.io/portfolio/#business" },
+              "areaServed": "札幌市・北海道・オンライン",
+              "audience": "中小企業・小規模チーム"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Light",
+            "price": "100000",
+            "priceCurrency": "JPY",
+            "description": "2ヶ月目以降の軽量な月次伴走。月3〜4時間を目安に、月1回定例、チャット相談、月次の見直しメモを行う継続相談プラン。",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI顧問 Light",
+              "serviceType": "軽量AI顧問",
+              "provider": { "@id": "https://motoki418.github.io/portfolio/#business" },
+              "areaServed": "札幌市・北海道・オンライン",
+              "audience": "中小企業・小規模チーム"
+            }
           },
           {
             "@type": "Offer",
             "name": "Advisor",
-            "price": "50000",
+            "price": "150000",
             "priceCurrency": "JPY",
-            "description": "月次の相談、改善提案、定着支援を継続的に伴走するAI顧問プラン。"
+            "description": "2ヶ月目以降の標準的な月次AI顧問。月6〜8時間を目安に、月2回定例、チャット相談、月次改善メモ、提案と軽い調整を継続して行う伴走プラン。",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI顧問",
+              "serviceType": "月次AI顧問",
+              "provider": { "@id": "https://motoki418.github.io/portfolio/#business" },
+              "areaServed": "札幌市・北海道・オンライン",
+              "audience": "中小企業・小規模チーム"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Advisor Plus",
+            "price": "300000",
+            "priceCurrency": "JPY",
+            "description": "2ヶ月目以降の実装伴走型AI顧問。月12〜16時間を目安に、Advisor内容に加えて小さな実装・改善作業も継続して行うプラン。",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI顧問 Plus",
+              "serviceType": "実装伴走型AI顧問",
+              "provider": { "@id": "https://motoki418.github.io/portfolio/#business" },
+              "areaServed": "札幌市・北海道・オンライン",
+              "audience": "中小企業・小規模チーム"
+            }
           }
         ]
       }
@@ -1918,7 +2030,7 @@ section { padding: 104px 0; }
       "@id": "https://motoki418.github.io/portfolio/#website",
       "url": "https://motoki418.github.io/portfolio/",
       "name": "札幌の生成AI・AIエージェント導入支援｜中村元揮",
-      "description": "札幌で生成AI導入支援、AIエージェント開発、AI活用研修・勉強会、AI顧問を提供。現場に合わせた設計から定着支援まで伴走します。",
+      "description": "札幌で生成AI導入支援、AIエージェント導入・活用支援、AI活用研修・勉強会、AI顧問を提供。現場に合わせた設計から定着支援まで伴走します。",
       "inLanguage": "ja",
       "author": { "@id": "https://motoki418.github.io/portfolio/#person" },
       "hasPart": {
@@ -1927,6 +2039,45 @@ section { padding: 104px 0; }
         "url": "https://motoki418.github.io/portfolio/downloads/ai-readiness-checklist.pdf",
         "encodingFormat": "application/pdf"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://motoki418.github.io/portfolio/#faq",
+      "inLanguage": "ja",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "AIエージェント導入支援では何を作りますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "定型作業の下書き作成、情報整理、通知、転記、社内資料の確認補助などを、小さなワークフローや簡易ツールとして試作します。最終判断や公開前確認は人が行う前提で設計します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "中小企業が最初にAI化しやすい業務は何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "問い合わせ返信、議事録整理、社内FAQ、SNS投稿案、月次レポート、定型メールなど、毎日・毎週くり返していて確認手順を決めやすい業務から始めやすいです。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "札幌以外でも相談できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "札幌・北海道を中心に支援していますが、オンライン相談で道外からのご相談にも対応できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "料金はいくらからですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "初月Projectは30万円から、2ヶ月目以降の月次伴走はLightが月10万円、Advisorが月15万円、Advisor Plusが月30万円です。無料相談後に必要な場合のみ、StarterのAI活用診断・整理パックを5万円で実施できます。表示価格は税別です。"
+          }
+        }
+      ]
     }
   ]
 }
@@ -1940,6 +2091,8 @@ section { padding: 104px 0; }
     <nav class="header-nav" id="nav">
       <a href="#services">できること</a>
       <a href="#usecases">業種別</a>
+      <a href="#pricing">料金</a>
+      <a href="#process">進め方</a>
       <a href="#contact">お問い合わせ</a>
       <a href="#contact" class="nav-cta">30分無料相談</a>
     </nav>
@@ -1949,12 +2102,12 @@ section { padding: 104px 0; }
 <section class="hero" id="hero">
   <div class="container hero-inner">
     <div class="hero-content">
-      <h1 class="hero-title">議事録・資料作成・<br>社内確認を<br>AIで軽くする</h1>
-      <p class="hero-sub">札幌・北海道の中小企業向けに、生成AIとAIエージェントの導入を現実的に支援します。まずは毎週くり返している文章作成、確認、整理作業から、無理なく減らせるところを一緒に見つけます。</p>
+      <h1 class="hero-title">毎日・毎週の<br>PC作業を<br>AIエージェントで軽くする</h1>
+      <p class="hero-sub">札幌・北海道の中小企業向けに、事務、営業、秘書業務、SNS、社内確認、開発まわりの反復作業を、業務の流れに合わせて整理・試作・定着まで支援します。</p>
       <ul class="hero-points">
-        <li>毎週くり返す文章作成、確認、整理作業から優先して見直します。</li>
-        <li>相談後は、社内で話せる整理メモと最初に試すテーマをお返しします。</li>
-        <li>開発経験をもとに、必要なら簡易ツールやワークフロー試作まで対応します。</li>
+        <li>特定の人に依存している確認、整理、下書き作業から優先して見直します。</li>
+        <li>相談後は、社内で話せる整理メモと、最初に試すこと・続けて見直すことをお返しします。</li>
+        <li>人の最終確認を前提に、簡易ツールやワークフローを試しながら整えます。</li>
       </ul>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">30分無料相談を申し込む</a>
@@ -1962,11 +2115,9 @@ section { padding: 104px 0; }
       </div>
       <div class="hero-trust-chips">
         <span>札幌・北海道の中小企業向け</span>
-        <span>初回相談後に整理メモ返却</span>
-        <span>開発経験をもとに実装まで対応</span>
+        <span>初回相談後に整理メモをお渡し</span>
         <span>通常24時間以内に返信</span>
       </div>
-      <p class="hero-note">売り込み前提ではなく、今すぐ導入すべきかどうかから整理します。</p>
     </div>
     <div class="hero-visual reveal reveal-delay-1">
       <div class="strategy-board">
@@ -1989,15 +2140,15 @@ section { padding: 104px 0; }
               <ul>
                 <li>業務整理メモ</li>
                 <li>優先順位リスト</li>
-                <li>初回プロンプト案</li>
+              <li>初回プロンプト案と見直し観点</li>
               </ul>
             </div>
             <div class="memo-card">
               <h3>次の進め方</h3>
               <ul>
-                <li>Starterで整理</li>
-                <li>Projectで試作</li>
-                <li>Advisorで定着改善</li>
+                <li>必要ならStarterで整理</li>
+                <li>初月Projectで試作</li>
+                <li>月次伴走で改善</li>
               </ul>
             </div>
           </div>
@@ -2044,7 +2195,7 @@ section { padding: 104px 0; }
       <span class="section-label reveal">Problems</span>
       <h2 class="section-title reveal">AIを入れたいけれど、<br>こう止まりやすい</h2>
     </div>
-    <p class="section-lead text-center mx-auto reveal">実際のご相談では、「AIを使いたい」より先に、現場のどこで詰まっているかを整理することが多いです。</p>
+    <p class="section-lead text-center mx-auto reveal">実際のご相談では、「AIを使いたい」より先に、現場のどこで詰まっているかを整理します。</p>
     <div class="problems-grid">
       <div class="problem-card reveal">
         <div class="problem-num">01</div>
@@ -2056,8 +2207,8 @@ section { padding: 104px 0; }
       <div class="problem-card reveal reveal-delay-1">
         <div class="problem-num">02</div>
         <div>
-          <p class="problem-text">議事録や資料作成が毎回重く、後回しになる</p>
-          <p class="problem-sub">会議後の整理、提案書の下書き、社内説明文など、毎回ゼロから作る作業が積み上がっている状態です。</p>
+          <p class="problem-text">特定の人しかできない作業が増えている</p>
+          <p class="problem-sub">確認、整理、判断材料づくりが担当者依存になると、休みや繁忙期に業務が止まりやすくなります。</p>
         </div>
       </div>
       <div class="problem-card reveal reveal-delay-2">
@@ -2070,12 +2221,12 @@ section { padding: 104px 0; }
       <div class="problem-card reveal reveal-delay-3">
         <div class="problem-num">04</div>
         <div>
-          <p class="problem-text">何をAI化すべきか決められない</p>
-          <p class="problem-sub">大きく作る前に、削減効果が見えやすく、現場が使いやすい業務を1つ選ぶことが重要です。</p>
+          <p class="problem-text">どこにAIを活用したらよいか分からない</p>
+          <p class="problem-sub">本格運用する前に、削減効果が見えやすく、現場が使いやすい業務を1つ選ぶことが重要です。</p>
         </div>
       </div>
     </div>
-    <div class="problems-footer reveal">札幌・北海道の中小企業向けに、派手さよりも現実的な導入と定着を重視して支援します。</div>
+    <div class="problems-footer reveal">札幌・北海道の中小企業向けに、導入と定着に必要な設計から支援します。</div>
   </div>
 </section>
 
@@ -2085,7 +2236,7 @@ section { padding: 104px 0; }
       <span class="section-label reveal">Services</span>
       <h2 class="section-title reveal">できること</h2>
     </div>
-    <p class="section-lead text-center mx-auto reveal">相談だけで終わらず、整理、試作、社内展開、継続改善まで、必要な深さでご一緒します。</p>
+    <p class="section-lead text-center mx-auto reveal">整理、試作、社内展開、継続改善を、必要な深さでご一緒します。人の確認を残しながら、毎回のPC作業を軽くする形へ整えていきます。</p>
     <div class="services-frame reveal">
       <div class="services-grid">
         <div class="service-card">
@@ -2096,9 +2247,9 @@ section { padding: 104px 0; }
         </div>
         <div class="service-card">
           <span class="service-eyebrow">02 / Build</span>
-          <h3>AIエージェント開発</h3>
-          <p>定型作業や情報整理を支える簡易ツール、ワークフロー、自動化の仕組みを設計します。必要に応じて最小構成で試作します。</p>
-          <div class="service-fit"><strong>こんな会社向け</strong>転記、通知、下書き作成、情報整理などの定型作業を小さく自動化したい。</div>
+          <h3>AIエージェント導入・活用支援</h3>
+          <p>下書き作成、情報整理、通知、転記、社内資料の確認補助など、PCで毎回行っている作業を支える仕組みを設計します。人が確認する範囲を決めたうえで小さく試し、使ってみた結果に合わせて手順やテンプレートを整えます。</p>
+          <div class="service-fit"><strong>こんな会社向け</strong>担当者依存の定型作業を、手順とテンプレートに落とし込み、他の社員も一定品質で実行できる状態に近づけたい。</div>
         </div>
         <div class="service-card">
           <span class="service-eyebrow">03 / Training</span>
@@ -2109,10 +2260,11 @@ section { padding: 104px 0; }
         <div class="service-card">
           <span class="service-eyebrow">04 / Monthly</span>
           <h3>AI顧問（月次契約）</h3>
-          <p>継続的な壁打ち相手として、月次の振り返り、次の打ち手、社内相談、運用改善を伴走します。内製化したい企業とも相性が良いです。</p>
+          <p>継続的な相談相手として、月次の振り返り、次の打ち手、社内相談、運用改善を伴走します。導入後に出てくる迷いや改善点を一緒に整理します。</p>
           <div class="service-fit"><strong>こんな会社向け</strong>月次で相談しながら、社内にAI活用を定着させたい。</div>
         </div>
       </div>
+      <div class="services-option">生成AI導入支援は、ChatGPTなどを業務に合わせて安全に使うために、対象業務、利用ルール、プロンプト、確認手順を整理する支援です。AIエージェント導入支援は、定型作業の下書き作成、情報整理、通知、転記などを小さなワークフローや簡易ツールとして試作・運用する支援です。</div>
       <div class="services-option">必要に応じて、公開導線の整理や簡易サイト制作までまとめて対応できます。AIだけ切り離さず、事業全体の導線として見ます。</div>
     </div>
   </div>
@@ -2122,7 +2274,7 @@ section { padding: 104px 0; }
   <div class="container">
     <div class="resource-strip reveal">
       <div>
-        <p class="resource-strip-eyebrow">Free PDF</p>
+        <p class="resource-strip-eyebrow">Checklist / PDFあり</p>
         <h3>中小企業向け AI導入チェックリスト</h3>
         <p>最初に見るべき業務、導入前に確認すること、30分相談で整理できることをまとめた社内共有用のチェックリストです。</p>
       </div>
@@ -2136,18 +2288,18 @@ section { padding: 104px 0; }
     <div class="trust-grid">
       <div class="trust-panel reveal">
         <h3>こういう会社の相談先として向いています</h3>
-        <p>AIに強い専任者がまだいない会社や、まず1つの業務から小さく始めたい会社と相性がいいです。いきなり全社導入を目指すより、現場で回る形を一緒に作っていく進め方です。</p>
+        <p>AIに強い専任者がまだいない場合や、まず1つの業務から小さく始めたい場合に、相談しやすい進め方です。いきなり全社導入を目指すより、現場で回る形を一緒に見直しながら作っていきます。</p>
         <ul class="trust-list">
-          <li>何から始めればいいか分からず、まず整理役がほしい</li>
+          <li>何から始めればいいか分からないので、まず整理役がほしい</li>
           <li>非エンジニア中心の組織でも使える形にしたい</li>
           <li>単なる研修ではなく、業務に当てはめるところまで見てほしい</li>
           <li>AIだけでなく、必要なら公開導線や簡易サイトまでまとめて相談したい</li>
         </ul>
-        <p class="trust-note">合わない場合は、今はまだ導入しないほうがいいという判断もそのままお伝えします。</p>
+        <div class="service-fit"><strong>AIに任せる前に決めること</strong>手順、テンプレート、人が確認する境界、入力してよい情報、使う権限を先に整理します。</div>
       </div>
       <div class="trust-panel trust-panel--warm reveal reveal-delay-1">
         <h3>初回相談のあとに残すもの</h3>
-        <p>相談だけで終わっても、次に社内で話せる材料が手元に残るように進めます。導入の可否を判断できる、短い実務メモをお返しします。</p>
+        <p>初回相談では、次に社内で話せる材料が手元に残るように進めます。必要な場合は、診断・初月Project・月次伴走へつなげられる短い実務メモをお返しします。</p>
         <ul class="deliverables-list">
           <li><strong>業務整理メモ</strong>どの業務が重いのか、どこがAI向きかを短く整理します。</li>
           <li><strong>優先順位リスト</strong>まず試す業務、後回しでよい業務、人が確認すべき業務を分けます。</li>
@@ -2219,83 +2371,23 @@ section { padding: 104px 0; }
         </div>
         <div class="usecase-card">
           <span>05 / 管理部門・バックオフィス</span>
-          <h3>定型文書と社内確認を軽くする</h3>
-          <p>議事録、稟議の下書き、社内FAQ、規程確認、Excel集計、月次レポート作成を支援します。</p>
+          <h3>定型文書、秘書業務、社内確認を軽くする</h3>
+          <p>議事録、稟議の下書き、日程調整、社内FAQ、規程確認、Excel集計、月次レポート作成を支援します。</p>
           <div class="usecase-flow">
             <p><b>Before</b>議事録、稟議、FAQ、月次レポートが担当者依存になっている。</p>
             <p><b>After</b>決定事項、未決事項、タスク、確認点を一定の型で整理する。</p>
           </div>
-          <strong>例：会議メモから決定事項、未決事項、担当者別タスクを自動で整理する。</strong>
+          <strong>例：会議メモから決定事項、未決事項、担当者別タスクを一定の型で整理する。</strong>
         </div>
         <div class="usecase-card">
           <span>06 / 経営者・小規模チーム</span>
           <h3>判断材料と実行タスクを整理する</h3>
-          <p>アイデアの壁打ち、競合調査、採用文、社内ルール、優先順位づけを短時間で形にします。</p>
+          <p>アイデアの壁打ち、競合調査、採用文、社内ルール、開発・Web運用の改善案、優先順位づけを短時間で形にします。</p>
           <div class="usecase-flow">
             <p><b>Before</b>頭の中の方針やアイデアが整理されず、実行が後回しになる。</p>
             <p><b>After</b>今週やること、任せること、後回しにすることへ分解する。</p>
           </div>
           <strong>例：頭の中の方針を整理し、今週やること・任せること・後回しにすることに分ける。</strong>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="portfolio-section" id="portfolio">
-  <div class="container">
-    <div class="text-center">
-      <span class="section-label reveal">Works</span>
-      <h2 class="section-title reveal">必要に応じてWeb周りも対応できます</h2>
-    </div>
-    <p class="section-lead text-center mx-auto reveal">AI支援が主軸です。公開導線、簡易LP、問い合わせフォームなどが必要な場合だけ、補助的にまとめて見ます。</p>
-    <div class="portfolio-grid">
-      <div class="portfolio-card reveal">
-        <div class="portfolio-thumb">
-          <div class="portfolio-shell">
-            <div class="pt-bar"><div class="pt-dots"><span></span><span></span><span></span></div><div class="pt-url">sample-clinic-aoba.vercel.app</div></div>
-            <div class="pt-body">
-              <div class="pt-title">情報整理と予約導線を<br>静かに整える</div>
-              <div class="pt-btn pt-btn--clinic">医療系サンプル</div>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-body">
-          <h3>あおば内科クリニック</h3>
-          <p>内科クリニック向けサンプル。診療案内、アクセス、Web予約導線を分かりやすく整理した構成です。</p>
-          <a href="https://sample-clinic-aoba.vercel.app" target="_blank" class="portfolio-link">サンプルを見る <span>&rarr;</span></a>
-        </div>
-      </div>
-      <div class="portfolio-card reveal reveal-delay-1">
-        <div class="portfolio-thumb">
-          <div class="portfolio-shell">
-            <div class="pt-bar"><div class="pt-dots"><span></span><span></span><span></span></div><div class="pt-url">sample-restaurant-daichi.vercel.app</div></div>
-            <div class="pt-body">
-              <div class="pt-title">店の魅力を言葉と導線で<br>伝える</div>
-              <div class="pt-btn pt-btn--restaurant">飲食店サンプル</div>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-body">
-          <h3>炭火キッチン だいち</h3>
-          <p>飲食店向けサンプル。メニュー、店舗情報、予約導線を整理し、来店前に必要な情報を迷わず読める形にしています。</p>
-          <a href="https://sample-restaurant-daichi.vercel.app" target="_blank" class="portfolio-link">サンプルを見る <span>&rarr;</span></a>
-        </div>
-      </div>
-      <div class="portfolio-card reveal reveal-delay-2">
-        <div class="portfolio-thumb">
-          <div class="portfolio-shell">
-            <div class="pt-bar"><div class="pt-dots"><span></span><span></span><span></span></div><div class="pt-url">sample-bonesetter-genki.vercel.app</div></div>
-            <div class="pt-body">
-              <div class="pt-title">初回相談につながる<br>安心感を設計する</div>
-              <div class="pt-btn pt-btn--bonesetter">整骨院サンプル</div>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-body">
-          <h3>げんき整骨院</h3>
-          <p>整骨院向けサンプル。初めての方が不安なく読める順番で、施術案内や相談導線をまとめた構成です。</p>
-          <a href="https://sample-bonesetter-genki.vercel.app" target="_blank" class="portfolio-link">サンプルを見る <span>&rarr;</span></a>
         </div>
       </div>
     </div>
@@ -2308,87 +2400,121 @@ section { padding: 104px 0; }
       <span class="section-label reveal">Pricing</span>
       <h2 class="section-title reveal">料金の目安</h2>
     </div>
-    <p class="section-lead text-center mx-auto reveal">まずは小さく始めることを前提にしています。初回相談のなかで、無理に広げず、どこまでやるのが適切かを一緒に決めます。</p>
-    <div class="text-center"><span class="pricing-intro reveal">相談だけで終えても大丈夫です。向いている場合だけ、次の打ち手をご提案します。</span></div>
+    <p class="section-lead text-center mx-auto reveal">初月に対象業務を決めて小さく試し、2ヶ月目以降は月次で使われ方を見ながら改善します。診断だけ、試作だけで終わらせず、必要に応じて伴走できる形にしています。</p>
+    <div class="text-center"><span class="pricing-intro reveal">表示価格は税別です。無料相談で現状を確認し、初月Projectと月次伴走の必要性を整理します。</span></div>
+
+    <div class="pricing-project">
+      <div class="pricing-card pricing-card--featured reveal">
+        <div class="pricing-project-main">
+          <span class="pricing-badge">First Month</span>
+          <p class="pricing-plan-label">Project</p>
+          <div class="pricing-amount">
+            <span class="pricing-amount-num">30</span>
+            <span class="pricing-amount-unit">万円〜</span>
+          </div>
+          <p class="pricing-monthly">初月の導入設計・試作 / 2〜4週間・税別</p>
+          <p class="pricing-summary">対象業務を1つ選び、入力、整理、下書き、人の確認までの流れを小さく試します。稼働目安は15〜25時間です。</p>
+        </div>
+        <div class="pricing-project-detail">
+          <ul class="pricing-features">
+            <li><span class="feat-icon feat-check">✓</span>対象業務の選定</li>
+            <li><span class="feat-icon feat-check">✓</span>プロンプト・運用設計</li>
+            <li><span class="feat-icon feat-check">✓</span>小さな試作と社内説明メモ</li>
+            <li><span class="feat-icon feat-check">✓</span>2ヶ月目以降に見直すポイントの整理</li>
+          </ul>
+          <div class="pricing-deliverables">
+            <p>初月に整えるもの</p>
+            <ul>
+              <li>プロンプト集・テンプレート</li>
+              <li>簡易ワークフローまたは試作物</li>
+              <li>月次伴走で改善する優先テーマ</li>
+            </ul>
+          </div>
+          <a href="#contact" class="pricing-cta pricing-cta--primary">初月Projectについて相談する</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="pricing-subnote reveal">無料相談後、まだ対象業務が絞れない場合は、任意でStarterのAI活用診断・整理パック（5万円 / 2〜3時間）から始められます。</p>
 
     <div class="pricing-cards">
       <div class="pricing-card reveal">
-        <p class="pricing-plan-label">Starter</p>
+        <p class="pricing-plan-label">Light</p>
         <div class="pricing-amount">
-          <span class="pricing-amount-num">3</span>
-          <span class="pricing-amount-unit">万円</span>
+          <span class="pricing-amount-num">10</span>
+          <span class="pricing-amount-unit">万円 / 月</span>
         </div>
-        <p class="pricing-monthly">初回の整理・提案向け / 単発</p>
-        <p class="pricing-summary">まず状況を整理して、小さく試すテーマを決めたい企業向けです。</p>
+        <p class="pricing-monthly">軽量伴走 / 2ヶ月目以降・税別</p>
+        <p class="pricing-summary">月1回の定例で、試した内容の振り返りと次の改善点を整理します。稼働目安は月3〜4時間です。</p>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
-          <li><span class="feat-icon feat-check">✓</span>現状ヒアリング</li>
-          <li><span class="feat-icon feat-check">✓</span>AI活用候補の洗い出し</li>
-          <li><span class="feat-icon feat-check">✓</span>優先順位の整理メモ</li>
-          <li><span class="feat-icon feat-check">✓</span>次の一歩の提案</li>
+          <li><span class="feat-icon feat-check">✓</span>月1回定例</li>
+          <li><span class="feat-icon feat-check">✓</span>月の稼働時間内でチャット相談</li>
+          <li><span class="feat-icon feat-check">✓</span>月次の見直しメモ</li>
+          <li><span class="feat-icon feat-check">✓</span>稼働目安 月3〜4時間</li>
         </ul>
         <div class="pricing-deliverables">
-          <p>手元に残るもの</p>
+          <p>向いているケース</p>
           <ul>
-            <li>業務整理メモ</li>
-            <li>優先順位リスト</li>
-            <li>次の一歩の提案</li>
+            <li>小さく継続相談したい</li>
+            <li>社内で運用しながら時々見直したい</li>
+            <li>実装作業は最小限でよい</li>
           </ul>
         </div>
-        <a href="#contact" class="pricing-cta">30分無料相談から始める</a>
+        <a href="#contact" class="pricing-cta">Lightについて相談する</a>
       </div>
 
       <div class="pricing-card pricing-card--featured reveal reveal-delay-1">
         <span class="pricing-badge">Standard</span>
-        <p class="pricing-plan-label">Project</p>
+        <p class="pricing-plan-label">Advisor</p>
         <div class="pricing-amount">
-          <span class="pricing-amount-num">30</span>
-          <span class="pricing-amount-unit">万円〜</span>
+          <span class="pricing-amount-num">15</span>
+          <span class="pricing-amount-unit">万円 / 月</span>
         </div>
-        <p class="pricing-monthly">導入支援・試作 / 2週間〜</p>
-        <p class="pricing-summary">対象業務を決め、必要な設計や試作まで進める、いちばん相談されやすいプランです。</p>
+        <p class="pricing-monthly">標準伴走・定着支援 / 2ヶ月目以降・税別</p>
+        <p class="pricing-summary">月2回の定例とチャット相談で、社内に使われる形へ継続的に整えます。稼働目安は月6〜8時間です。</p>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
-          <li><span class="feat-icon feat-check">✓</span>対象業務の選定</li>
-          <li><span class="feat-icon feat-check">✓</span>プロンプト・運用設計</li>
-          <li><span class="feat-icon feat-check">✓</span>必要に応じた簡易開発</li>
-          <li><span class="feat-icon feat-check">✓</span>社内共有用の導入メモ</li>
+          <li><span class="feat-icon feat-check">✓</span>月2回定例</li>
+          <li><span class="feat-icon feat-check">✓</span>月の稼働時間内でチャット相談</li>
+          <li><span class="feat-icon feat-check">✓</span>月次改善メモ</li>
+          <li><span class="feat-icon feat-check">✓</span>提案と軽い調整</li>
         </ul>
         <div class="pricing-deliverables">
-          <p>手元に残るもの</p>
+          <p>向いているケース</p>
           <ul>
-            <li>プロンプト集</li>
-            <li>簡易ワークフロー</li>
-            <li>社内説明メモと試作物</li>
+            <li>標準的に伴走してほしい</li>
+            <li>テンプレートやルールを育てたい</li>
+            <li>社内展開の相談相手がほしい</li>
           </ul>
         </div>
-        <a href="#contact" class="pricing-cta pricing-cta--primary">相談して進め方を決める</a>
+        <a href="#contact" class="pricing-cta pricing-cta--primary">Advisorについて相談する</a>
       </div>
 
       <div class="pricing-card reveal reveal-delay-2">
-        <p class="pricing-plan-label">Advisor</p>
+        <p class="pricing-plan-label">Advisor Plus</p>
         <div class="pricing-amount">
-          <span class="pricing-amount-num">5</span>
+          <span class="pricing-amount-num">30</span>
           <span class="pricing-amount-unit">万円 / 月</span>
         </div>
-        <p class="pricing-monthly">継続伴走・定着支援 / 月次</p>
-        <p class="pricing-summary">導入後も継続的に相談しながら、社内に定着させたい企業向けです。</p>
+        <p class="pricing-monthly">実装伴走・改善作業込み / 2ヶ月目以降・税別</p>
+        <p class="pricing-summary">Advisor内容に加え、小さな実装や改善作業も月次で進めます。稼働目安は月12〜16時間です。</p>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
-          <li><span class="feat-icon feat-check-warm">✓</span>月次の振り返りと提案</li>
-          <li><span class="feat-icon feat-check-warm">✓</span>社内相談の壁打ち</li>
-          <li><span class="feat-icon feat-check-warm">✓</span>改善テーマの優先順位づけ</li>
-          <li><span class="feat-icon feat-check-warm">✓</span>運用の見直しと定着支援</li>
+          <li><span class="feat-icon feat-check-warm">✓</span>Advisor内容を含む</li>
+          <li><span class="feat-icon feat-check-warm">✓</span>小さな実装・改善作業</li>
+          <li><span class="feat-icon feat-check-warm">✓</span>運用ルールと試作物の見直し</li>
+          <li><span class="feat-icon feat-check-warm">✓</span>稼働目安 月12〜16時間</li>
         </ul>
         <div class="pricing-deliverables">
-          <p>手元に残るもの</p>
+          <p>向いているケース</p>
           <ul>
-            <li>月次改善ログ</li>
-            <li>次月の優先テーマ</li>
-            <li>運用見直しメモ</li>
+            <li>改善作業まで任せたい</li>
+            <li>複数業務に広げたい</li>
+            <li>重い開発は別見積で切り分けたい</li>
           </ul>
         </div>
-        <a href="#contact" class="pricing-cta">継続支援について相談する</a>
+        <a href="#contact" class="pricing-cta">Plusについて相談する</a>
       </div>
     </div>
 
@@ -2399,84 +2525,104 @@ section { padding: 104px 0; }
           <thead>
             <tr>
               <th style="width:30%">項目</th>
-              <th>Starter</th>
-              <th class="th-std">Project</th>
-              <th>Advisor</th>
+              <th>Light</th>
+              <th class="th-std">Advisor</th>
+              <th>Advisor Plus</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>向いているケース</td>
-              <td>まず整理したい</td>
-              <td class="td-std">小さく導入したい</td>
-              <td>社内に定着させたい</td>
+              <td>小さく継続相談したい</td>
+              <td class="td-std">標準的に伴走してほしい</td>
+              <td>改善作業まで任せたい</td>
             </tr>
             <tr>
               <td>提供形態</td>
-              <td>単発</td>
-              <td class="td-std">個別導入支援</td>
-              <td>月次伴走</td>
+              <td>軽量伴走</td>
+              <td class="td-std">標準伴走</td>
+              <td>実装伴走</td>
             </tr>
             <tr>
               <td>期間の目安</td>
-              <td>1回</td>
-              <td class="td-std">2週間〜</td>
-              <td>月次契約</td>
+              <td>2ヶ月目以降</td>
+              <td class="td-std">2ヶ月目以降</td>
+              <td>2ヶ月目以降</td>
+            </tr>
+            <tr>
+              <td>稼働目安</td>
+              <td>月3〜4時間</td>
+              <td class="td-std">月6〜8時間</td>
+              <td>月12〜16時間</td>
             </tr>
             <tr>
               <td>手元に残るもの</td>
-              <td>整理メモ・優先順位</td>
-              <td class="td-std">プロンプト集・試作物</td>
-              <td>月次改善ログ</td>
+              <td>見直しメモ</td>
+              <td class="td-std">月次改善ログ</td>
+              <td>改善ログ・小さな実装</td>
             </tr>
             <tr>
               <td>現状ヒアリング</td>
-              <td><span class="ct-check">✓</span></td>
-              <td class="td-std"><span class="ct-check">✓</span></td>
-              <td><span class="ct-check">✓</span></td>
+              <td>初月Projectで実施</td>
+              <td class="td-std">初月Projectで実施</td>
+              <td>初月Projectで実施</td>
             </tr>
             <tr>
               <td>活用候補の整理</td>
-              <td><span class="ct-check">✓</span></td>
-              <td class="td-std"><span class="ct-check">✓</span></td>
-              <td><span class="ct-check">✓</span></td>
+              <td>月次で見直し</td>
+              <td class="td-std">月次で見直し</td>
+              <td>月次で見直し</td>
             </tr>
             <tr>
               <td>研修・勉強会</td>
               <td><span class="ct-dash">—</span></td>
-              <td class="td-std">必要に応じて</td>
-              <td>継続相談内で対応</td>
+              <td class="td-std">稼働時間内で相談</td>
+              <td>稼働時間内で相談</td>
             </tr>
             <tr>
               <td>簡易開発・エージェント</td>
               <td><span class="ct-dash">—</span></td>
-              <td class="td-std"><span class="ct-check">✓</span></td>
-              <td>改善に応じて相談</td>
+              <td class="td-std">軽い調整</td>
+              <td>小さな実装・改善作業</td>
             </tr>
             <tr>
               <td>運用ルール設計</td>
-              <td><span class="ct-dash">—</span></td>
+              <td>確認</td>
               <td class="td-std"><span class="ct-check">✓</span></td>
               <td><span class="ct-check">✓</span></td>
             </tr>
             <tr>
               <td>継続伴走</td>
-              <td><span class="ct-dash">—</span></td>
-              <td class="td-std">初期導入まで</td>
+              <td><span class="ct-check">✓</span></td>
+              <td class="td-std"><span class="ct-check-warm">✓</span></td>
               <td><span class="ct-check-warm">✓</span></td>
             </tr>
             <tr>
               <td>料金</td>
-              <td><span class="ct-price">3万円</span></td>
-              <td class="td-std"><span class="ct-price">30万円〜</span></td>
-              <td><span class="ct-price">5万円 / 月</span></td>
+              <td><span class="ct-price">10万円/月（税別）</span></td>
+              <td class="td-std"><span class="ct-price">15万円/月（税別）</span></td>
+              <td><span class="ct-price">30万円/月（税別）</span></td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
 
-    <p class="pricing-note reveal">実際の金額は、対象業務の数、社内調整の有無、必要な試作範囲で変わります。初回相談では、無理に大きくせず、今の段階で必要な範囲だけをご提案します。</p>
+    <p class="pricing-note reveal">初月Projectは30万円〜です。実際の金額は、対象業務の数、社内調整の有無、必要な試作範囲で変わります。緊急対応は含めず、重い開発や継続的な実装は別見積として切り分けます。</p>
+    <div class="advisor-bridge reveal">
+      <div class="advisor-bridge-head">
+        <p>Monthly Support</p>
+        <h3>導入後も、使われる形へ育てます</h3>
+      </div>
+      <div class="advisor-bridge-body">
+        <p>生成AIは、最初の設定よりも「現場で使われ続ける形に直すこと」で差が出ます。2ヶ月目以降は、月次で振り返りながらテンプレート、ルール、次に広げる業務を整えます。</p>
+        <ul>
+          <li>Lightは月3〜4時間、Advisorは月6〜8時間、Advisor Plusは月12〜16時間を目安に対応します。</li>
+          <li>チャット相談は回数ではなく月の稼働時間内で対応し、原則1営業日以内に返信します。</li>
+          <li>緊急対応は含めず、重い開発は別見積に分けます。</li>
+        </ul>
+      </div>
+    </div>
     <div class="pricing-bottom-cta reveal">
       <a href="#contact" class="cta-button">30分無料相談を申し込む</a>
     </div>
@@ -2487,34 +2633,34 @@ section { padding: 104px 0; }
   <div class="container">
     <div class="text-center">
       <span class="section-label reveal">Process</span>
-      <h2 class="section-title reveal">プランに合わせた進め方</h2>
+      <h2 class="section-title reveal">小さく始めて、月次で育てる進め方</h2>
     </div>
-    <p class="section-lead text-center mx-auto reveal">Starterは整理、Projectは試作、Advisorは定着改善です。最初から大きく作らず、相談内容に合わせて必要な範囲だけ進めます。</p>
+    <p class="section-lead text-center mx-auto reveal">無料相談で方向性を確認し、必要ならStarterで整理します。初月Projectで1つの業務を試し、2ヶ月目以降はLight / Advisor / Advisor Plusで使われ方を見ながら改善します。</p>
     <div class="process-grid">
       <div class="process-card reveal">
-        <p class="process-step">Starter / 1回</p>
-        <h3>まず整理する</h3>
-        <p>現状を聞き、AIを使う業務と使わない業務を分けます。まず試すテーマを絞り、社内で共有できる整理メモを作ります。</p>
+        <p class="process-step">Free / Starter</p>
+        <h3>相談して、必要なら整理する</h3>
+        <p>無料相談で現状を聞き、対象業務がまだ曖昧な場合はStarterでAIを使う業務と使わない業務を分けます。次に試すことと、継続して見直すことを整理します。</p>
         <ul>
           <li>対象業務の洗い出し</li>
           <li>導入テーマの優先順位づけ</li>
-          <li>次の一歩の提案</li>
+          <li>次に試すこと・見直すことの整理</li>
         </ul>
       </div>
       <div class="process-card reveal reveal-delay-1">
-        <p class="process-step">Project / 2週間〜</p>
-        <h3>小さく試作する</h3>
-        <p>ひとつの業務で試し、プロンプトや手順を整えます。必要に応じて、簡易ワークフローやAIエージェントの試作まで進めます。</p>
+        <p class="process-step">Project / 初月 2〜4週間</p>
+        <h3>1つの業務で試す</h3>
+        <p>15〜25時間を目安に、ひとつの業務で入力、整理、下書き、人の確認までの流れを試します。簡易ワークフローやAIエージェントを小さく作り、2ヶ月目以降に直すポイントまで見えるようにします。</p>
         <ul>
           <li>プロンプト・テンプレート作成</li>
           <li>必要に応じた簡易ツール試作</li>
-          <li>社内説明メモの作成</li>
+          <li>月次伴走で改善するテーマの整理</li>
         </ul>
       </div>
       <div class="process-card reveal reveal-delay-2">
-        <p class="process-step">Advisor / 月次</p>
-        <h3>定着と改善を続ける</h3>
-        <p>使ってみた結果を見ながら、残す運用と直す運用を整理します。次に広げる業務や、社内相談の扱い方を月次で見直します。</p>
+        <p class="process-step">Monthly / 2ヶ月目以降</p>
+        <h3>月次で改善を続ける</h3>
+        <p>Lightは月3〜4時間、Advisorは月6〜8時間、Advisor Plusは月12〜16時間を目安に、使われ方を見ながら運用を整えます。社員が一定品質で使えるよう、テンプレート、確認ルール、次に広げる業務を見直します。</p>
         <ul>
           <li>運用状況のレビュー</li>
           <li>テンプレートとルールの改善</li>
@@ -2533,12 +2679,20 @@ section { padding: 104px 0; }
     </div>
     <div class="faq-list reveal">
       <div class="faq-item">
-        <h3>相談だけで終わっても本当に大丈夫ですか？</h3>
-        <p>大丈夫です。初回相談では、今AIを入れるべきか、まだ整理を優先すべきかも含めてお伝えします。無理に契約を前提に進めません。</p>
+        <h3>まず相談だけでも大丈夫ですか？</h3>
+        <p>大丈夫です。初回相談では、今AIを入れるべきか、まず整理を優先すべきかも含めて確認します。必要な場合はStarter、初月Project、月次伴走のどこから進めるかを一緒に決めます。</p>
       </div>
       <div class="faq-item">
         <h3>生成AIを使ったことがなくても相談できますか？</h3>
         <p>問題ありません。ツール名や専門用語から入らず、今の業務で時間がかかっている作業を聞くところから始めます。</p>
+      </div>
+      <div class="faq-item">
+        <h3>AIエージェント導入支援では何を作りますか？</h3>
+        <p>定型作業の下書き作成、情報整理、通知、転記、社内資料の確認補助などを、小さなワークフローや簡易ツールとして試作します。最終判断や公開前確認は人が行う前提で設計します。</p>
+      </div>
+      <div class="faq-item">
+        <h3>中小企業が最初にAI化しやすい業務は何ですか？</h3>
+        <p>問い合わせ返信、議事録整理、社内FAQ、SNS投稿案、月次レポート、定型メールなど、毎日・毎週くり返していて確認手順を決めやすい業務から始めやすいです。</p>
       </div>
       <div class="faq-item">
         <h3>社内データをAIに入れて大丈夫ですか？</h3>
@@ -2557,12 +2711,32 @@ section { padding: 104px 0; }
         <p>相談できます。1人社長や少人数チームでも、議事録、メール、資料作成、問い合わせ対応など、毎週くり返す業務から整理できます。</p>
       </div>
       <div class="faq-item">
+        <h3>札幌以外でも相談できますか？</h3>
+        <p>札幌・北海道を中心に支援していますが、オンライン相談で道外からのご相談にも対応できます。</p>
+      </div>
+      <div class="faq-item">
+        <h3>料金はいくらからですか？</h3>
+        <p>初月Projectは30万円から、2ヶ月目以降の月次伴走はLightが月10万円、Advisorが月15万円、Advisor Plusが月30万円です。無料相談後に必要な場合のみ、StarterのAI活用診断・整理パックを5万円で実施できます。表示価格は税別です。</p>
+      </div>
+      <div class="faq-item">
         <h3>ChatGPTなどのツール費用は含まれますか？</h3>
         <p>各種AIツールやAPIの利用料は、原則として実費をご負担いただきます。無駄な契約が増えないよう、最小構成から提案します。</p>
       </div>
       <div class="faq-item">
         <h3>契約期間は決まっていますか？</h3>
-        <p>Starterは単発、Projectは2週間程度から、Advisorは月次契約を想定しています。実際の期間は対象業務と社内体制に合わせて調整します。</p>
+        <p>Projectは初月の2〜4週間程度を想定しています。2ヶ月目以降のLight、Advisor、Advisor Plusは月次で伴走しながら改善する前提です。実際の期間は対象業務と社内体制に合わせて調整します。</p>
+      </div>
+      <div class="faq-item">
+        <h3>初月Projectのあとに月次契約は必要ですか？</h3>
+        <p>必須ではありません。ただしAI活用は使い始めてから改善点が出やすいため、必要に応じて2ヶ月目以降のLight、Advisor、Advisor Plusで見直しを続けられる形にしています。</p>
+      </div>
+      <div class="faq-item">
+        <h3>Light、Advisor、Advisor Plusはどう選べばいいですか？</h3>
+        <p>小さく継続相談したい場合はLight、月2回の定例で標準的に伴走してほしい場合はAdvisor、小さな実装や改善作業まで任せたい場合はAdvisor Plusが目安です。</p>
+      </div>
+      <div class="faq-item">
+        <h3>Advisorのチャット相談に上限はありますか？</h3>
+        <p>回数ではなく、各月次プランの稼働時間内で優先順位をつけて対応します。返信は原則1営業日以内を目安にしていますが、緊急対応や重い開発作業は含みません。</p>
       </div>
       <div class="faq-item">
         <h3>Web制作も一緒に相談できますか？</h3>
@@ -2578,7 +2752,7 @@ section { padding: 104px 0; }
       <span class="section-label reveal">Profile</span>
       <h2 class="section-title reveal">プロフィール</h2>
     </div>
-    <p class="section-lead text-center mx-auto reveal">相談から実装まで、基本的に本人が直接対応します。整理だけで終わらせず、現場で使う形への落とし込みまで担当します。</p>
+    <p class="section-lead text-center mx-auto reveal">相談、試作、導入後の見直しまで、基本的に本人が直接対応します。現場で使う形へ整えながら伴走します。</p>
     <div class="profile-card reveal">
       <div class="profile-inner">
         <div class="profile-photo">
@@ -2587,11 +2761,11 @@ section { padding: 104px 0; }
         <div class="profile-text">
           <h3>中村元揮</h3>
           <p class="profile-name-en">Motoki Nakamura</p>
-          <p>札幌在住。中小企業向けに、生成AIの導入支援、AIエージェントの試作、社内で使い続けるための整理と定着支援を行っています。ご相談から実装まで、基本的に本人が直接対応します。</p>
+          <p>札幌在住。中小企業向けに、生成AIの導入支援、AIエージェントの試作、社内で使い続けるための整理と定着支援を行っています。ご相談、試作、導入後の見直しまで、基本的に本人が直接対応します。</p>
           <p>IT企業でのシステム開発経験を土台に、技術だけに寄りすぎず、現場の業務に合わせて整えることを大切にしています。派手な演出より、実際に運用できる形をつくるのが役割です。</p>
-          <p>AIの相談だけでなく、公開導線や簡易サイト制作までまとめて見られるので、「誰に何を頼めばいいか分からない」段階でも相談しやすい窓口として動けます。ご相談から実装まで、基本的に自分で直接対応します。</p>
+          <p>AIの相談だけでなく、公開導線や簡易サイト制作までまとめて見られるので、「誰に何を頼めばいいか分からない」段階でも相談しやすい窓口として動けます。</p>
           <div class="profile-points">
-            <span>相談から実装まで本人対応</span>
+            <span>相談から見直しまで本人対応</span>
             <span>札幌拠点</span>
             <span>開発経験あり</span>
             <span>AI導入の伴走支援</span>
@@ -2607,11 +2781,11 @@ section { padding: 104px 0; }
   <div class="container">
     <div class="contact-inner">
       <p class="contact-main-cta reveal">まず30分、<br>現状を聞かせてください</p>
-      <p class="contact-sub reveal">まだ課題が言語化できていなくても大丈夫です。どの業務が重いのか、AIで何ができそうか、今すぐ着手すべきかどうかも含めて一緒に整理します。初回相談後は、社内で共有できる簡単な整理メモもお返しします。</p>
+      <p class="contact-sub reveal">まだ課題が言語化できていなくても大丈夫です。毎日・毎週くり返しているPC作業、担当者依存になっている確認作業、AIで何ができそうかを一緒に整理します。初回相談後は、社内で共有できる簡単な整理メモもお返しします。</p>
       <div class="contact-assurance reveal">
         <span>売り込みなし</span>
         <span>オンライン相談可</span>
-        <span>相談後に整理メモ返却</span>
+        <span>相談後に整理メモをお渡し</span>
       </div>
       <form class="contact-form reveal" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="fa0c4986-834c-439c-bb39-e36f5be2f3c3">
@@ -2632,20 +2806,20 @@ section { padding: 104px 0; }
         </div>
         <div class="contact-form-group">
           <label for="cf-message">ご相談内容 <span class="required-pill">必須</span></label>
-          <textarea id="cf-message" name="message" placeholder="例：ChatGPTを契約したが使われていない、議事録作成を減らしたい、社内データの扱いが不安、など。" required></textarea>
+          <textarea id="cf-message" name="message" placeholder="例：ChatGPTを契約したが使われていない、毎週のPC作業を減らしたい、担当者依存の確認作業を整理したい、社内データの扱いが不安、など。" required></textarea>
         </div>
         <button type="submit" class="contact-submit" id="contactSubmit">30分無料相談を申し込む</button>
-        <p class="contact-policy">送信することで<a href="privacy.html" target="_blank">プライバシーポリシー</a>に同意したものとみなします。</p>
+        <p class="contact-policy">送信することで<a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意したものとみなします。</p>
       </form>
       <div class="contact-success" id="contactSuccess">
         <p>お問い合わせありがとうございます。<br>24時間以内に初回のご返信をいたします。</p>
       </div>
       <div class="contact-social">
-        <a href="https://x.com/motoki0418" target="_blank">
+        <a href="https://x.com/motoki0418" target="_blank" rel="noopener">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           @motoki0418
         </a>
-        <a href="https://note.com/motoki_0418" target="_blank">
+        <a href="https://note.com/motoki_0418" target="_blank" rel="noopener">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3C3.9 3 3 3.9 3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5zm2 4h10v2H7V7zm0 4h7v2H7v-2z"/></svg>
           note
         </a>
