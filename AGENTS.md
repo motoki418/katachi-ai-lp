@@ -1,0 +1,57 @@
+# portfolio — プロジェクト固有指示
+
+## このディレクトリの境界
+
+**役割: 対外公開の営業LP とサンプルサイト**。GitHub Pages で公開する本番資材のみ置く。
+
+> 判定基準: 見込み顧客が直接見る公開物か？
+>
+> - ビジネスロジック・エージェント → `~/work/ai-biz`
+> - 個人ライフログ → `~/life`
+> - 学習・プロトタイプ → `~/dev`
+
+## 概要
+
+中村元揮（札幌・エンジニア）の個人ビジネスポートフォリオサイト。
+札幌でWeb制作・Web予約・AI業務改善を提供するサービスのLP。
+
+- 本番URL: https://motoki418.github.io/portfolio/
+- 配信: GitHub Pages（`main` ブランチへの push で即本番反映）
+- 公開LPのため、文言・価格・画像・計測タグの変更は見込み顧客に直接影響する本番変更として扱う
+
+## 技術スタック
+
+- 素の HTML / CSS / JavaScript（ビルドツール・パッケージマネージャなし）
+- Google Fonts（Noto Sans JP, Sora）を CDN 経由で読込
+- Google Analytics (gtag) 導入済み（測定ID `G-KV15FJJDYL`）
+
+## 構成
+
+- `index.html` — メインLP。CSS は `<style>` タグ内、JS は `<script>` タグ内に**インライン**で記述（外部 style.css / script.js は存在しない）
+- `privacy.html` — プライバシーポリシー
+- `samples/{bonesetter,clinic,restaurant}/` — 営業用サンプルサイト（業種別）。完成サイトの設計見本。AI機能デモは別物（`~/work/ai-biz/demos/`）
+- `favicon.svg`, `sitemap.xml`, `robots.txt`
+- `profile.png` — プロフィール画像（`.gitignore` の `!profile.png` で例外許可）
+- 他の `*.png` はスクリーンショット等で `.gitignore` により除外される
+
+## 開発規約
+
+- **CSS/JS はインライン方針を維持**：外部ファイル化しない（現状単一ページのため）。変更は `<style>` / `<script>` 内の既存セクションに追記・編集する
+- **CSSカスタムプロパティ**：カラー・スペーシングは `:root` の `--ink`, `--accent` 等を必ず使う（ハードコードした色値の新規追加禁止）
+- **レスポンシブ**：モバイル優先。画面幅変更で崩れやすい領域は profile section / hero / pricing — HTML変更時は必ず確認する
+- **日本語LP**：文言変更時は敬語レベルと語尾の統一感を崩さない
+- **画像追加**：`.gitignore` が `*.png` を除外しているので、本番で使う画像は `!filename.png` を追加する必要あり
+
+## Codex への指示
+
+- 作業開始時に必ず `git status --short --branch` を実行し、ブランチ・ahead/behind・dirty差分・未追跡ファイルを確認する
+- ユーザー既存のdirty差分や未追跡ファイルは、明示指示なしに編集・整形・削除・revertしない。必要な変更が既存dirtyファイルと重なる場合は、先に差分を読んで最小限の追記に留める
+- `git add .` は禁止。ステージングが必要な場合でも、明示指示後に対象ファイルを個別指定する
+- `git reset --hard`、`git checkout -- <path>`、`git clean`、`rm -rf`、画像ファイル削除など破壊的なGit操作・削除操作は、明示承認なしに実行しない
+- 変更前に `git diff` で意図しない差分がないか確認する
+- コミット前に index.html をブラウザで開いて実機確認する（プレビューツールがあれば活用）
+- `main` への push は即公開されるため、明示承認なしで実行しない
+- `git push --force`、画像ファイル削除、Google Analytics タグ変更・削除、公開文言の大幅変更、価格・問い合わせ導線の変更は明示承認なしで実行しない
+- 静的HTMLとして成立することを確認する。`index.html` 変更時はブラウザ表示、主要セクション、レスポンシブ、構造化データの破損有無を確認する
+- CSSの既存デザイントークン（`--ink`, `--accent`, `--surface` 系）を優先して使う
+- 過度な構造変更（外部CSS化、フレームワーク導入、ビルドツール追加）は提案ベースで、実装前に必ず相談する
