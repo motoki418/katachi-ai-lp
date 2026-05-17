@@ -3,10 +3,20 @@
 *.png
 !profile.png
 
+# secrets / credentials
+.env
+.env.*
+*.key
+*.pem
+id_rsa*
+credentials.json
+token.json
+service-account.json
+*.token
+
 # Claude Code
 .claude/worktrees/
 .claude/settings.local.json
-AGENTS.md
 
 # ローカル作業領域
 .plans/
