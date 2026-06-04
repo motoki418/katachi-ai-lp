@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://motoki418-portfolio.pages.dev/sitemap.xml
+Sitemap: https://ai-advisory-hokkaido.pages.dev/sitemap.xml
