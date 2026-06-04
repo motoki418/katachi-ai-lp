@@ -10,7 +10,7 @@
 
 - [ ] Public copy, pricing, CTAs, images, and analytics impact are described.
 - [ ] This PR does not remove Google Analytics or production images without approval.
-- [ ] `main` push / merge timing is safe for immediate GitHub Pages publication.
+- [ ] `main` push / merge timing is safe for immediate Cloudflare Pages publication.
 
 ## Browser check
 

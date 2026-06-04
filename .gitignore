@@ -18,6 +18,10 @@ service-account.json
 .claude/worktrees/
 .claude/settings.local.json
 
+# Cloudflare / Wrangler local cache
+.wrangler/
+
 # ローカル作業領域
 .plans/
+dist/
 .playwright-mcp/

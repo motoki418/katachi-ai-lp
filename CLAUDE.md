@@ -2,7 +2,7 @@
 
 ## このディレクトリの境界
 
-**役割: 対外公開の営業LP とサンプルサイト**。GitHub Pages で公開する本番資材のみ置く。
+**役割: 対外公開の営業LP とサンプルサイト**。Cloudflare Pages で公開する本番資材のみ置く。
 
 > 判定基準: 見込み顧客が直接見る公開物か？
 >
@@ -15,8 +15,9 @@
 中村元揮（札幌・エンジニア）の個人ビジネスポートフォリオサイト。
 札幌でWeb制作・Web予約・AI業務改善を提供するサービスのLP。
 
-- 本番URL: https://motoki418.github.io/portfolio/
-- 配信: GitHub Pages（`main` ブランチへの push で即本番反映）
+- 本番URL: https://motoki418-portfolio.pages.dev/
+- 配信: Cloudflare Pages（GitHub 連携時は `main` ブランチへの push が本番反映トリガー）
+- 推奨設定: Framework preset は `None`、Production branch は `main`、Build command は `sh scripts/build-cloudflare-pages.sh`、Build output directory は `dist`
 
 ## 技術スタック
 
