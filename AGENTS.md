@@ -15,7 +15,7 @@
 中村元揮（札幌・エンジニア）の個人ビジネスポートフォリオサイト。
 札幌でWeb制作・Web予約・AI業務改善を提供するサービスのLP。
 
-- 本番URL: https://motoki418-portfolio.pages.dev/
+- 本番URL: https://ai-advisory-hokkaido.pages.dev/
 - 配信: Cloudflare Pages（GitHub 連携時は `main` ブランチへの push が本番反映トリガー）
 - 推奨設定: Framework preset は `None`、Production branch は `main`、Build command は `sh scripts/build-cloudflare-pages.sh`、Build output directory は `dist`
 - 公開LPのため、文言・価格・画像・計測タグの変更は見込み顧客に直接影響する本番変更として扱う
