@@ -2,7 +2,7 @@
 
 ## このディレクトリの境界
 
-**役割: 対外公開の営業LP とサンプルサイト**。GitHub Pages で公開する本番資材のみ置く。
+**役割: 対外公開の営業LP とサンプルサイト**。Cloudflare Pages で公開する本番資材のみ置く。
 
 > 判定基準: 見込み顧客が直接見る公開物か？
 >
@@ -15,13 +15,14 @@
 中村元揮（札幌・エンジニア）の個人ビジネスポートフォリオサイト。
 札幌でWeb制作・Web予約・AI業務改善を提供するサービスのLP。
 
-- 本番URL: https://motoki418.github.io/portfolio/
-- 配信: GitHub Pages（`main` ブランチへの push で即本番反映）
+- 本番URL: https://motoki418-portfolio.pages.dev/
+- 配信: Cloudflare Pages（GitHub 連携時は `main` ブランチへの push が本番反映トリガー）
+- 推奨設定: Framework preset は `None`、Production branch は `main`、Build command は `sh scripts/build-cloudflare-pages.sh`、Build output directory は `dist`
 - 公開LPのため、文言・価格・画像・計測タグの変更は見込み顧客に直接影響する本番変更として扱う
 
 ## 技術スタック
 
-- 素の HTML / CSS / JavaScript（ビルドツール・パッケージマネージャなし）
+- 素の HTML / CSS / JavaScript（ビルドツール・パッケージマネージャなし。Cloudflare Pages 用の `dist/` 作成のみシェルスクリプトで行う）
 - Google Fonts（Noto Sans JP, Sora）を CDN 経由で読込
 - Google Analytics (gtag) 導入済み（測定ID `G-KV15FJJDYL`）
 
@@ -33,6 +34,7 @@
 - `favicon.svg`, `sitemap.xml`, `robots.txt`
 - `profile.png` — プロフィール画像（`.gitignore` の `!profile.png` で例外許可）
 - 他の `*.png` はスクリーンショット等で `.gitignore` により除外される
+- `scripts/build-cloudflare-pages.sh` — Cloudflare Pages の公開対象だけを `dist/` にコピーする
 
 ## 開発規約
 
@@ -50,7 +52,7 @@
 - `git reset --hard`、`git checkout -- <path>`、`git clean`、`rm -rf`、画像ファイル削除など破壊的なGit操作・削除操作は、明示承認なしに実行しない
 - 変更前に `git diff` で意図しない差分がないか確認する
 - コミット前に index.html をブラウザで開いて実機確認する（プレビューツールがあれば活用）
-- `main` への push は即公開されるため、明示承認なしで実行しない
+- `main` への push は Cloudflare Pages の本番反映トリガーになるため、明示承認なしで実行しない
 - `git push --force`、画像ファイル削除、Google Analytics タグ変更・削除、公開文言の大幅変更、価格・問い合わせ導線の変更は明示承認なしで実行しない
 - 静的HTMLとして成立することを確認する。`index.html` 変更時はブラウザ表示、主要セクション、レスポンシブ、構造化データの破損有無を確認する
 - CSSの既存デザイントークン（`--ink`, `--accent`, `--surface` 系）を優先して使う
