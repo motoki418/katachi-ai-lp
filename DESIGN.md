@@ -91,7 +91,7 @@
 | 用途 | サイズ | ウェイト | line-height | letter-spacing |
 |---|---|---|---|---|
 | Hero H1 | 50px（→900px: 40px →768px: 32px） | 900 | 1.2 | -0.045em |
-| Section title | 34px（→768px: 27px） | 900 | 1.35 | -0.03em |
+| Section title | 34px（→768px: 27px）※ | 900 | 1.35 | -0.03em |
 | Contact headline | 30px（→680px: 25px） | 900 | 1.45 | -0.03em |
 | Service card h3 | 22px | 900 | 1.4 | — |
 | Profile name | 22px | 900 | — | — |
@@ -105,6 +105,8 @@
 | Section label | 11px | 600–700 | — | 0.16em |
 | Nav link | 14.5px | 600 | — | — |
 | Note / meta | 12–13px | 400–600 | — | — |
+
+※ 長文タイトルの例外: `<br>` で意図した行割りが狭い画面で崩れる場合のみ、そのセクションに限定して `clamp(18px, 6vw, 27px)` で縮小してよい（適用例: concerns の「何から始めればいいか分からない」14文字）。
 
 ### 見出し階層ルール
 
