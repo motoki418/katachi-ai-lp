@@ -453,6 +453,11 @@ section { padding: 104px 0; }
   .concerns-grid { grid-template-columns: 1fr; }
 }
 
+@media (max-width: 768px) {
+  /* 2行目「何から始めればいいか分からない」(14文字) が1行に収まるよう画面幅に応じて縮小 */
+  .concerns-section .section-title { font-size: clamp(18px, 6vw, 27px); }
+}
+
 /* ── Services (相談できること) ── */
 .services-section { background: var(--surface); }
 
