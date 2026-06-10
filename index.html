@@ -70,6 +70,7 @@
   --shadow-header: 0 1px 0 rgba(31, 38, 44, 0.05);
   --radius: 18px;
   --radius-sm: 10px;
+  --radius-lg: 24px;
   --font-body: "Noto Sans JP", sans-serif;
   --font-display: "Sora", "Noto Sans JP", sans-serif;
   --max-w: 1060px;
@@ -104,6 +105,7 @@ img { max-width: 100%; height: auto; display: block; }
 section { padding: 104px 0; }
 .text-center { text-align: center; }
 .mx-auto { margin-left: auto; margin-right: auto; }
+.nowrap { white-space: nowrap; }
 
 @media (max-width: 768px) {
   section { padding: 72px 0; }
@@ -229,7 +231,8 @@ section { padding: 104px 0; }
   .header-brand { font-size: 14px; }
   .header-nav { gap: 16px; }
   .header-nav a { font-size: 13px; }
-  .header-nav a:not(.nav-cta):not(:last-of-type) { display: none; }
+  /* 簡略化: 先頭2リンクを隠し「進め方」「料金」と CTA を残す */
+  .header-nav a:nth-child(-n+2) { display: none; }
 }
 
 @media (max-width: 768px) {
@@ -338,7 +341,7 @@ section { padding: 104px 0; }
   font-size: 13px;
   color: var(--ink-muted);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
 }
 .hero-note::before {
@@ -347,6 +350,7 @@ section { padding: 104px 0; }
   border-radius: 50%;
   background: var(--warm);
   flex: 0 0 auto;
+  margin-top: 9px; /* 1行目（line-height 1.9 × 13px）の中央にドットを合わせる */
 }
 
 .hero-chips {
@@ -666,6 +670,8 @@ section { padding: 104px 0; }
 .faq-categories {
   display: grid;
   gap: 40px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .faq-category-title {
@@ -755,7 +761,7 @@ section { padding: 104px 0; }
 
 .profile-card {
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: var(--radius-lg);
   background: var(--surface-raised);
   box-shadow: var(--shadow-soft);
   padding: 40px;
@@ -881,7 +887,7 @@ section { padding: 104px 0; }
   gap: 20px;
   background: var(--surface-raised);
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: var(--radius-lg);
   padding: 36px;
   box-shadow: var(--shadow-soft);
 }
@@ -958,7 +964,7 @@ section { padding: 104px 0; }
   text-align: center;
   background: var(--surface-raised);
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: var(--radius-lg);
   font-size: 15px;
   color: var(--ink-muted);
   line-height: 1.9;
@@ -1019,7 +1025,7 @@ section { padding: 104px 0; }
 <section class="hero" id="hero">
   <div class="container">
     <p class="hero-label reveal">AI推進パートナー</p>
-    <h1 class="hero-title reveal">AI導入・AI活用を、<br>現場で使われる形にする</h1>
+    <h1 class="hero-title reveal">AI導入・AI活用を、<br>現場で使われる<span class="nowrap">形にする</span></h1>
     <p class="hero-sub reveal">相談・設計・試作・定着まで、中小企業のAI活用を一緒に進めます。</p>
     <div class="hero-actions reveal">
       <a href="#contact" class="btn-primary">自社でできることを相談する</a>

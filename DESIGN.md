@@ -69,6 +69,7 @@
 |---|---|---|
 | `--radius` | `18px` | カード・フォームグループ |
 | `--radius-sm` | `10px` | 小カード・インプット・小パネル |
+| `--radius-lg` | `24px` | 大型コンテナ（profile-card・contact-form・contact-success） |
 | `--ease` | `cubic-bezier(0.22,1,0.36,1)` | 全トランジションのイージング |
 
 ---
