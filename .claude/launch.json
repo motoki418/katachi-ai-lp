@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio-static",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8431"],
+      "port": 8431
+    },
+    {
+      "name": "prod-mirror",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8432", "--directory", "/tmp/prod-mirror"],
+      "port": 8432
+    }
+  ]
+}
