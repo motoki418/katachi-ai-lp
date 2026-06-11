@@ -254,6 +254,16 @@ position: relative; overflow: hidden;
 
 **使い方:** 業種バッジ → h3（対象業務）→ 成果数値 → 説明文の順。成果数値は実際の支援で出た値のみ記載する（推定値・誇張禁止）。
 
+### profile-facts（プロフィールの経歴ハイライト）
+
+```css
+.profile-facts { list-style: none; display: grid; gap: 8px; margin-top: 16px; }
+.profile-facts li { display: flex; gap: 8px; font-size: 13.5px; color: var(--ink-soft); line-height: 1.7; }
+/* li::before に warm のドット（5px・1行目中央に margin-top で位置合わせ） */
+```
+
+**使い方:** プロフィール本文の直下に置く。職務経歴書に基づく事実のみ記載する（誇張禁止）。
+
 ### num-badge（番号付きサークル）
 
 ```css
