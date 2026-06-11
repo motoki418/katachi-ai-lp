@@ -843,6 +843,28 @@ section { padding: 104px 0; }
   line-height: 1.9;
 }
 
+.profile-facts {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+}
+.profile-facts li {
+  display: flex;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.profile-facts li::before {
+  content: "";
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--warm);
+  flex: 0 0 auto;
+  margin-top: 9px; /* 1行目（line-height 1.7 × 13.5px）の中央にドットを合わせる */
+}
+
 .profile-links {
   display: flex;
   gap: 16px;
@@ -1376,7 +1398,13 @@ section { padding: 104px 0; }
         <div class="profile-text">
           <h3>中村元揮</h3>
           <p class="profile-name-en">Motoki Nakamura</p>
-          <p>札幌在住のエンジニア。中小企業のAI導入・AI活用支援を行っています。相談・設計・試作・導入後の見直しまで、基本的に本人が直接対応します。AIの活用方法を整理するところから、現場で使われる形まで一緒に進めます。</p>
+          <p>札幌在住のエンジニア。製造業・建設業の現場で働いたのちITエンジニアに転身し、2026年に独立しました。中小企業のAI導入・AI活用支援を、相談・設計・試作・導入後の見直しまで基本的に本人が直接対応します。</p>
+          <ul class="profile-facts">
+            <li>製造業・建設業の現場出身。中小企業の業務感覚を踏まえて支援します</li>
+            <li>製造・物流・自動車業界向けモバイルアプリの開発・保守に約3年従事</li>
+            <li>クラウド基盤の運用経験。社内データの扱いにも配慮して設計します</li>
+            <li>スクラムマスター資格（RSM / PSM I）を保有。社内に定着する進め方を整えます</li>
+          </ul>
           <div class="profile-links">
             <a href="https://x.com/motoki0418" target="_blank" rel="noopener" class="profile-link">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
