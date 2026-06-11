@@ -458,66 +458,92 @@ section { padding: 104px 0; }
   .concerns-section .section-title { font-size: clamp(18px, 6vw, 27px); }
 }
 
-/* ── Services (相談できること) ── */
-.services-section { background: var(--surface); }
+/* ── Cases (導入事例) ── */
+.cases-section { background: var(--surface); }
 
-.services-grid {
+.cases-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 
-.service-card {
+.case-card {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 30px 26px 28px;
   background: var(--surface-raised);
+  box-shadow: var(--shadow-soft);
   position: relative;
   overflow: hidden;
   transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
 }
-.service-card:hover {
+.case-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-card);
 }
 
-.service-card::before {
+.case-card::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
 }
-.service-card:nth-child(1)::before { background: var(--accent); }
-.service-card:nth-child(2)::before { background: var(--warm); }
-.service-card:nth-child(3)::before { background: var(--olive); }
-.service-card:nth-child(4)::before { background: var(--brick); }
+.case-card:nth-child(1)::before { background: var(--accent); }
+.case-card:nth-child(2)::before { background: var(--warm); }
+.case-card:nth-child(3)::before { background: var(--olive); }
 
-.service-step {
-  font-family: var(--font-display);
+.case-industry {
+  display: inline-block;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  margin-bottom: 12px;
+  color: var(--warm);
+  background: var(--warm-soft);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
 }
 
-.service-card h3 {
-  font-size: 22px;
+.case-card h3 {
+  font-size: 19px;
   font-weight: 900;
   color: var(--ink);
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   line-height: 1.4;
 }
 
-.service-card p {
+.case-metric {
+  font-family: var(--font-display);
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.case-desc {
   font-size: 14px;
   color: var(--ink-muted);
   line-height: 1.9;
 }
 
-@media (max-width: 680px) {
-  .services-grid { grid-template-columns: 1fr; }
+.cases-note {
+  margin-top: 24px;
+  padding: 16px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-warm);
+  font-size: 13px;
+  color: var(--ink-muted);
+  line-height: 1.75;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .cases-grid { grid-template-columns: 1fr; }
 }
 
 /* ── Process (進め方) ── */
@@ -593,8 +619,8 @@ section { padding: 104px 0; }
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
   margin-bottom: 24px;
 }
 
@@ -616,6 +642,7 @@ section { padding: 104px 0; }
 }
 .pricing-card:nth-child(1)::before { background: var(--accent); }
 .pricing-card:nth-child(2)::before { background: var(--warm); }
+.pricing-card:nth-child(3)::before { background: var(--olive); }
 .pricing-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-card);
@@ -672,7 +699,7 @@ section { padding: 104px 0; }
   margin-top: 36px;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 768px) {
   .pricing-grid { grid-template-columns: 1fr; }
 }
 
@@ -1023,7 +1050,7 @@ section { padding: 104px 0; }
     <a href="#hero" class="header-brand">中村元揮｜AI推進パートナー</a>
     <nav class="header-nav" id="nav">
       <a href="#concerns">お悩み</a>
-      <a href="#services">相談できること</a>
+      <a href="#cases">導入事例</a>
       <a href="#process">進め方</a>
       <a href="#pricing">料金</a>
       <a href="#contact" class="nav-cta">相談する</a>
@@ -1081,36 +1108,35 @@ section { padding: 104px 0; }
   </div>
 </section>
 
-<!-- ── 3. 相談できること ── -->
-<section class="services-section" id="services">
+<!-- ── 3. 導入事例 ── -->
+<section class="cases-section" id="cases">
   <div class="container">
     <div class="text-center">
-      <span class="section-label reveal">相談できること</span>
-      <h2 class="section-title reveal">4つの役割で支援します</h2>
+      <span class="section-label reveal">導入事例</span>
+      <h2 class="section-title reveal">業種ごとに、<br>こうした成果が出ています</h2>
     </div>
-    <p class="section-lead text-center mx-auto reveal">必要に応じて、メモ・利用ルール・プロンプト・簡易ツール・運用テンプレートまで一緒に作ります。</p>
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <p class="service-step">Step 01</p>
-        <h3>相談</h3>
-        <p>何から始めるかを一緒に整理します。AIツールの選定より先に、毎週くり返している確認・整理・転記・資料作成を洗い出します。</p>
+    <p class="section-lead text-center mx-auto reveal">いずれも、毎週くり返している1業務から小さく始めた実際の支援事例です。</p>
+    <div class="cases-grid">
+      <div class="case-card reveal">
+        <p class="case-industry">製造業</p>
+        <h3>見積書の作成</h3>
+        <p class="case-metric">週5時間 → 30分</p>
+        <p class="case-desc">過去見積の参照と転記に時間がかかっていた見積書づくりを、生成AIによるドラフト作成と転記の自動化で短縮。担当者は最終確認に集中できるようになりました。</p>
       </div>
-      <div class="service-card reveal reveal-delay-1">
-        <p class="service-step">Step 02</p>
-        <h3>設計</h3>
-        <p>業務に合わせた使い方を決めます。どの業務をAIに任せるか、人が確認する箇所はどこか、最初に試すプロンプトや手順を整えます。</p>
+      <div class="case-card reveal reveal-delay-1">
+        <p class="case-industry">士業</p>
+        <h3>顧客への定型連絡</h3>
+        <p class="case-metric">月30時間を削減</p>
+        <p class="case-desc">顧客ごとに調整しながら送っていた定型連絡を、生成AIの文案テンプレートに整理。内容を確認して送るだけの運用になりました。</p>
       </div>
-      <div class="service-card reveal reveal-delay-2">
-        <p class="service-step">Step 03</p>
-        <h3>試作</h3>
-        <p>小さく試せる形を作ります。文案作成・情報整理・通知・転記など、業務の一部を軽くする試作から始めます。</p>
-      </div>
-      <div class="service-card reveal reveal-delay-3">
-        <p class="service-step">Step 04</p>
-        <h3>定着</h3>
-        <p>社内で使われる状態にします。使われない理由を確認し、業務に近いテンプレートや手順に直しながら運用を整えます。</p>
+      <div class="case-card reveal reveal-delay-2">
+        <p class="case-industry">美容室</p>
+        <h3>予約確認の電話</h3>
+        <p class="case-metric">週8時間 → 30分</p>
+        <p class="case-desc">営業中の手を止めていた予約確認の電話を、チャットボットでの自動応対に置き換え。施術に集中できる時間が増えました。</p>
       </div>
     </div>
+    <p class="cases-note reveal">いずれも1ヶ月の試作と2ヶ月の定着支援で成果につながった事例です。守秘義務のため社名は非公開としています。</p>
   </div>
 </section>
 
@@ -1159,25 +1185,31 @@ section { padding: 104px 0; }
 <section class="pricing-section" id="pricing">
   <div class="container">
     <div class="text-center">
-      <span class="section-label reveal">料金目安</span>
+      <span class="section-label reveal">料金プラン</span>
       <h2 class="section-title reveal">まず無料相談で、<br>必要な範囲を確認します</h2>
     </div>
-    <p class="section-lead text-center mx-auto reveal">初回相談は1時間無料です。有料支援は対象業務と支援範囲を確認してから、内容と金額を提案します。</p>
+    <p class="section-lead text-center mx-auto reveal">初回相談は1時間無料です。支援の進め方に合わせて、3つの定額プランから選べます。</p>
     <div class="pricing-grid">
       <div class="pricing-card reveal">
-        <p class="pricing-card-label">スポット</p>
-        <h3>1ヶ月支援</h3>
-        <p>月次契約ではなく、1ヶ月だけ導入設計や試作をしたい場合の単体プランです。対象業務を絞って小さく始めます。</p>
-        <p class="pricing-price">初回相談後にご提案</p>
+        <p class="pricing-card-label">継続・隔週</p>
+        <h3>ライト伴走</h3>
+        <p>隔週ペースで定着を進めるプランです。月2回の60分MTGとチャット相談（営業日24時間以内に返信）で、AI活用の見直しと改善を続けます。</p>
+        <p class="pricing-price">月15万円（税別）</p>
       </div>
       <div class="pricing-card reveal reveal-delay-1">
-        <p class="pricing-card-label">継続</p>
-        <h3>月次伴走</h3>
-        <p>定期的な見直しと改善を続けながら、AI活用を社内に定着させていくプランです。週次MTGと月次定例で進捗を確認します。</p>
-        <p class="pricing-price">初回相談後にご提案</p>
+        <p class="pricing-card-label">継続・週次</p>
+        <h3>集中伴走</h3>
+        <p>立ち上げ期を週次で一気に進めるプランです。週1回の60分MTGと月次定例、チャット相談で、試作から定着までを最短で形にします。</p>
+        <p class="pricing-price">月25万円（税別）</p>
+      </div>
+      <div class="pricing-card reveal reveal-delay-2">
+        <p class="pricing-card-label">単発</p>
+        <h3>1ヶ月支援</h3>
+        <p>現状整理・対象業務の設計・試作・運用手順書づくりまでを1ヶ月で行う単発パッケージです。まず小さく試したい場合に向いています。</p>
+        <p class="pricing-price">40万円（税別）</p>
       </div>
     </div>
-    <p class="pricing-note reveal">正式な内容と金額は、無料相談後に対象業務と支援範囲を確認して決めます。</p>
+    <p class="pricing-note reveal">月次プランの最低契約期間は3ヶ月です。品質維持のため、同時にお受けするのは3社までとしています。</p>
     <div class="pricing-cta reveal">
       <a href="#contact" class="btn-primary">まず無料相談で確認する</a>
     </div>
@@ -1277,7 +1309,7 @@ section { padding: 104px 0; }
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-a" role="region">
-              <p class="faq-a-inner">対象業務、支援範囲、期間によって決まります。初回相談後に、1ヶ月支援または月次伴走のどちらが合うかを整理し、内容と金額を提案します。</p>
+              <p class="faq-a-inner">プラン制です。隔週MTGのライト伴走が月15万円、週1回MTGの集中伴走が月25万円、単発の1ヶ月支援が40万円（いずれも税別）です。どのプランが合うかは、初回相談で対象業務を確認しながら整理します。</p>
             </div>
           </div>
           <div class="faq-item">
