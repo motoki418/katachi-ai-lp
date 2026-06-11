@@ -263,6 +263,25 @@ display: flex; align-items: center; justify-content: center;
 font-family: var(--font-display); font-size: 12px; font-weight: 700;
 ```
 
+### hero-stat（ヒーロー右カラムの実績カード）
+
+```css
+/* hero は >900px で grid 2カラム（1.2fr 0.8fr）。右カラムに縦積みで配置 */
+.hero-stat {
+  display: grid; gap: 2px;
+  padding: 16px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-soft);
+}
+.hero-stat-meta  { font-size: 12px; font-weight: 600; color: var(--ink-muted); }  /* 業種｜業務名 */
+.hero-stat-value { font-family: var(--font-display); font-size: 21px; font-weight: 700; color: var(--ink); white-space: nowrap; }
+/* ≤900px: 3カラム横並び ／ ≤680px: 1カラム・meta と value を左右配置（value 17px） */
+```
+
+**使い方:** `<a href="#cases">` で事例セクションへリンクする。数値は cases セクションと必ず一致させる。
+
 ### chip（タグ・ラベル chip）
 
 ```css

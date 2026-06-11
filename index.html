@@ -107,6 +107,22 @@ section { padding: 104px 0; }
 .mx-auto { margin-left: auto; margin-right: auto; }
 .nowrap { white-space: nowrap; }
 
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 2000;
+  padding: 12px 20px;
+  background: var(--ink);
+  color: var(--surface);
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+.skip-link:focus {
+  left: 16px;
+}
+
 @media (max-width: 768px) {
   section { padding: 72px 0; }
   .container { padding: 0 20px; }
@@ -353,45 +369,63 @@ section { padding: 104px 0; }
   margin-top: 9px; /* 1行目（line-height 1.9 × 13px）の中央にドットを合わせる */
 }
 
-.hero-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 44px;
-  padding-top: 36px;
-  border-top: 1px solid var(--line);
-}
-
-.hero-chip-label {
-  font-size: 12px;
-  color: var(--ink-faint);
-  font-weight: 600;
-  align-self: center;
-  margin-right: 4px;
-}
-
-.hero-chip {
-  display: inline-flex;
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 56px;
   align-items: center;
-  gap: 7px;
-  padding: 7px 14px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--surface-raised);
-  color: var(--ink-soft);
-  font-size: 13px;
+}
+
+.hero-stats {
+  display: grid;
+  gap: 12px;
+}
+
+.hero-stats-label {
+  font-size: 12px;
+  color: var(--ink-muted);
   font-weight: 600;
 }
-.hero-chip::before {
-  content: "";
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--warm);
-  flex: 0 0 auto;
+
+.hero-stat {
+  display: grid;
+  gap: 2px;
+  padding: 16px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-soft);
+  color: var(--ink-soft);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.hero-stat:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+  color: var(--ink-soft);
+}
+
+.hero-stat-meta {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-muted);
+}
+
+.hero-stat-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 @media (max-width: 900px) {
   .hero-title { font-size: 40px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-stats { grid-template-columns: repeat(3, 1fr); }
+  .hero-stats-label { grid-column: 1 / -1; }
 }
 @media (max-width: 768px) {
   .hero { padding: 104px 0 72px; }
@@ -399,9 +433,17 @@ section { padding: 104px 0; }
   .hero-sub { font-size: 15px; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .btn-primary { width: 100%; }
-  .hero-chips { gap: 8px; }
-  /* ラベルがチップの行に紛れないよう1行独立させる */
-  .hero-chip-label { flex-basis: 100%; margin-right: 0; }
+}
+@media (max-width: 680px) {
+  .hero-stats { grid-template-columns: 1fr; gap: 8px; }
+  .hero-stat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+  .hero-stat-value { font-size: 17px; }
 }
 
 /* ── Concerns (よくある悩み) ── */
@@ -992,7 +1034,7 @@ section { padding: 104px 0; }
 
 .contact-policy {
   font-size: 12px;
-  color: var(--ink-faint);
+  color: var(--ink-muted);
   text-align: center;
 }
 .contact-policy a { color: var(--ink-muted); text-decoration: underline; text-underline-offset: 3px; }
@@ -1036,7 +1078,7 @@ section { padding: 104px 0; }
   padding: 22px 28px;
   text-align: center;
   font-size: 12.5px;
-  color: var(--ink-faint);
+  color: var(--ink-muted);
   border-top: 1px solid var(--line);
 }
 .footer a { color: var(--ink-muted); }
@@ -1044,6 +1086,8 @@ section { padding: 104px 0; }
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#main">本文へスキップ</a>
 
 <header class="header" id="header">
   <div class="header-inner">
@@ -1058,23 +1102,36 @@ section { padding: 104px 0; }
   </div>
 </header>
 
-<main>
+<main id="main">
 
 <!-- ── 1. Hero ── -->
 <section class="hero" id="hero">
   <div class="container">
-    <p class="hero-label reveal">AI推進パートナー</p>
-    <h1 class="hero-title reveal">AI導入・AI活用を、<br>現場で使われる<span class="nowrap">形にする</span></h1>
-    <p class="hero-sub reveal">相談・設計・試作・定着まで、中小企業のAI活用を一緒に進めます。</p>
-    <div class="hero-actions reveal">
-      <a href="#contact" class="btn-primary">自社でできることを相談する</a>
-    </div>
-    <p class="hero-note reveal">初回1時間無料相談 &nbsp;／&nbsp; 札幌・北海道を拠点に、オンラインでも全国対応</p>
-    <div class="hero-chips reveal">
-      <span class="hero-chip-label">こんな業務から始められます</span>
-      <span class="hero-chip">見積・提案準備</span>
-      <span class="hero-chip">社内確認</span>
-      <span class="hero-chip">問い合わせ対応</span>
+    <div class="hero-inner">
+      <div class="hero-main">
+        <p class="hero-label reveal">AI推進パートナー</p>
+        <h1 class="hero-title reveal">AI導入・AI活用を、<br>現場で使われる<span class="nowrap">形にする</span></h1>
+        <p class="hero-sub reveal">相談・設計・試作・定着まで、中小企業のAI活用を一緒に進めます。</p>
+        <div class="hero-actions reveal">
+          <a href="#contact" class="btn-primary">自社でできることを相談する</a>
+        </div>
+        <p class="hero-note reveal">初回1時間無料相談 &nbsp;／&nbsp; 札幌・北海道を拠点に、オンラインでも全国対応</p>
+      </div>
+      <aside class="hero-stats reveal reveal-delay-1" aria-label="支援実績">
+        <p class="hero-stats-label">実際の支援で出た成果</p>
+        <a href="#cases" class="hero-stat">
+          <span class="hero-stat-meta">製造業｜見積書の作成</span>
+          <span class="hero-stat-value">週5時間 → 30分</span>
+        </a>
+        <a href="#cases" class="hero-stat">
+          <span class="hero-stat-meta">士業｜顧客への定型連絡</span>
+          <span class="hero-stat-value">月30時間を削減</span>
+        </a>
+        <a href="#cases" class="hero-stat">
+          <span class="hero-stat-meta">美容室｜予約確認の電話</span>
+          <span class="hero-stat-value">週8時間 → 30分</span>
+        </a>
+      </aside>
     </div>
   </div>
 </section>
