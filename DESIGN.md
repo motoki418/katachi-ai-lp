@@ -429,8 +429,8 @@ Web3Forms（`action="https://api.web3forms.com/submit"`）を使用。
   "@type": "ProfessionalService",
   "name": "中村元揮｜AI推進パートナー",
   "description": "AI導入・AI活用を現場で使われる形にする…",
-  "url": "https://ai-advisory-hokkaido.pages.dev/",
-  "image": "https://ai-advisory-hokkaido.pages.dev/profile.png",
+  "url": "https://katachi-ai.com/",
+  "image": "https://katachi-ai.com/profile.png",
   "areaServed": "日本（札幌・北海道拠点、オンライン全国対応）",
   "founder": { "@type": "Person", "name": "中村元揮", "jobTitle": "AI推進パートナー" }
 }

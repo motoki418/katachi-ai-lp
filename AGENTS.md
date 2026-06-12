@@ -15,7 +15,8 @@
 中村元揮（札幌・エンジニア）の個人ビジネスポートフォリオサイト。
 札幌でWeb制作・Web予約・AI業務改善を提供するサービスのLP。
 
-- 本番URL: https://ai-advisory-hokkaido.pages.dev/
+- 本番URL: https://katachi-ai.com/ （正規URL。外部掲載はすべてこれに統一）
+- katachi-ai.jp / www.katachi-ai.jp は https://katachi-ai.com へ 301 リダイレクト（ブランド保護用・Cloudflare Redirect Rule、パス・クエリ保持）
 - 配信: Cloudflare Pages（GitHub 連携時は `main` ブランチへの push が本番反映トリガー）
 - 推奨設定: Framework preset は `None`、Production branch は `main`、Build command は `sh scripts/build-cloudflare-pages.sh`、Build output directory は `dist`
 - 公開LPのため、文言・価格・画像・計測タグの変更は見込み顧客に直接影響する本番変更として扱う
