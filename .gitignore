@@ -17,6 +17,7 @@ service-account.json
 # Claude Code
 .claude/worktrees/
 .claude/settings.local.json
+.claude/launch.json
 
 # Cloudflare / Wrangler local cache
 .wrangler/

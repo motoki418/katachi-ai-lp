@@ -230,6 +230,9 @@ section { padding: 104px 0; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  /* 上の * は transition-duration しか潰さないため、.faq-a の visibility 切替に残る
+     0.4s の delay も 0 にし、閉時の AT 除外が遅延なく即時になるようにする */
+  .faq-a { transition-delay: 0s !important; }
 }
 
 /* ── Header ── */
@@ -881,7 +884,16 @@ section { padding: 104px 0; }
 .faq-a {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s var(--ease);
+  /* 閉状態は visibility:hidden で AT（スクリーンリーダー）の読み上げツリーからも除外する。
+     visibility は 0.4s 遅延で切替え、max-height の collapse アニメが見えてから hidden にする */
+  visibility: hidden;
+  transition: max-height 0.4s var(--ease), visibility 0s linear 0.4s;
+}
+
+.faq-item.open .faq-a {
+  /* 開いたら即 visible（遅延なし）。max-height は inline style(JS) で scrollHeight に展開される */
+  visibility: visible;
+  transition: max-height 0.4s var(--ease), visibility 0s linear 0s;
 }
 
 .faq-a-inner {
