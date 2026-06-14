@@ -2,6 +2,7 @@
 *.jpeg
 *.png
 !profile.png
+!ogp.png
 
 # secrets / credentials
 .env

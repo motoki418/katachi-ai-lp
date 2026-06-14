@@ -12,6 +12,7 @@ cp robots.txt "$output_dir/"
 cp sitemap.xml "$output_dir/"
 cp favicon.svg "$output_dir/"
 cp profile.png "$output_dir/"
+cp ogp.png "$output_dir/"
 cp -R downloads "$output_dir/"
 cp -R samples "$output_dir/"
 
