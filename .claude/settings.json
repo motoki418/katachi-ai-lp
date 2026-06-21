@@ -9,7 +9,21 @@
       "Read(**/token.json)",
       "Bash(rm -rf *)",
       "Bash(git push --force*)",
-      "Bash(git push -f*)"
+      "Bash(git push -f*)",
+      "Bash(rm *.png)",
+      "Bash(git rm *.png)",
+      "Edit(.claude/settings.json)",
+      "Edit(.claude/settings.local.json)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          { "type": "command", "command": "FILE=$(jq -r '.tool_input.file_path // empty'); case \"$FILE\" in *.html) npx -y html-validate \"$FILE\" 2>&1 | tail -20;; esac; true", "timeout": 60 }
+        ]
+      }
     ]
   }
 }
