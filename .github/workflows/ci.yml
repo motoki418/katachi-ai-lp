@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# 同一 ref の古い run を自動キャンセル（feature push と PR synchronize の二重消費を防ぐ）。
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build-verify:
+    name: Build and verify static site
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      # 本番（Cloudflare Pages）と同じビルド手順。スクリプトが壊れたらここで落ちる。
+      - name: Build (Cloudflare Pages output)
+        run: sh scripts/build-cloudflare-pages.sh
+
+      # 公開物の必須ファイルと最低限の HTML 構造を決定論で検証する。
+      # 手書き LP に strict な HTML linter を当てると誤検知で赤くなるため、
+      # 「壊れたら必ず落ちる」観測量（必須ファイルの存在・DOCTYPE・閉じタグ）に絞る。
+      - name: Verify build output
+        run: |
+          set -eu
+          for f in index.html privacy.html robots.txt sitemap.xml favicon.svg; do
+            test -f "dist/$f" || { echo "::error::dist/$f が生成されていません"; exit 1; }
+          done
+          test -d dist/samples || { echo "::error::dist/samples がありません"; exit 1; }
+          for html in dist/index.html dist/privacy.html; do
+            grep -qi '<!doctype html>' "$html" || { echo "::error::$html に <!DOCTYPE html> がありません"; exit 1; }
+            grep -q '</html>' "$html" || { echo "::error::$html が </html> で閉じていません"; exit 1; }
+          done
+          echo "OK: dist の必須ファイルと HTML 構造を確認"
