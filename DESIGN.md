@@ -1,7 +1,7 @@
 # DESIGN.md — 中村元揮 LP デザインシステム
 
-このファイルはClaudeへの指示を兼ねる**デザインの正本**です。置き場所は `apps/portfolio/DESIGN.md`。
-`portfolio/index.html`（`<style>` タグ内）を変更するとき、このファイルに定義された値・ルールを優先します。
+このファイルはClaudeへの指示を兼ねる**デザインの正本**です。置き場所は `apps/katachi-ai-lp/DESIGN.md`。
+`katachi-ai-lp/index.html`（`<style>` タグ内）を変更するとき、このファイルに定義された値・ルールを優先します。
 
 ---
 
@@ -453,4 +453,4 @@ Web3Forms（`action="https://api.web3forms.com/submit"`）を使用。
 
 - `index.html` の `:root` のトークン値を変えたら、このファイルの「2. カラートークン」も必ず同期する
 - 新しいコンポーネントを追加したら「5. コンポーネントパターン」に追記する
-- このファイルが正本。リモート（Claude Code on the web）で portfolio を作業させる場合は、このファイルの内容をプロンプトに渡すか、一時的にリポジトリへコピーして参照させる
+- このファイルが正本。リモート（Claude Code on the web）で katachi-ai-lp を作業させる場合は、このファイルの内容をプロンプトに渡すか、一時的にリポジトリへコピーして参照させる
