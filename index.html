@@ -306,8 +306,8 @@ section { padding: 104px 0; }
   .header-brand { font-size: 14px; }
   .header-nav { gap: 16px; }
   .header-nav a { font-size: 13px; }
-  /* 簡略化: 先頭2リンクを隠し「進め方」「料金」と CTA を残す */
-  .header-nav a:nth-child(-n+2) { display: none; }
+  /* 簡略化: 先頭3リンクを隠し「料金」「開発」と CTA を残す */
+  .header-nav a:nth-child(-n+3) { display: none; }
 }
 
 @media (max-width: 768px) {
@@ -766,8 +766,46 @@ section { padding: 104px 0; }
   .pricing-grid { grid-template-columns: 1fr; }
 }
 
+/* ── Development (開発・制作) ── */
+.development-section { background: var(--surface-warm); }
+
+.dev-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.dev-samples {
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  margin-bottom: 72px;
+}
+.dev-samples a { font-weight: 700; }
+
+.dev-subhead {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--ink);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* warm セクション上では注記が背景に埋もれるため白カード化 */
+.development-section .pricing-note { background: var(--surface-raised); }
+
+/* DESIGN.md: warm 背景上の本文は --ink-muted だと AA 未達(4.19:1) → --ink-soft */
+.development-section .section-lead,
+.development-section .process-step p { color: var(--ink-soft); }
+
+@media (max-width: 768px) {
+  .dev-grid { grid-template-columns: 1fr; }
+}
+
 /* ── FAQ ── */
-.faq-section { background: var(--surface-warm); }
+.faq-section { background: var(--surface); }
 
 .faq-categories {
   display: grid;
@@ -868,7 +906,7 @@ section { padding: 104px 0; }
 }
 
 /* ── Profile ── */
-.profile-section { background: var(--surface); }
+.profile-section { background: var(--surface-warm); }
 
 .profile-card {
   border: 1px solid var(--line);
@@ -965,7 +1003,9 @@ section { padding: 104px 0; }
 }
 
 /* ── Contact ── */
-.contact-section { background: var(--surface-warm); }
+.contact-section { background: var(--surface); }
+/* surface 背景になった contact 上ではピルが同色化するため warm で境界を確保 */
+.contact-section .contact-example { background: var(--surface-warm); }
 
 .contact-inner {
   max-width: 680px;
@@ -1157,6 +1197,7 @@ section { padding: 104px 0; }
       <a href="#cases">導入事例</a>
       <a href="#process">進め方</a>
       <a href="#pricing">料金</a>
+      <a href="#development">開発</a>
       <a href="#contact" class="nav-cta">相談する</a>
     </nav>
   </div>
@@ -1333,7 +1374,80 @@ section { padding: 104px 0; }
   </div>
 </section>
 
-<!-- ── 6. FAQ ── -->
+<!-- ── 6. 開発・制作 ── -->
+<section class="development-section" id="development">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label reveal">開発・制作</span>
+      <h2 class="section-title reveal">Web制作から、<br>AIを組み込んだ開発まで</h2>
+    </div>
+    <p class="section-lead text-center mx-auto reveal">AIを活用した開発（AI駆動開発）で、設計から実装まで短い納期で一貫して対応します。受託でのWeb制作・システム開発・アプリ開発を承ります。</p>
+    <div class="dev-grid">
+      <div class="pricing-card reveal">
+        <p class="pricing-card-label">Web</p>
+        <h3>Web制作・LP制作</h3>
+        <p>コーポレートサイト・LP・予約サイトなど。デザインから実装まで一貫して対応します。</p>
+        <p class="pricing-price">30万円〜（税別）</p>
+      </div>
+      <div class="pricing-card reveal reveal-delay-1">
+        <p class="pricing-card-label">AI</p>
+        <h3>AIを組み込んだシステム開発</h3>
+        <p>チャットボット、社内文書検索、業務エージェントなど、生成AIを業務に組み込みます。</p>
+        <p class="pricing-price">80万円〜（税別）</p>
+      </div>
+      <div class="pricing-card reveal reveal-delay-2">
+        <p class="pricing-card-label">System</p>
+        <h3>業務システム・ツール開発</h3>
+        <p>社内業務の自動化ツール、管理システム、API連携など。要件定義から請け負います。</p>
+        <p class="pricing-price">100万円〜（税別）</p>
+      </div>
+      <div class="pricing-card reveal reveal-delay-3">
+        <p class="pricing-card-label">App</p>
+        <h3>アプリ開発</h3>
+        <p>モバイルアプリ・業務アプリの開発。規模の幅が大きいため、内容を伺って個別にお見積りします。</p>
+        <p class="pricing-price">個別見積</p>
+      </div>
+    </div>
+    <p class="dev-samples reveal">制作サンプル：<a href="samples/bonesetter/" target="_blank" rel="noopener">整骨院</a>　/　<a href="samples/clinic/" target="_blank" rel="noopener">クリニック</a>　/　<a href="samples/restaurant/" target="_blank" rel="noopener">飲食店</a></p>
+    <h3 class="dev-subhead reveal">ご依頼の進め方</h3>
+    <div class="process-steps reveal">
+      <div class="process-step">
+        <div class="process-step-num">1</div>
+        <div class="process-step-body">
+          <h3>ヒアリング</h3>
+          <p>つくりたいもの、解決したい課題、ご予算感を伺い、実現したい姿を整理します。</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">2</div>
+        <div class="process-step-body">
+          <h3>お見積り・ご提案</h3>
+          <p>要件を踏まえ、進め方・期間・費用をまとめてご提案します。ここまで無料です。</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">3</div>
+        <div class="process-step-body">
+          <h3>設計・開発</h3>
+          <p>合意した範囲を設計し、AIを活用して実装します。途中で確認しながら進めます。</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">4</div>
+        <div class="process-step-body">
+          <h3>納品・サポート</h3>
+          <p>動作を確認のうえ納品します。公開後の修正・運用のご相談にも対応します。</p>
+        </div>
+      </div>
+    </div>
+    <p class="pricing-note reveal">金額は目安です。規模・要件に応じて個別にお見積りします。まずはお気軽にご相談ください。</p>
+    <div class="pricing-cta reveal">
+      <a href="#contact" class="btn-primary">開発について相談する</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── 7. FAQ ── -->
 <section class="faq-section" id="faq">
   <div class="container">
     <div class="text-center">
@@ -1478,7 +1592,7 @@ section { padding: 104px 0; }
   </div>
 </section>
 
-<!-- ── 7. プロフィール ── -->
+<!-- ── 8. プロフィール ── -->
 <section class="profile-section" id="profile">
   <div class="container">
     <div class="text-center">
@@ -1516,18 +1630,20 @@ section { padding: 104px 0; }
   </div>
 </section>
 
-<!-- ── 8. 問い合わせ ── -->
+<!-- ── 9. 問い合わせ ── -->
 <section class="contact-section" id="contact">
   <div class="container">
     <div class="contact-inner">
       <h2 class="contact-headline reveal">まず1時間、<br>現状を聞かせてください</h2>
-      <p class="contact-sub reveal">まだ課題が言語化できていなくても大丈夫です。気になっている業務を1つだけ持ってきてください。</p>
+      <p class="contact-sub reveal">まだ課題が言語化できていなくても大丈夫です。気になっている業務や、つくりたいものを1つ持ってきてください。</p>
       <div class="contact-examples reveal">
         <span class="contact-example">AIで何ができるか、自社の業務に当てはめたい</span>
         <span class="contact-example">ChatGPTなどを導入したが、社内で使われていない</span>
         <span class="contact-example">AIエージェントや簡易ツールを小さく試したい</span>
         <span class="contact-example">毎週くり返しているPC作業を減らしたい</span>
         <span class="contact-example">社内データの扱いが不安</span>
+        <span class="contact-example">コーポレートサイト・LPを作りたい</span>
+        <span class="contact-example">AIを組み込んだ開発を相談したい</span>
       </div>
       <form class="contact-form reveal" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="fa0c4986-834c-439c-bb39-e36f5be2f3c3">
