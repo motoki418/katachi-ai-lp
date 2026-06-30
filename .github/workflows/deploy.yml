@@ -42,9 +42,14 @@ jobs:
 
       # wrangler deploy は wrangler.jsonc の build.command（build-cloudflare-pages.sh）を
       # 自動実行してから dist/ をアップロードする。ビルド手順は CI(build-verify) と同一。
+      #
+      # wranglerVersion を固定する理由: wrangler-action は既定で古い wrangler 3.x を入れる。
+      # 本サイトは main スクリプトを持たない assets-only Worker で、3.x は「Missing entry-point」で
+      # 拒否する（assets-only 対応は 4.x）。ローカル検証・本番初回デプロイと同じ 4.105.0 に固定する。
       - name: Deploy to Cloudflare Workers
         if: steps.gate.outputs.ready == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          wranglerVersion: "4.105.0"
           command: deploy
