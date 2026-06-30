@@ -25,8 +25,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      # 本番（Cloudflare Pages）と同じビルド手順。スクリプトが壊れたらここで落ちる。
-      - name: Build (Cloudflare Pages output)
+      # 本番（Cloudflare Workers / static assets）と同じビルド手順。スクリプトが壊れたらここで落ちる。
+      - name: Build (Cloudflare Workers assets output)
         run: sh scripts/build-cloudflare-pages.sh
 
       # 公開物の必須ファイルと最低限の HTML 構造を決定論で検証する。

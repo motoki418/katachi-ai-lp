@@ -1,0 +1,50 @@
+name: Deploy
+
+# main への push を Cloudflare Workers（static assets）への本番反映トリガーにする。
+# 旧 Cloudflare Pages の GitHub 連携に代わる、移行後の唯一の自動デプロイ経路。
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# デプロイは取りこぼすと本番が古いままになるため、直列化はするが古い run を kill しない。
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy Worker (static assets)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      # CLOUDFLARE_API_TOKEN 未設定の間はデプロイを安全にスキップする（main を赤くしないため）。
+      # シークレットを登録した次の push から自動で有効化される。
+      - name: Check Cloudflare token
+        id: gate
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -n "$CF_TOKEN" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::CLOUDFLARE_API_TOKEN 未設定のため Worker デプロイをスキップしました。リポジトリ Secrets に登録すると有効化されます。"
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # wrangler deploy は wrangler.jsonc の build.command（build-cloudflare-pages.sh）を
+      # 自動実行してから dist/ をアップロードする。ビルド手順は CI(build-verify) と同一。
+      - name: Deploy to Cloudflare Workers
+        if: steps.gate.outputs.ready == 'true'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: deploy
