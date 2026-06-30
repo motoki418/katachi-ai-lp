@@ -1,0 +1,17 @@
+{
+  "name": "katachi-ai-lp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright E2E + ビジュアル回帰テスト（営業LP・サイト本体は素のHTML/CSS/JSのまま）",
+  "scripts": {
+    "test": "playwright test",
+    "test:e2e": "playwright test tests/e2e.spec.ts",
+    "test:visual": "playwright test tests/visual.spec.ts",
+    "test:ui": "playwright test --ui",
+    "update-snapshots": "playwright test tests/visual.spec.ts --update-snapshots",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.1"
+  }
+}
