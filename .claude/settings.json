@@ -13,7 +13,15 @@
       "Bash(rm *.png)",
       "Bash(git rm *.png)",
       "Edit(.claude/settings.json)",
-      "Edit(.claude/settings.local.json)"
+      "Edit(.claude/settings.local.json)",
+      "Edit(.github/workflows/**)",
+      "Write(.github/workflows/**)",
+      "Write(.claude/settings.json)",
+      "Write(.claude/settings.local.json)",
+      "Bash(git push origin main*)",
+      "Bash(git push origin master*)",
+      "Bash(git push origin HEAD:main*)",
+      "Bash(git push origin HEAD:master*)"
     ]
   },
   "hooks": {
@@ -21,7 +29,11 @@
       {
         "matcher": "Write|Edit",
         "hooks": [
-          { "type": "command", "command": "FILE=$(jq -r '.tool_input.file_path // empty'); case \"$FILE\" in *.html) npx -y html-validate \"$FILE\" 2>&1 | tail -20;; esac; true", "timeout": 60 }
+          {
+            "type": "command",
+            "command": "FILE=$(jq -r '.tool_input.file_path // empty'); case \"$FILE\" in *.html) npx -y html-validate \"$FILE\" 2>&1 | tail -20;; esac; true",
+            "timeout": 60
+          }
         ]
       }
     ]
