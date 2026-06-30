@@ -2,7 +2,7 @@
 
 ## このディレクトリの境界
 
-**役割: 対外公開の営業LP とサンプルサイト**。Cloudflare Pages で公開する本番資材のみ置く。
+**役割: 対外公開の営業LP とサンプルサイト**。Cloudflare Workers（static assets）で公開する本番資材のみ置く。
 
 > 判定基準: 見込み顧客が直接見る公開物か？
 >
@@ -17,9 +17,11 @@
 
 - 本番URL: https://katachi-ai.com/ （正規URL。SNS・名刺・QR・メール署名など外部掲載はすべてこれに統一）
 - katachi-ai.jp / www.katachi-ai.jp はブランド保護用。Cloudflare の Redirect Rule で https://katachi-ai.com へ 301 リダイレクト（パス・クエリ保持）。.jp 側にコンテンツは置かない
-- 旧URL https://ai-advisory-hokkaido.pages.dev/ は Cloudflare Pages のデフォルトドメイン（残存。新規掲載には使わない）
-- 配信: Cloudflare Pages（GitHub 連携時は `main` ブランチへの push が本番反映トリガー）
-- 推奨設定: Framework preset は `None`、Production branch は `main`、Build command は `sh scripts/build-cloudflare-pages.sh`、Build output directory は `dist`
+- 旧URL https://ai-advisory-hokkaido.pages.dev/ は移行前の Cloudflare Pages のデフォルトドメイン（残存。新規掲載には使わない）
+- 配信: Cloudflare Workers（static assets）。設定は `wrangler.jsonc`。`main` への push を `.github/workflows/deploy.yml`（`wrangler deploy`）が拾って本番反映する。手動デプロイは `npx wrangler deploy`
+- ビルド: `wrangler deploy` が `wrangler.jsonc` の `build.command`（`sh scripts/build-cloudflare-pages.sh`）を自動実行して `dist/` を生成・アップロードする。出力先は `dist`
+- 自動デプロイの有効化に必要: リポジトリ Secrets に `CLOUDFLARE_API_TOKEN`（Workers Scripts:Edit 権限）。未設定の間 deploy.yml はスキップ動作（main は赤くならない）
+- 旧 Pages（`ai-advisory-hokkaido`）からの移行は GitHub Flow で `wrangler.jsonc` を main に載せた時点でリポジトリ側は完了。旧 Pages プロジェクトの独自ドメイン剥がし／GitHub 連携 OFF はオーナー承認のうえ実施する（本番ドメインに触るため）
 
 ## 技術スタック
 
