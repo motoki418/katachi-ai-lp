@@ -1,0 +1,7 @@
+# Cloudflare Workers Static Assets / Pages 共通の _headers。
+# 旧 Pages が全レスポンスに付けていたヘッダーを Worker でも再現し、移行で退行させない。
+# 参照: 移行前の本番ヘッダー（access-control-allow-origin / x-content-type-options / referrer-policy）。
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Access-Control-Allow-Origin: *
