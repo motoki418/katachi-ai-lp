@@ -21,3 +21,6 @@ cp -R services "$output_dir/"
 cp -R about "$output_dir/"
 
 find "$output_dir" -name ".DS_Store" -delete
+
+# Verify the files actually copied, not only the cp declarations above.
+python3 scripts/verify-build.py --root . --output "$output_dir"
