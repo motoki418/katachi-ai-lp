@@ -19,6 +19,8 @@ cp -R samples "$output_dir/"
 cp -R training "$output_dir/"
 cp -R services "$output_dir/"
 cp -R about "$output_dir/"
+mkdir -p "$output_dir/assets"
+cp assets/lead-attribution.js "$output_dir/assets/"
 
 find "$output_dir" -name ".DS_Store" -delete
 
