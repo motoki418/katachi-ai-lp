@@ -1659,6 +1659,7 @@ section { padding: 104px 0; }
 .footer a { color: var(--ink-muted); }
 .footer a:hover { color: var(--ink); }
 </style>
+<script src="/assets/lead-attribution.js"></script>
 </head>
 <body>
 
@@ -2422,7 +2423,8 @@ if (contactForm) {
         contactSuccess.focus();
         // GA4 コンバージョン計測（問い合わせ完了）。gtag 未読込でも送信処理は壊さない
         if (typeof gtag === 'function') {
-          gtag('event', 'generate_lead', { event_category: 'contact', event_label: 'web3forms', value: 1 });
+          gtag('event', 'generate_lead', { event_category: 'contact', event_label: 'web3forms', value: 1,
+            ...(typeof window.katachiLeadAttribution === 'function' ? window.katachiLeadAttribution() : {}) });
         }
       } else {
         throw new Error('submit failed');

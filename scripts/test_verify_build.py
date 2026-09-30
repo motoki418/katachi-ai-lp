@@ -68,8 +68,9 @@ class BuildGateTests(unittest.TestCase):
         # Exercise the actual shell entry, with wholly synthetic publication files.
         for rel in ('privacy.html', 'robots.txt', 'favicon.svg', 'profile.png', 'ogp.png', '_headers'):
             (self.root / rel).write_text('fixture')
-        for directory in ('samples', 'training', 'services', 'about', 'scripts'):
+        for directory in ('samples', 'training', 'services', 'about', 'scripts', 'assets'):
             (self.root / directory).mkdir(exist_ok=True)
+        (self.root / 'assets/lead-attribution.js').write_text('/* fixture */')
         for name in ('build-cloudflare-pages.sh', 'verify-build.py'):
             shutil.copyfile(Path(__file__).with_name(name), self.root / 'scripts' / name)
         result = subprocess.run(['sh', 'scripts/build-cloudflare-pages.sh'], cwd=self.root,

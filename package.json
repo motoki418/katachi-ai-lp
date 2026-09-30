@@ -5,7 +5,7 @@
   "description": "Playwright E2E + ビジュアル回帰テスト（営業LP・サイト本体は素のHTML/CSS/JSのまま）",
   "scripts": {
     "test": "playwright test",
-    "test:e2e": "playwright test tests/e2e.spec.ts",
+    "test:e2e": "node --test tests/lead-attribution.node.cjs && playwright test tests/e2e.spec.ts tests/lead-attribution.spec.ts",
     "test:visual": "playwright test tests/visual.spec.ts",
     "test:ui": "playwright test --ui",
     "update-snapshots": "playwright test tests/visual.spec.ts --update-snapshots",
