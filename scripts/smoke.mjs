@@ -2,7 +2,12 @@
 /* global console, process, fetch */
 // 本番（または任意 URL）への読み取り専用スモーク。
 // 「対象が壊れたら必ず落ちる観測量」を assert する（200 の数だけ数えない）。
-// 使い方: node scripts/smoke.mjs [BASE_URL]（省略時 SMOKE_BASE_URL）
+// 使い方: node scripts/smoke.mjs [BASE_URL] [VERIFIED_DIST]（省略時 SMOKE_BASE_URL）
+// VERIFIED_DIST 指定時は、公開トップ・sitemap掲載HTML・robotsとartifactのSHA-256も比較する。
+
+import { createHash } from 'node:crypto';
+import { existsSync, readFileSync } from 'node:fs';
+import { resolve, sep } from 'node:path';
 
 const BASE = process.argv[2] || process.env.SMOKE_BASE_URL;
 if (!BASE) {
@@ -10,18 +15,46 @@ if (!BASE) {
   process.exit(1);
 }
 const base = BASE.replace(/\/$/, "");
+const expectedDist = process.argv[3];
 const failures = [];
+
+function get(url) {
+  return fetch(url, {
+    headers: { "user-agent": "katachi-smoke" },
+    redirect: "follow",
+    signal: AbortSignal.timeout(15_000),
+  });
+}
+
+function verifyContent(url, bytes) {
+  if (!expectedDist) return;
+  const pathname = decodeURIComponent(new URL(url).pathname);
+  const candidates = pathname.endsWith('/')
+    ? [`${pathname}index.html`]
+    : [pathname, `${pathname}.html`];
+  const root = resolve(expectedDist);
+  const files = candidates.map((path) => resolve(root, `.${path}`))
+    .filter((path) => path.startsWith(root + sep));
+  const file = files.find((path) => existsSync(path));
+  check(`${pathname} のartifactが存在する`, !!file);
+  if (!file) return;
+  const hash = (data) => createHash('sha256').update(data).digest('hex');
+  check(
+    `${pathname} の公開内容が検証済みartifactと一致`,
+    hash(bytes) === hash(readFileSync(file)),
+    'SHA-256不一致（別リビジョン/古い配信の疑い）',
+  );
+}
 
 function check(name, cond, detail) {
   if (cond) console.log(`  ✓ ${name}`);
   else failures.push(`  ✗ ${name}${detail ? ` — ${detail}` : ""}`);
 }
 
-const res = await fetch(`${base}/`, {
-  headers: { "user-agent": "katachi-smoke" },
-  redirect: "follow",
-});
-const body = await res.text();
+const res = await get(`${base}/`);
+const bytes = Buffer.from(await res.arrayBuffer());
+const body = bytes.toString('utf8');
+verifyContent(`${base}/`, bytes);
 
 check("/ が 200", res.status === 200, `status=${res.status}`);
 check(
@@ -53,19 +86,16 @@ check(
 );
 
 // sitemap.xml: 全 <loc> が redirect を挟まず 200 を返すことを確認する。
-const sitemapRes = await fetch(`${base}/sitemap.xml`, {
-  headers: { "user-agent": "katachi-smoke" },
-  redirect: "follow",
-});
-const sitemapBody = await sitemapRes.text();
+const sitemapRes = await get(`${base}/sitemap.xml`);
+const sitemapBytes = Buffer.from(await sitemapRes.arrayBuffer());
+const sitemapBody = sitemapBytes.toString('utf8');
+verifyContent(`${base}/sitemap.xml`, sitemapBytes);
 check("sitemap.xml が 200", sitemapRes.status === 200, `status=${sitemapRes.status}`);
 const locs = [...sitemapBody.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 check("sitemap.xml に <loc> が1件以上ある", locs.length > 0, `body=${sitemapBody.slice(0, 200)}`);
 for (const loc of locs) {
-  const locRes = await fetch(loc, {
-    headers: { "user-agent": "katachi-smoke" },
-    redirect: "follow",
-  });
+  const locRes = await get(loc);
+  verifyContent(loc, Buffer.from(await locRes.arrayBuffer()));
   check(
     `sitemap: ${loc} が200かつ無リダイレクト`,
     locRes.status === 200 && locRes.url === loc,
@@ -74,11 +104,10 @@ for (const loc of locs) {
 }
 
 // robots.txt が Sitemap 行を含むこと。
-const robotsRes = await fetch(`${base}/robots.txt`, {
-  headers: { "user-agent": "katachi-smoke" },
-  redirect: "follow",
-});
-const robotsBody = await robotsRes.text();
+const robotsRes = await get(`${base}/robots.txt`);
+const robotsBytes = Buffer.from(await robotsRes.arrayBuffer());
+const robotsBody = robotsBytes.toString('utf8');
+verifyContent(`${base}/robots.txt`, robotsBytes);
 check("robots.txt が 200", robotsRes.status === 200, `status=${robotsRes.status}`);
 check(
   "robots.txt に Sitemap: 行がある",
@@ -87,10 +116,7 @@ check(
 );
 
 // 存在しないパスが 404 を返し、soft-redirect（200でトップと同一内容を返す誤設定）でないこと。
-const notFoundRes = await fetch(`${base}/__not-exist-smoke__`, {
-  headers: { "user-agent": "katachi-smoke" },
-  redirect: "follow",
-});
+const notFoundRes = await get(`${base}/__not-exist-smoke__`);
 const notFoundBody = await notFoundRes.text();
 check(
   "存在しないパスが404を返す",

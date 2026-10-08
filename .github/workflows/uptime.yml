@@ -22,6 +22,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+
       - id: smoke
         continue-on-error: true
         run: node scripts/smoke.mjs "https://katachi-ai.com"

@@ -1,9 +1,11 @@
 name: E2E & Visual
 
 on:
-  push:
-    branches: [main]
   pull_request:
+  workflow_call:
+
+permissions:
+  contents: read
 
 # 同一 ref の古い run を自動キャンセル（feature push と PR synchronize の二重消費を防ぐ）。
 concurrency:
@@ -16,14 +18,31 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.sha }}
       - uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version-file: .node-version
           cache: npm
       - run: npm ci
+      - name: Build assets for standalone PR checks
+        if: github.event_name == 'pull_request'
+        run: sh scripts/build-cloudflare-pages.sh
+      - uses: actions/download-artifact@v6
+        if: github.event_name != 'pull_request'
+        with:
+          name: static-site-${{ github.sha }}
+          path: ${{ runner.temp }}/verified-site
+      - name: Restore the CI artifact (no rebuild)
+        if: github.event_name != 'pull_request'
+        run: |
+          mkdir -p dist
+          tar -xf "$RUNNER_TEMP/verified-site/site.tar" --strip-components=2 -C dist ./dist
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium webkit
       - name: Run E2E tests
+        env:
+          PLAYWRIGHT_WEB_ROOT: dist
         run: npm run test:e2e
       - uses: actions/upload-artifact@v6
         if: ${{ !cancelled() }}
@@ -39,14 +58,31 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.sha }}
       - uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version-file: .node-version
           cache: npm
       - run: npm ci
+      - name: Build assets for standalone PR checks
+        if: github.event_name == 'pull_request'
+        run: sh scripts/build-cloudflare-pages.sh
+      - uses: actions/download-artifact@v6
+        if: github.event_name != 'pull_request'
+        with:
+          name: static-site-${{ github.sha }}
+          path: ${{ runner.temp }}/verified-site
+      - name: Restore the CI artifact (no rebuild)
+        if: github.event_name != 'pull_request'
+        run: |
+          mkdir -p dist
+          tar -xf "$RUNNER_TEMP/verified-site/site.tar" --strip-components=2 -C dist ./dist
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium webkit
       - name: Run visual regression tests
+        env:
+          PLAYWRIGHT_WEB_ROOT: dist
         run: npm run test:visual
       - uses: actions/upload-artifact@v6
         if: ${{ !cancelled() }}
