@@ -2,9 +2,8 @@ name: CI
 
 on:
   pull_request:
-  push:
-    branches:
-      - main
+  # main の検証は Deploy が呼び出す。同じ run の artifact を配信まで渡す。
+  workflow_call:
   workflow_dispatch:
 
 # 同一 ref の古い run を自動キャンセル（feature push と PR synchronize の二重消費を防ぐ）。
@@ -24,6 +23,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          ref: ${{ github.sha }}
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+
+      - name: Test build verifier and smoke
+        run: |
+          python3 -m unittest discover -s scripts -p 'test_*.py'
+          node --test scripts/smoke.test.mjs
 
       # 本番（Cloudflare Workers / static assets）と同じビルド手順。スクリプトが壊れたらここで落ちる。
       - name: Build (Cloudflare Workers assets output)
@@ -48,3 +58,30 @@ jobs:
       # 自動コミット step への CI-skip magic string 混入を決定論で拒否（deploy 取りこぼし再発防止）
       - name: Guard auto-commit steps (no CI-skip magic string)
         run: bash scripts/guard-no-skipci-in-commit-steps.sh
+
+      # 配信専用設定は build を持たない。Wrangler に成果物を再生成させない。
+      - name: Package verified assets and revision
+        env:
+          VERIFIED_SHA: ${{ github.sha }}
+        run: |
+          set -eu
+          test "$(git rev-parse HEAD)" = "$VERIFIED_SHA"
+          mkdir -p .ci-site
+          cp -R dist .ci-site/dist
+          node --input-type=module <<'NODE'
+          import { readFileSync, writeFileSync } from 'node:fs';
+          const config = JSON.parse(readFileSync('wrangler.jsonc', 'utf8'));
+          delete config.build;
+          writeFileSync('.ci-site/wrangler.json', JSON.stringify(config, null, 2));
+          writeFileSync('.ci-site/revision.txt', process.env.VERIFIED_SHA + '\n');
+          NODE
+          tar -cf "$RUNNER_TEMP/site.tar" -C .ci-site .
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: static-site-${{ github.sha }}
+          path: ${{ runner.temp }}/site.tar
+          if-no-files-found: error
+          # 同一runを「全job再実行」した場合も、同一SHAの検証済み成果物で置き換える。
+          overwrite: true
+          retention-days: 7

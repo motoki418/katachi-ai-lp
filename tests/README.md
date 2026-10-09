@@ -10,6 +10,8 @@ npm ci                              # 依存（@playwright/test）を入れる
 npx playwright install chromium webkit   # ブラウザ本体を入れる
 ```
 
+Node はリポジトリ直下の `.node-version` に揃える。
+
 ## 実行
 
 ```bash
@@ -32,11 +34,26 @@ npm run report          # 直近の結果をHTMLレポートで開く
 - 表示を意図的に変えたら `npm run update-snapshots` で mac 基準を撮り直してコミットする。
 - **CIでビジュアル比較も回したい場合**: GitHub Actions の「Update visual baselines (Linux)」を
   1回手動実行すると Linux 基準が生成・コミットされる。以後 CI でも比較可能。
-- 現状 CI（`e2e.yml`）は **機能E2Eのみ**を毎回実行（OS非依存で確実）。
+- PR では `ci.yml` と `e2e.yml` が静的検証・機能E2E・Visualを実行する。
+- main の push / Deploy 手動実行では `deploy.yml` が両workflowを呼び出す。
+  静的検証が生成した同一run/SHAのartifactを E2E・Visual が配信して確認し、
+  両方の成功後だけ Deploy が同じartifactを再ビルドせず配信する。
+  手動実行もこの検証を通り、main以外のブランチでは配信しない。
+- 配信後は `scripts/smoke.mjs` がHTTP・canonical・sitemap・404と、
+  公開トップ/sitemap掲載HTML/robotsのSHA-256をartifactと比較する。
+  失敗時は最大3回（待機10秒）で検査し、Deployを失敗にする。自動ロールバックは行わない。
+
+ローカルで配信成果物を検証する場合:
+
+```bash
+sh scripts/build-cloudflare-pages.sh
+PLAYWRIGHT_WEB_ROOT=dist npm test
+python3 -m unittest discover -s scripts -p 'test_*.py'
+node --test scripts/smoke.test.mjs
+```
 
 ## 注意（既知の癖）
 
 - `--window-size` 等の素のヘッドレス撮影と違い、Playwright は本物の WebKit でモバイルを描画する。
   ただし実機 iPhone Safari と完全一致ではない（flex-wrap/gap で稀に差）。重要セクションは
   ときどき実機でも目視する。
-

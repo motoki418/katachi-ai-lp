@@ -17,14 +17,53 @@ permissions:
   contents: read
 
 jobs:
+  ci:
+    uses: ./.github/workflows/ci.yml
+
+  browser-tests:
+    needs: ci
+    uses: ./.github/workflows/e2e.yml
+
   deploy:
     name: Deploy Worker (static assets)
+    # needs の既定 success() により、静的検証・E2E・Visualの失敗/中断時は走らない。
+    needs: [ci, browser-tests]
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          ref: ${{ github.sha }}
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+
+      - uses: actions/download-artifact@v6
+        with:
+          name: static-site-${{ github.sha }}
+          path: ${{ runner.temp }}/verified-site
+
+      - name: Verify deployment revision and assets
+        env:
+          VERIFIED_SHA: ${{ github.sha }}
+        run: |
+          set -eu
+          mkdir -p .ci-site
+          tar -xf "$RUNNER_TEMP/verified-site/site.tar" -C .ci-site
+          test "$(git rev-parse HEAD)" = "$VERIFIED_SHA"
+          test "$(cat .ci-site/revision.txt)" = "$VERIFIED_SHA"
+          python3 scripts/verify-build.py --root . --output .ci-site/dist
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import { readFileSync } from 'node:fs';
+          const source = JSON.parse(readFileSync('wrangler.jsonc', 'utf8'));
+          delete source.build;
+          assert.deepEqual(JSON.parse(readFileSync('.ci-site/wrangler.json', 'utf8')), source);
+          NODE
 
       # CLOUDFLARE_API_TOKEN 未設定の間はデプロイを安全にスキップする（main を赤くしないため）。
       # シークレットを登録した次の push から自動で有効化される。
@@ -40,8 +79,7 @@ jobs:
             echo "ready=false" >> "$GITHUB_OUTPUT"
           fi
 
-      # wrangler deploy は wrangler.jsonc の build.command（build-cloudflare-pages.sh）を
-      # 自動実行してから dist/ をアップロードする。ビルド手順は CI(build-verify) と同一。
+      # 同じ run / SHA の検証済み artifact を、build のない設定で配信する。
       #
       # wranglerVersion を固定する理由: wrangler-action は既定で古い wrangler 3.x を入れる。
       # 本サイトは main スクリプトを持たない assets-only Worker で、3.x は「Missing entry-point」で
@@ -52,4 +90,16 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           wranglerVersion: "4.105.0"
-          command: deploy
+          workingDirectory: .ci-site
+          command: deploy --config wrangler.json
+
+      - name: Smoke production and verify published content
+        if: steps.gate.outputs.ready == 'true'
+        run: |
+          for attempt in 1 2 3; do
+            if node scripts/smoke.mjs "https://katachi-ai.com" .ci-site/dist; then
+              exit 0
+            fi
+            if [ "$attempt" -lt 3 ]; then sleep 10; fi
+          done
+          exit 1

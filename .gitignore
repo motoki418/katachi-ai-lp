@@ -26,6 +26,7 @@ service-account.json
 # ローカル作業領域
 .plans/
 dist/
+.ci-site/
 .playwright-mcp/
 
 # Node / Playwright
